@@ -1,0 +1,679 @@
+.homepageTask {
+    list-style-type: none;
+    background-color: var(--taskColor);
+    width: 100%;
+    margin: 0 auto;
+    transition-duration: 0.3s;
+    position: relative;
+    z-index: 5;
+    display: grid;
+    grid-template-columns: 50px 1fr 125px 150px;
+    padding: 10px 0;
+    border-bottom: 1px solid #efefef;
+}
+
+@media screen and (max-width : 499px) {
+    .homepageTask {
+        grid-template-columns: 30px 1fr 50px 70px;
+    }
+}
+
+.importantAndCheckBox {
+    display: flex;
+    flex-direction: row;
+    grid-column: 1 / 2;
+    margin-left: 25px;
+    align-items: center;
+}
+
+@media screen and (max-width : 499px) {
+    .importantAndCheckBox {
+        position: relative;
+        margin-left: 10px;
+        top: 1px;
+    }
+
+    .importantAndCheckBox label {
+        width: 15px;
+        height: 15px;
+    }
+    
+}
+
+.homepageTaskBody {
+    position: relative;
+    z-index: 6;
+}
+
+.homepageTaskMain {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transition-duration: 0.5s;
+    position: relative;
+    z-index: 5;
+    height: 50px;
+}
+
+.homepageTaskName {
+    overflow-x: auto;
+    grid-column: 2 / 3;
+    display: flex;
+    align-items: center;
+}
+
+.homepageStatus {
+    grid-column: 3 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    border: 1px solid black;
+    height: 20px;
+}
+
+.homepageStatus p {
+    color: #fff;
+    font-size: 14px;
+}
+
+
+@media screen and (max-width : 499px) {
+    .homepageStatus p {
+        font-size: 10px;
+    }
+}
+
+.pending_Task {
+    background-color: #FF8C00;
+}
+
+.fulfilled_Task {
+    background-color: #50C878;
+}
+
+.failing_Task {
+    background-color: #FF748B;
+}
+.homepageTaskName::-webkit-scrollbar {
+    height: 5px;
+}
+  
+.homepageTaskName::-webkit-scrollbar-track {
+    background-color: #000;
+}
+
+.homepageTaskName::-webkit-scrollbar-thumb {
+    background-color: grey;
+}
+
+.homepageTaskName h4 {
+    font-weight: 400;
+}
+
+@media screen and (max-width : 499px) {
+    .homepageTaskName h4 {
+        font-size: 12px;
+    }
+}
+
+.fulfilledTask {
+    background-color: #A8CD89;
+    box-shadow: 0 0 white;
+}
+
+.failingTask {
+    background-color: #FF748B;
+    box-shadow: 0 0 white;
+}
+
+.fulfilledTask .homepageTaskName, .failingTask .homepageTaskName {
+    width: 220px;
+}
+
+.fulfilledTask:hover, .failingTask:hover {
+    box-shadow: 0px 0px white;
+    transform: translate(0px, 0px);
+}
+
+.homepageTaskDescription, .homepageTaskDescription:hover {
+    box-shadow: 0px 0px white;
+    transform: translate(0px, 0px);
+}
+
+#userHomepage .homepageTaskMainNonDisplay, #userHomepage .homepageTaskMainNonDisplay * {
+    height: 0;
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* =========================== TASK IMPORTANT =========================== */
+.important {
+    width: 25px;
+    margin: 0 5px;
+}
+
+@media screen and (max-width : 499px) {
+    .important {
+        width: 15px;
+    }
+}
+
+.important input[type="checkbox"]{
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+.important label svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: #000;
+    stroke-width: 1px;
+    cursor: pointer;
+    position: relative;
+    top: 2px;
+    fill: #fff;
+    transition-duration: 0.5s;
+}
+
+@media screen and (max-width : 499px) {
+    .important label svg {
+        width: 15px;
+        height: 15px;
+    }
+}
+/*
+.homepageTask:hover .important label svg {
+    width: 25px;
+    height: 25px;
+    stroke-width: 2px;
+}
+*/
+.taskBody:active .important label svg {
+    width: 25px;
+    height: 25px;
+    stroke-width: 2px;
+}
+
+.important input[type=checkbox]:checked + label svg {
+    fill: yellow;
+}
+
+
+/* =========================== TASK NAME =========================== */
+
+/* =========================== TASK STATUS =========================== */
+.taskStatus {
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width : 499px) {
+    .checkbox {
+        width: 7px;
+        height: 7px;
+    }
+
+    .taskStatus p{
+        font-size: 12px;
+    }
+}
+
+.pending {
+    background-color: orange;
+}
+
+.fulfilled {
+    background-color: greenyellow;
+}
+
+.failing {
+    background-color: red;
+}
+
+/* =========================== TASK FUNCTION =========================== */
+.taskFunction {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    grid-column: 4 / 5;
+}
+
+.taskFunction img {
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    margin-left: 20px;
+}
+
+@media screen and (max-width : 499px) {
+    .taskFunction img {
+        height: 15px;
+        width: 15px;
+        margin-left: 5px;
+    }
+}
+.changeStatus {
+    display: none;
+}
+
+.labelCheckboxTask {
+    width: 25px;
+    height: 25px;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.changeStatus:checked + .labelCheckboxTask {
+    background-color: green;
+}
+
+.labelCheckboxTask svg {
+    fill: transparent;
+}
+.changeStatus:checked + .labelCheckboxTask svg {
+    fill: #fff;
+}
+/* =========================== TASK INFO BODY =========================== */
+.taskInfoBody {
+    transition-duration: 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    grid-column: 1 / 5;
+}
+
+.backgroundTaskDelete {
+    background-color: antiquewhite;
+}
+
+.backgroundTaskNonDelete {
+    background-color: #FFF0E5;
+    background-color: white;
+}
+
+#userHomepage .taskInfoHidden, #userHomepage .taskInfoHidden * {
+    height: 0px;
+    opacity: 0;
+    visibility: hidden;
+    width: 0px;
+    overflow: hidden;
+}
+
+
+.taskInfoVisible {
+    border-radius: 10px;
+    height: 175px;
+    opacity: 1;
+    visibility: visible;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.taskInfoVisible::-webkit-scrollbar {
+    height: 5px;
+}
+  
+.taskInfoVisible::-webkit-scrollbar-track {
+    background-color: #000;
+}
+
+.taskInfoVisible::-webkit-scrollbar-thumb {
+    background-color: grey;
+}
+
+.taskInfoDescription {
+    margin-left: 10px;
+}
+
+.taskInfoDescription span {
+    display: inline-block;
+    font-size: 14px;
+}
+
+@media screen and (max-width : 499px) {
+    .taskInfoDescription span {
+        font-size: 12px;
+    }
+}
+
+
+.taskInfoDescription .outlineDescription {
+    font-weight: 500;
+    margin-right: 3px;
+}
+.taskInfoButton {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    height: 40px;
+}
+
+.taskFinishInfoButton {
+    justify-content: flex-end;
+}
+.taskInfoButton div {
+    box-shadow: 5px 5px black;
+    border-radius: 5px;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+    transition-duration: 500ms;
+    height: max-content;
+}
+
+.taskInfoButton figure {
+    display: flex;
+    align-items: center;
+}
+
+.taskInfoButton div:hover {
+    margin-top: 5px;
+    margin-left: 5px;
+    box-shadow: 0px 0px white;
+}
+
+.taskInfoButton div:active {
+    margin-top: 5px;
+    margin-left: 5px;
+    box-shadow: 0px 0px white;
+}
+
+.taskInfoButton figure img{
+    height: 16px;
+    width: 16px;
+}
+
+.taskInfoButton figure figcaption{
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+}
+
+.taskInfoEdit {
+    background-color: #008FFF;
+}
+
+.taskInfoDelete {
+    background-color: #F86363;
+}
+
+.taskInfoClose {
+    background-color: #000;
+}
+
+.taskFinishInfoButton .taskInfoClose {
+    margin-right: 10px;
+}
+/* =========================== TASK NOT FINISH =========================== */
+
+.taskFinish .taskInfoVisible {
+    height: 150px;
+}
+
+.taskFinish .note {
+    font-size: 13px;
+    font-style: italic;
+}
+
+@media screen and (max-width : 499px) {
+    .taskFinish .note {
+        font-size: 10px;
+    }
+    .taskFinish .taskInfoVisible {
+        height: 100px;
+    }
+}
+
+
+
+/* =========================== TASK DASHBOARD =========================== */
+#dashboard .taskInfoHidden, #dashboard .taskInfoHidden * {
+    height: 0px;
+    opacity: 0;
+    visibility: hidden;
+    width: 0px;
+    overflow: hidden;
+}
+
+#dashboard .changeStatus {
+    margin-right: 0;
+    margin-left: 5px;
+}
+
+.taskDashboard {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition-duration: 0.3s;
+    width: 95%;
+    align-items: center;
+}
+
+.taskDashboard:hover {
+    background-color: #fff;
+    border: 1px solid black;
+    transform: translate(10px, 10px);
+
+}
+.taskDashboardFunction {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.taskNameAndTaskDeadline {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer;
+}
+.taskDashboard .important {
+    display: flex;
+}
+.taskDashboard .taskName {
+    grid-column: 2 / 3;
+    cursor: pointer;
+}
+
+@media screen and (max-width : 499px) {
+    .taskDashboard .taskName, .taskDashboard p {
+        font-size: 12px;
+    }
+
+    .taskDashboard .important label svg {
+        height: 15px;
+        width: 15px;
+    }
+
+    .taskDashboard .labelCheckboxTask {
+        height: 15px;
+        width: 15px;
+    }
+
+    .taskDashboard .labelCheckboxTask svg {
+        height: 15px;
+        width: 15px;
+    }
+}
+
+.taskDashboard .taskFunction {
+    grid-column: 3 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+#dashboard .taskInfoBody > div {
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+
+#dashboard .taskInfoVisible { 
+    height: 150px;
+}
+
+#dashboard span {
+    font-weight: 500;
+}
+
+#dashboard .taskInfoBody {
+    width: 95%;
+    transition-duration: 0.3s;
+}
+
+.taskDashboard:hover + .taskInfoBody {
+    transform: translate(10px, 10px);
+    background-color: #fff;
+}
+
+@media screen and (max-width : 499px) {
+    #dashboard .taskInfoBody p{
+        font-size: 12px;
+    }
+
+    #dashboard .taskInfoVisible { 
+        height: 120px;
+    }
+}
+
+
+/* ===================== CALENDAR ===============================*/
+.dateDetail {
+    padding: 5px;
+    color: #fff;
+}
+
+.taskCalendarBody {
+    display: flex;
+    align-items: center;
+}
+
+.taskCalendarBody .taskCalendarMain {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    justify-content: space-between;
+}
+
+@media screen and (max-width : 499px) {   
+    .taskCalendarBody {
+        width: 100%;
+        justify-content: space-evenly;
+    }
+    
+    .taskCalendarBody .taskCalendarMain {
+        width: 80%;
+    }
+}
+
+.taskCalendarBody .taskName {
+    display: flex;
+    align-items: center;
+}
+
+.taskCalendarBody h4, .taskCalendarDescription span {
+    font-weight: 300;
+}
+
+@media screen and (max-width : 499px) {
+    .taskCalendarBody h4 {
+        font-size: 12px;
+    }
+
+    .taskCalendarBody .important label svg {
+        height: 15px;
+        width: 15px;
+    }
+}
+
+#calendarPage .taskInfoBody {
+    transition-duration: 0.5s;
+    transition-property: height;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px;
+    width: 100%;
+}
+
+#calendarPage .taskInfoHidden {
+    height: 0px;
+    opacity: 0;
+    visibility: hidden;
+    border: 0;
+}
+
+#calendarPage .taskInfoVisible {
+    border: 0;
+    border-top: 2px dashed black;
+    height: 128px;
+    opacity: 1;
+    visibility: visible;
+}
+
+@media screen and (max-width : 499px) {
+    #calendarPage .taskInfoVisible {
+        height: 100px;
+    }
+    .taskCalendarDescription p {
+        font-size: 12px;
+    }
+}
+
+
+#calendarPage ::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+}
+
+/*
+.test {
+    background-color: #008FFF;
+    display: block;
+    transition: display 5s;
+    cursor: pointer;
+}
+
+.test:hover {
+    display: none;
+    background-color: red;
+}
+
+/*
+.test {
+    transition: opacity 10s, display 10s;
+    display: block;
+    opacity: 1;
+}
+
+.test:hover {
+    display: none;
+    opacity: 0;
+}
+*/
+
+/*
+@keyframes slideaway {
+    from { display: block; }
+    to { transform: translateY(40px); opacity: 0;}
+  }
+
+.test {
+    animation: 1s slideaway;
+    display: block;
+    cursor: pointer;
+}*/
+

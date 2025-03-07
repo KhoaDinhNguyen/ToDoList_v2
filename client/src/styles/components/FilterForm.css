@@ -1,0 +1,134 @@
+#filterForm {
+    margin-left: 10px;
+}
+
+#filterForm label{
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+@media screen and (max-width : 499px) {
+    #filterForm label{
+        font-size: 12px;
+        margin-right: 0px;
+    }  
+}
+
+@media screen and (max-width : 499px) {
+    #filterForm h3{
+        font-size: 16px;
+    }  
+}
+
+@media screen and (max-width : 499px) {
+    #filterForm h4{
+        font-size: 12px;
+    }  
+}
+
+
+/* ================================== STATUS FILTER ================================== */
+
+#statusFilter input[type=checkbox] {
+    height: 18px;
+    width: 18px;
+    margin-right: 2px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width : 499px) {
+    #statusFilter input[type=checkbox] {
+        height: 15px;
+        width: 15px;
+    }
+}
+
+
+#statusFilter input[type=checkbox]:checked {
+    accent-color: #0077b6;
+    
+}
+#statusFilter {
+    margin-top: 5px;
+}
+
+#statusFilter h4 {
+    margin-bottom: -5px;
+}
+
+#statusList {
+    display: flex;
+    margin: 5px 0;
+    flex-flow: row wrap;
+    align-content: center;
+}
+
+@media screen and (max-width : 499px) {
+    #statusList {
+        width: 250px;
+    }
+}
+
+#filterForm .statusBox {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+/* ================================== DATE FILTER ================================== */
+@media screen and (max-width : 499px) {
+    .dateFilter label{
+        margin-left: 0;
+    }
+}
+
+#clearDate {
+    display: block;
+    color: white;
+    background-color: #023e8a;
+    box-shadow: 0px 5px #023e8a;
+    border: 0;
+    padding: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+@media screen and (max-width : 499px) {
+    #clearDate {
+        font-size: 10px;
+    }
+}
+
+
+#clearDate:hover, #clearDate:active {
+    transform: translate(0, 5px);
+    box-shadow: 0px 0px #023e8a;
+}
+
+#starFilter {
+    z-index: -1;
+}
+#starFilter input[type="checkbox"]{
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+#starFilter label svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: #000;
+    stroke-width: 1px;
+    cursor: pointer;
+    position: relative;
+    top: 2px;
+    fill: #fff;
+}
+
+#starFilter input[type=checkbox]:checked + label svg {
+    fill: yellow;
+}

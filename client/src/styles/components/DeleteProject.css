@@ -1,0 +1,122 @@
+.detetePrompt .deletePromptBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 175px;
+}
+
+@media screen and (max-width : 499px) {
+    .detetePrompt .deletePromptBody{
+        height: 150px;
+    }
+}
+
+.deletePromptMain {
+    text-align: center;
+    font-weight: 500;
+}
+
+.deletePromptMain p:nth-child(2) {
+    font-style: italic;
+    font-weight: 300;
+}
+
+@media screen and (max-width : 499px) {
+    .deletePromptMain p {
+        font-size: 12px;
+    }
+}
+
+
+.deletePromptButton {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.deletePromptButton button{
+    width: max-content;
+    padding: 10px;
+    border-radius: 10px;
+    border: 0;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+@media screen and (max-width : 499px) {
+    .deletePromptButton button{
+        display: block;
+        width: max-content;
+        padding: 10px;
+        font-size: 12px;
+        margin-left: 0;
+    }
+}
+
+.deletePromptButton button::before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    transition-duration: 500ms;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    border-radius: 10px;
+}
+
+.deletePromptButton span {
+    position: relative;
+    z-index: 5;
+}
+
+.yesDeleteProject:hover::before {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: #f44336;
+}
+
+.yesDeleteProject:hover span {
+    color: #fff;
+}
+
+.yesDeleteProject:active::before {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: #f44336;
+}
+
+.yesDeleteProject:active span {
+    color: #fff;
+}
+
+.noDeleteProject:hover::before {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: #fff;
+}
+
+.noDeleteProject:hover span {
+    color: #000;
+}
+
+.noDeleteProject:active::before {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: #fff;
+}
+
+.noDeleteProject:active span {
+    color: #000;
+}

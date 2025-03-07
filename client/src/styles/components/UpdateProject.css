@@ -1,0 +1,137 @@
+.updateProjectForm form .updateProjectInput{
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.updateProjectInput input {
+    font-size: 16px;
+    background-color: #e8e7e7;
+    border-radius: 5px;
+    width: 125px;
+}
+
+.updateProjectInput input:focus {
+    background-color: white;
+}
+
+@media screen and (max-width : 499px) {
+    .updateProjectInput input {
+        width: 100px;
+        margin-bottom: 0;
+        overflow: auto;
+    }
+}
+
+
+.updateProjectInput label, .updateProjectInput input, .updateProjectInput p{
+    font-size: 14px;
+}
+
+@media screen and (max-width : 499px) {
+    .updateProjectInput label, .updateProjectInput input, .updateProjectInput p {
+        font-size: 14px;
+    }
+}
+
+.updateProjectInput span, .updateProjectInput label {
+    font-weight: 500;
+
+}
+.updateProjectInput .updateProjectMessage {
+    font-size: 13px;
+    color: black;
+    font-weight: 300;
+}
+
+@media screen and (max-width : 499px) {
+    .updateProjectInput .updateProjectMessage {
+        font-size: 10px;
+    }
+}
+
+.updateProjectFunction {
+    margin: 20px 0px 0px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.updateProjectFunction input {
+    display: none;
+}
+
+.updateProjectFunction label {
+    background-color: #000;
+    border: 2px solid black;
+    padding: 7px;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.updateProjectFunction span {
+    position: relative;
+    z-index: 3;
+}
+
+.updateProjectFunction label::before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    transition-duration: 500ms;
+    border-radius: 10px;
+}
+
+.updateProjectFunction label:hover::before {
+    width: 100%;
+    background-color: white;
+    height: 100%;
+}
+
+.updateProjectFunction label:active::before {
+    width: 100%;
+    background-color: white;
+    height: 100%;
+}
+
+.updateProjectCancelButton label:hover span {
+    color: black;
+}
+
+.updateProjectCancelButton label:active span {
+    color: black;
+}
+
+.updateProjectSubmitButton label:hover {
+    background-color: #008FFF;
+    border: 2px solid #008FFF;
+}
+
+.updateProjectSubmitButton {
+    margin-right: 20px;
+}
+
+.updateProjectSubmitButton label:hover span {
+    color: #008FFF;
+}
+
+.updateProjectSubmitButton label:active span {
+    color: #008FFF;
+}
+
+@media screen and (max-width : 499px) {
+    .updateProjectFunction {
+        margin-top: 0px;
+    }
+
+    .updateProjectFunction label {
+        padding: 5px;
+        font-size: 12px;
+    }
+}
