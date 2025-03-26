@@ -1,4 +1,4 @@
-.homepageTask {
+.rootContainer {
     list-style-type: none;
     background-color: var(--taskColor);
     width: 100%;
@@ -13,7 +13,7 @@
 }
 
 @media screen and (max-width : 499px) {
-    .homepageTask {
+    .rootContainer {
         grid-template-columns: 30px 1fr 50px 70px;
     }
 }
@@ -148,62 +148,6 @@
     visibility: hidden;
 }
 
-/* =========================== TASK IMPORTANT =========================== */
-.important {
-    width: 25px;
-    margin: 0 5px;
-}
-
-@media screen and (max-width : 499px) {
-    .important {
-        width: 15px;
-    }
-}
-
-.important input[type="checkbox"]{
-    visibility: hidden;
-    width: 0;
-    height: 0;
-}
-
-.important label svg {
-    width: 20px;
-    height: 20px;
-    fill: none;
-    stroke: #000;
-    stroke-width: 1px;
-    cursor: pointer;
-    position: relative;
-    top: 2px;
-    fill: #fff;
-    transition-duration: 0.5s;
-}
-
-@media screen and (max-width : 499px) {
-    .important label svg {
-        width: 15px;
-        height: 15px;
-    }
-}
-/*
-.homepageTask:hover .important label svg {
-    width: 25px;
-    height: 25px;
-    stroke-width: 2px;
-}
-*/
-.taskBody:active .important label svg {
-    width: 25px;
-    height: 25px;
-    stroke-width: 2px;
-}
-
-.important input[type=checkbox]:checked + label svg {
-    fill: yellow;
-}
-
-
-/* =========================== TASK NAME =========================== */
 
 /* =========================== TASK STATUS =========================== */
 .taskStatus {
@@ -552,8 +496,13 @@
 
 /* ===================== CALENDAR ===============================*/
 .dateDetail {
-    padding: 5px;
-    color: #fff;
+    padding: 10px;
+    color: #000;
+    background-color: white;
+    width: 80%;
+    border-radius: 10px;
+    border: 3px solid black;
+
 }
 
 .taskCalendarBody {
@@ -638,42 +587,3 @@
     height: 5px;
     width: 5px;
 }
-
-/*
-.test {
-    background-color: #008FFF;
-    display: block;
-    transition: display 5s;
-    cursor: pointer;
-}
-
-.test:hover {
-    display: none;
-    background-color: red;
-}
-
-/*
-.test {
-    transition: opacity 10s, display 10s;
-    display: block;
-    opacity: 1;
-}
-
-.test:hover {
-    display: none;
-    opacity: 0;
-}
-*/
-
-/*
-@keyframes slideaway {
-    from { display: block; }
-    to { transform: translateY(40px); opacity: 0;}
-  }
-
-.test {
-    animation: 1s slideaway;
-    display: block;
-    cursor: pointer;
-}*/
-

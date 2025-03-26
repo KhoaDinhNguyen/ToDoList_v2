@@ -3,11 +3,16 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { useDispatch } from "react-redux";
 
+import TextInput from "../../components/utils/TextInput";
+import PasswordInput from "../../components/utils/PasswordInput";
+
 import { profileNameSlice } from "../../redux/databaseSlice";
 import { fetchSignIn } from "../../API/pageAPI";
 import profileLogo from "../../asset/img/loginPage.png";
 //import profileLogo from "../../img/homepage/loginPage.png";
 import loginImg from "../../asset/img/login.png";
+
+import styles from "../../styles/pages/Login.module.css";
 
 import "../../styles/pages/Login.css";
 
@@ -60,7 +65,6 @@ function LoginMain() {
   const onSubmitLogin = async (event) => {
     event.preventDefault();
     setLoading(true);
-
     fetchSignIn(accountName, password)
       .then((response) => {
         setLoading(false);
@@ -94,30 +98,21 @@ function LoginMain() {
           <p>Please enter your details to sign in</p>
         </div>
         <form onSubmit={onSubmitLogin} id="loginForm">
-          <div className="loginInput">
-            <input
-              name="accountNameSignIn"
-              id="accountNameSignIn"
-              type="text"
-              required
-              value={accountName}
-              onChange={onChangeAccountName}
-              autoComplete="off"
-              placeholder="Username"
-            />
-          </div>
-          <div className="loginInput">
-            <input
-              name="passwordSignIn"
-              id="passwordSignIn"
-              type="password"
-              required
-              value={password}
-              onChange={onChangePassword}
-              autoComplete="off"
-              placeholder="Password"
-            />
-          </div>
+          <TextInput
+            id="accountNameSignIn"
+            required={true}
+            value={accountName}
+            onChangeText={onChangeAccountName}
+            placeholder="Username"
+            style={styles.loginInput}
+          />
+          <PasswordInput
+            id="passwordSignIn"
+            value={password}
+            onChangePassword={onChangePassword}
+            placeholder="Password"
+            style={styles.loginInput}
+          />
           <div id="forgetPassword">
             <NavLink to="/homepage/forgetPassword">Forgot password?</NavLink>
           </div>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { TaskDisplay } from "./TaskDisplay";
+import TaskDisplay from "./TaskDisplay";
 import { convertDateToISOString } from "../../pages/user/User";
 
 import "../../styles/components/calendar.css";

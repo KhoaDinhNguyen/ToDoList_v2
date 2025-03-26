@@ -11,7 +11,7 @@ import {
   Legend,
 } from "chart.js";
 
-import { TaskDisplay } from "./TaskDisplay";
+import TaskDisplay from "./TaskDisplay";
 import { convertDateToISOString } from "../../pages/user/User";
 import { sortTask } from "../../utils/sortTask";
 

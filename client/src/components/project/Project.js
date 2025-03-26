@@ -12,8 +12,8 @@ import {
 
 import UpdateProject from "./UpdateProject";
 import DeleteProject from "./DeleteProject";
-import CreateTaskForm from "../task/CreateTaskForm";
-import { TaskDisplay } from "../task/TaskDisplay";
+import CreateTaskForm from "../TaskComponents/CreateTaskForm";
+import TaskDisplay from "../TaskComponents/TaskDisplay";
 
 import { projectsSlice, tasksSlice } from "../../redux/databaseSlice";
 import {

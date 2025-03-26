@@ -1,0 +1,40 @@
+.important {
+  width: 25px;
+  margin: 0 5px;
+}
+
+@media screen and (max-width : 499px) {
+  .important {
+      width: 15px;
+  }
+}
+
+.important input[type="checkbox"]{
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.important label svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: #000;
+  stroke-width: 1px;
+  cursor: pointer;
+  position: relative;
+  top: 2px;
+  fill: #fff;
+  transition-duration: 0.5s;
+}
+
+@media screen and (max-width : 499px) {
+  .important label svg {
+      width: 15px;
+      height: 15px;
+  }
+}
+
+.important input[type=checkbox]:checked + label svg {
+  fill: yellow;
+}

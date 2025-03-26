@@ -1,0 +1,172 @@
+.rootContainer {
+  list-style-type: none;
+  background-color: var(--taskColor);
+  width: 100%;
+  margin: 0 auto;
+  transition-duration: 0.3s;
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 50px 1fr 125px 150px;
+  padding: 10px 0;
+  border-bottom: 1px solid #efefef;
+}
+
+@media screen and (max-width : 499px) {
+  .rootContainer {
+      grid-template-columns: 30px 1fr 50px 70px;
+  }
+}
+
+.fulfilledContainer {
+  display: flex;
+  flex-direction: row;
+  grid-column: 1 / 2;
+  margin-left: 25px;
+  align-items: center;
+}
+
+@media screen and (max-width : 499px) {
+  .fulfilledContainer {
+      position: relative;
+      margin-left: 10px;
+      top: 1px;
+  }
+
+  .fulfilledContainer label {
+      width: 15px;
+      height: 15px;
+  }
+  
+}
+
+/* .homepageTaskBody {
+  position: relative;
+  z-index: 6;
+}
+
+.homepageTaskMain {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  transition-duration: 0.5s;
+  position: relative;
+  z-index: 5;
+  height: 50px;
+} */
+
+.taskNameContainer {
+  overflow-x: auto;
+  grid-column: 2 / 3;
+  display: flex;
+  align-items: center;
+}
+
+.taskStatusContainer {
+  grid-column: 3 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  border: 1px solid black;
+  height: 20px;
+}
+
+.taskStatusContainer p {
+  color: #fff;
+  font-size: 14px;
+}
+
+
+@media screen and (max-width : 499px) {
+  .taskStatusContainer p {
+      font-size: 10px;
+  }
+}
+
+.pending_task {
+  background-color: #FF8C00;
+}
+
+.fulfilled_task {
+  background-color: #50C878;
+}
+
+.failing_task {
+  background-color: #FF748B;
+}
+
+.homepageTaskName::-webkit-scrollbar {
+  height: 5px;
+}
+
+.homepageTaskName::-webkit-scrollbar-track {
+  background-color: #000;
+}
+
+.homepageTaskName::-webkit-scrollbar-thumb {
+  background-color: grey;
+}
+
+.homepageTaskName h4 {
+  font-weight: 400;
+}
+
+@media screen and (max-width : 499px) {
+  .homepageTaskName h4 {
+      font-size: 12px;
+  }
+}
+
+.fulfilledTask {
+  background-color: #A8CD89;
+  box-shadow: 0 0 white;
+}
+
+.failingTask {
+  background-color: #FF748B;
+  box-shadow: 0 0 white;
+}
+
+.fulfilledTask .homepageTaskName, .failingTask .homepageTaskName {
+  width: 220px;
+}
+
+.fulfilledTask:hover, .failingTask:hover {
+  box-shadow: 0px 0px white;
+  transform: translate(0px, 0px);
+}
+
+.homepageTaskDescription, .homepageTaskDescription:hover {
+  box-shadow: 0px 0px white;
+  transform: translate(0px, 0px);
+}
+
+#userHomepage .homepageTaskMainNonDisplay, #userHomepage .homepageTaskMainNonDisplay * {
+  height: 0;
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.taskFunctionContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  grid-column: 4 / 5;
+}
+
+.taskFunctionContainer img {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  margin-left: 20px;
+}
+
+@media screen and (max-width : 499px) {
+  .taskFunctionContainer img {
+      height: 15px;
+      width: 15px;
+      margin-left: 5px;
+  }
+}

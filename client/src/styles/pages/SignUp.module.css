@@ -1,0 +1,34 @@
+.signUpInput {
+  width: 360px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width : 850px) {
+  .signUpInput {
+      width: 275px;
+      margin-bottom: 20px;
+  }
+}
+
+.signUpInput input {
+  font-size: 16px;
+  background: #F8F8F8;;
+  padding: 12px;
+  width: 360px;
+  border: 2px solid #cccccc;
+  border-radius: 5px;
+  outline: 0;
+}
+
+@media screen and (max-width : 850px) {
+  .signUpInput input {
+      font-size: 14px;
+      padding: 12px;
+      width: 275px;
+  }
+}
+
+.signUpInput input:focus {
+  border: 2px solid orange;
+}

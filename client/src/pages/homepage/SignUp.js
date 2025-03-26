@@ -4,8 +4,11 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 import { fetchSignUp } from "../../API/pageAPI";
 import signUpLogo from "../../asset/img/signupPage.png";
+import TextInput from "../../components/utils/TextInput";
+import PasswordInput from "../../components/utils/PasswordInput";
 
 import "../../styles/pages/SignUp.css";
+import styles from "../../styles/pages/SignUp.module.css";
 
 function SignUp() {
   return (
@@ -97,56 +100,36 @@ function SignUpMain() {
         </p>
       </div>
       <form onSubmit={onSubmitSignIn} id="signUpForm">
-        <div className="signUpInput">
-          <input
-            type="text"
-            id="accountNameSignUp"
-            name="accountNameSignUp"
-            value={accountName}
-            onChange={onChangeAccountName}
-            required
-            autoComplete="off"
-            placeholder="Username"
-            title="Only used for login"
-          />
-        </div>
-        <div className="signUpInput">
-          <input
-            type="text"
-            id="profileNameSignUp"
-            name="profileNameSignUp"
-            value={profileName}
-            onChange={onChangeProfileName}
-            required
-            autoComplete="off"
-            placeholder="Profile name"
-            title="Displayed name in public"
-          />
-        </div>
-        <div className="signUpInput">
-          <input
-            type="password"
-            id="passwordSignUp"
-            name="passwordSignUp"
-            value={password}
-            onChange={onChangePassword}
-            required
-            autoComplete="off"
-            placeholder="Password"
-          />
-        </div>
-        <div className="signUpInput">
-          <input
-            type="password"
-            id="confirmedPasswordSignUp"
-            name="confirmedPasswordSignUp"
-            value={confirmedPassword}
-            onChange={onChangeConfirmedPassword}
-            required
-            autoComplete="off"
-            placeholder="Confirmed password"
-          />
-        </div>
+        <TextInput
+          id="accountNameSignUp"
+          value={accountName}
+          onChangeText={onChangeAccountName}
+          required={true}
+          placeholder="Username"
+          style={styles.signUpInput}
+        />
+        <TextInput
+          id="profileNameSignUp"
+          value={profileName}
+          onChangeText={onChangeProfileName}
+          required={true}
+          placeholder="Profile name"
+          style={styles.signUpInput}
+        />
+        <PasswordInput
+          id="profileNameSignUp"
+          value={password}
+          onChangePassword={onChangePassword}
+          placeholder="Password name"
+          style={styles.signUpInput}
+        />
+        <PasswordInput
+          id="confirmedPasswordSignUp"
+          value={password}
+          onChangePassword={onChangeConfirmedPassword}
+          placeholder="Confirmed password"
+          style={styles.signUpInput}
+        />
         <input
           type="submit"
           value="Sign Up"

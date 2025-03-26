@@ -1,0 +1,15 @@
+.rootContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 300px;
+}
+
+.title {
+  font-weight: 500;
+  margin-right: 10px;
+  grid-column: 1 / 2;
+}
+
+.content {
+  grid-column: 2 / 3;
+}

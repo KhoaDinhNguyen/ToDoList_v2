@@ -1,0 +1,32 @@
+.rootContainer {
+  margin-bottom: 20px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.taskNameContainer {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.taskNameContainer h4 {
+  font-weight: 300;
+}
+.statusContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statusBlock {
+  padding: 5px 12px;
+  border-radius: 50%;
+  color: black;
+  font-weight: 700;
+}

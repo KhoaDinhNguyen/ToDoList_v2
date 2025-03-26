@@ -1,0 +1,66 @@
+.taskContainer {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition-duration: 0.3s;
+  width: 95%;
+  align-items: center;
+}
+
+.taskContainer:hover {
+  background-color: #fff;
+  border: 1px solid black;
+  transform: translate(10px, 10px);
+}
+
+.taskFunctionContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.taskNameAndTaskDeadline {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+}
+
+.taskInfoContainer {
+  width: 95%;
+  transition-duration: 0.5s;
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-top: 5px;
+}
+
+.taskContainer:hover + .taskInfoContainer {
+  background-color: #fff;
+  border: 1px solid black;
+  transform: translate(10px, 10px);
+}
+
+.taskInfoHidden {
+  height: 0px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.taskInfoVisible {
+  height: 150px;
+}
+
+.taskStatus {
+  display: flex;
+  align-items: center;
+}
+
+.statusBox {
+  width: 7px;
+  height: 7px;
+  border-radius: 3px;
+  margin: 0px 5px;
+}

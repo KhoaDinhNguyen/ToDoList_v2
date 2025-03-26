@@ -1,0 +1,25 @@
+.checkboxInput {
+  display: none;
+}
+
+.checkboxLabel {
+  width: 25px;
+  height: 25px;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkboxInput:checked + .checkboxLabel {
+  background-color: green;
+}
+
+.checkboxLabel svg {
+  fill: transparent;
+}
+.checkboxInput:checked + .checkboxLabel svg {
+  fill: #fff;
+}
