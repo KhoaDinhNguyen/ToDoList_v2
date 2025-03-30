@@ -1,4 +1,4 @@
-.rootContainer {
+/* .rootContainer {
     list-style-type: none;
     background-color: var(--taskColor);
     width: 100%;
@@ -149,7 +149,7 @@
 }
 
 
-/* =========================== TASK STATUS =========================== */
+/* =========================== TASK STATUS =========================== 
 .taskStatus {
     display: flex;
     align-items: center;
@@ -178,7 +178,7 @@
     background-color: red;
 }
 
-/* =========================== TASK FUNCTION =========================== */
+/* =========================== TASK FUNCTION =========================== 
 .taskFunction {
     display: flex;
     justify-content: flex-start;
@@ -225,7 +225,7 @@
 .changeStatus:checked + .labelCheckboxTask svg {
     fill: #fff;
 }
-/* =========================== TASK INFO BODY =========================== */
+/* =========================== TASK INFO BODY =========================== 
 .taskInfoBody {
     transition-duration: 0.5s;
     display: flex;
@@ -356,7 +356,7 @@
 .taskFinishInfoButton .taskInfoClose {
     margin-right: 10px;
 }
-/* =========================== TASK NOT FINISH =========================== */
+/* =========================== TASK NOT FINISH =========================== 
 
 .taskFinish .taskInfoVisible {
     height: 150px;
@@ -378,7 +378,7 @@
 
 
 
-/* =========================== TASK DASHBOARD =========================== */
+/* =========================== TASK DASHBOARD =========================== 
 #dashboard .taskInfoHidden, #dashboard .taskInfoHidden * {
     height: 0px;
     opacity: 0;
@@ -494,7 +494,7 @@
 }
 
 
-/* ===================== CALENDAR ===============================*/
+/* ===================== CALENDAR ===============================
 .dateDetail {
     padding: 10px;
     color: #000;
@@ -586,4 +586,4 @@
 #calendarPage ::-webkit-scrollbar {
     height: 5px;
     width: 5px;
-}
+} */

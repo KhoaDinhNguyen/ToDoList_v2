@@ -40,21 +40,6 @@
   
 }
 
-/* .homepageTaskBody {
-  position: relative;
-  z-index: 6;
-}
-
-.homepageTaskMain {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  transition-duration: 0.5s;
-  position: relative;
-  z-index: 5;
-  height: 50px;
-} */
-
 .taskNameContainer {
   overflow-x: auto;
   grid-column: 2 / 3;
@@ -96,18 +81,6 @@
   background-color: #FF748B;
 }
 
-.homepageTaskName::-webkit-scrollbar {
-  height: 5px;
-}
-
-.homepageTaskName::-webkit-scrollbar-track {
-  background-color: #000;
-}
-
-.homepageTaskName::-webkit-scrollbar-thumb {
-  background-color: grey;
-}
-
 .homepageTaskName h4 {
   font-weight: 400;
 }
@@ -116,37 +89,6 @@
   .homepageTaskName h4 {
       font-size: 12px;
   }
-}
-
-.fulfilledTask {
-  background-color: #A8CD89;
-  box-shadow: 0 0 white;
-}
-
-.failingTask {
-  background-color: #FF748B;
-  box-shadow: 0 0 white;
-}
-
-.fulfilledTask .homepageTaskName, .failingTask .homepageTaskName {
-  width: 220px;
-}
-
-.fulfilledTask:hover, .failingTask:hover {
-  box-shadow: 0px 0px white;
-  transform: translate(0px, 0px);
-}
-
-.homepageTaskDescription, .homepageTaskDescription:hover {
-  box-shadow: 0px 0px white;
-  transform: translate(0px, 0px);
-}
-
-#userHomepage .homepageTaskMainNonDisplay, #userHomepage .homepageTaskMainNonDisplay * {
-  height: 0;
-  width: 0;
-  opacity: 0;
-  visibility: hidden;
 }
 
 .taskFunctionContainer {
@@ -169,4 +111,112 @@
       width: 15px;
       margin-left: 5px;
   }
+}
+
+.taskInfoContainer {
+  transition-duration: 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  grid-column: 1 / 5;
+}
+
+.backgroundTaskDelete {
+  background-color: antiquewhite;
+}
+
+.backgroundTaskNonDelete {
+  background-color: #FFF0E5;
+  background-color: white;
+}
+
+#userHomepage .taskInfoHidden, #userHomepage .taskInfoHidden * {
+  height: 0px;
+  opacity: 0;
+  visibility: hidden;
+  width: 0px;
+  overflow: hidden;
+}
+
+
+.taskInfoVisible {
+  border-radius: 10px;
+  height: 175px;
+  opacity: 1;
+  visibility: visible;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.taskInfoVisible::-webkit-scrollbar {
+  height: 5px;
+}
+
+.taskInfoVisible::-webkit-scrollbar-track {
+  background-color: #000;
+}
+
+.taskInfoVisible::-webkit-scrollbar-thumb {
+  background-color: grey;
+}
+
+.taskInfoDescription {
+  margin-left: 10px;
+}
+
+.taskFinishInfoButton {
+  justify-content: flex-end;
+}
+.taskInfoButton div {
+  box-shadow: 5px 5px black;
+  border-radius: 5px;
+  padding: 5px;
+  position: relative;
+  cursor: pointer;
+  transition-duration: 500ms;
+  height: max-content;
+}
+
+.taskInfoButton figure {
+  display: flex;
+  align-items: center;
+}
+
+.taskInfoButton div:hover {
+  margin-top: 5px;
+  margin-left: 5px;
+  box-shadow: 0px 0px white;
+}
+
+.taskInfoButton div:active {
+  margin-top: 5px;
+  margin-left: 5px;
+  box-shadow: 0px 0px white;
+}
+
+.taskInfoButton figure img{
+  height: 16px;
+  width: 16px;
+}
+
+.taskInfoButton figure figcaption{
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+}
+
+.taskInfoEdit {
+  background-color: #008FFF;
+}
+
+.taskInfoDelete {
+  background-color: #F86363;
+}
+
+.taskInfoClose {
+  background-color: #000;
+}
+
+.taskFinishInfoButton .taskInfoClose {
+  margin-right: 10px;
 }

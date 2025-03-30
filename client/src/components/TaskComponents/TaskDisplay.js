@@ -8,7 +8,7 @@ import TaskDisplayCalendar from "./TaskDisplayCalendar/TaskDisplayCalendar";
 import TaskDisplayDashboard from "./TaskDisplayDashboard/TaskDisplayDashboard";
 import TaskDisplayHomepage from "./TaskDisplayHomepage/TaskDisplayHomepage";
 
-import "../../styles/components/taskDisplay.css";
+//import "../../styles/components/taskDisplay.css";
 
 function TaskDisplay(props) {
   const { type, task } = props;

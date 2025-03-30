@@ -35,11 +35,7 @@ function TaskDisplayHomepage(props) {
   const { taskName, projectName } = task;
 
   return (
-    <li
-      className={`${styles.rootContainer} ${
-        !taskDetailDisplay ? `` : "homepageTaskDescription"
-      }`}
-    >
+    <li className={`${styles.rootContainer}`}>
       <div className={styles.fulfilledContainer}>
         {!finish && (
           <FulfilledBox
@@ -123,13 +119,9 @@ function TaskInfoHomepage(props) {
   } = task;
 
   return (
-    <div
-      className={`taskInfoBody ${
-        taskDetailDisplay ? "taskInfoVisible" : "taskInfoHidden"
-      }`}
-    >
+    <div className={`${styles.taskInfoContainer}`}>
       <div
-        className="taskInfoDescription"
+        className={styles.taskInfoDescription}
         style={{ display: convertFromBooleanToDisplay(taskDescriptionDisplay) }}
       >
         <InfoText title="Task name">
