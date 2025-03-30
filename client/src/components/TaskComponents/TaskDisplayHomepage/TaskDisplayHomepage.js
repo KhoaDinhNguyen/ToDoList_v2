@@ -119,10 +119,12 @@ function TaskInfoHomepage(props) {
   } = task;
 
   return (
-    <div className={`${styles.taskInfoContainer}`}>
+    <div className={styles.taskInfoContainer}>
       <div
         className={styles.taskInfoDescription}
-        style={{ display: convertFromBooleanToDisplay(taskDescriptionDisplay) }}
+        style={{
+          display: convertFromBooleanToDisplay(taskDescriptionDisplay),
+        }}
       >
         <InfoText title="Task name">
           <p>{taskName}</p>

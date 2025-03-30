@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { Helmet } from "react-helmet";
 
 import { tasksSlice } from "../../redux/databaseSlice";
-import Dashboard from "../../components/TaskComponents/Dashboard";
+import Dashboard from "../../components/DashboardComponents/Dashboard";
 import { splitTask } from "../../utils/finishTask";
 
 function UserDashboard() {
