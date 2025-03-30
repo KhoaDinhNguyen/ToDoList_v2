@@ -1,0 +1,118 @@
+.deleteContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 200px;
+}
+
+@media screen and (max-width : 499px) {
+  .deleteContainer {
+      height: 150px;
+  }
+}
+
+.deletePrompt {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+@media screen and (max-width : 499px) {
+  .deletePrompt {
+      font-size: 14px;
+      margin-bottom: 20px;
+  }
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+
+.buttonContainer {
+  width: 60px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 0;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+
+@media screen and (max-width : 499px) {
+  .buttonContainer {
+      padding: 5px;
+      font-size: 14px;
+      width: 40px;
+  }
+}
+
+.buttonContainer::before {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  transition-duration: 500ms;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  border-radius: 10px;
+}
+
+.title {
+  position: relative;
+  z-index: 5;
+}
+
+
+.deleteButton:hover::before {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: #f44336;
+}
+
+.deleteButton:hover span {
+  color: #fff;
+}
+
+.deleteButton:active::before {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: #f44336;
+}
+
+.deleteButton:active span {
+  color: #fff;
+}
+
+.cancleButton:hover::before {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: #fff;
+}
+
+.cancleButton:hover span {
+  color: #000;
+}
+
+.cancleButton:active::before {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: #fff;
+}
+
+.cancleButton:active span {
+  color: #000;
+}

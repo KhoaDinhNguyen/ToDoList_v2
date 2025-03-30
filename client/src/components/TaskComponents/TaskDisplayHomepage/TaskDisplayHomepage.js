@@ -1,8 +1,8 @@
-import DeleteTask from "../DeleteTask";
 import ImportantStar from "../../utils/ImportantStar/ImportantStar";
 import FulfilledBox from "../../utils/FulfilledBox/FulfilledBox";
 import InfoText from "../../utils/InfoText/InfoText";
 import UpdateTaskForm from "../UpdateTaskForm/UpdataTaskForm";
+import DeleteTaskForm from "../DeleteTaskForm/DeleteTaskForm";
 
 import { convertFromBooleanToDisplay } from "../../../pages/user/User";
 
@@ -161,7 +161,7 @@ function TaskInfoHomepage(props) {
         setEditDisplay={setEditDisplay}
         setTaskDetailDisplay={setTaskDetailDisplay}
       />
-      <DeleteTask
+      <DeleteTaskForm
         task={task}
         display={convertFromBooleanToDisplay(deleteDisplay)}
         setDeleteDisplay={setDeleteDisplay}

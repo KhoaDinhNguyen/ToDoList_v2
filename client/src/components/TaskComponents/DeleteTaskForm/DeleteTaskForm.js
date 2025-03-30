@@ -1,10 +1,11 @@
 import { useDispatch } from "react-redux";
 
-import { fetchTaskDelete } from "../../API/taskAPI";
-import { tasksSlice } from "../../redux/databaseSlice";
-import "../../styles/components/DeleteTask.css";
+import { fetchTaskDelete } from "../../../API/taskAPI";
+import { tasksSlice } from "../../../redux/databaseSlice";
 
-function DeleteTask(props) {
+import styles from "./DeleteTaskForm.module.css";
+
+function DeleteTaskForm(props) {
   const dispatch = useDispatch();
   const { task, display, setDeleteDisplay, setTaskDetailDisplay } = props;
   const { taskName, projectName } = task;
@@ -32,17 +33,22 @@ function DeleteTask(props) {
   };
   return (
     <div style={{ display: display }}>
-      <div className="deletePrompt">
-        <p>Do you really want to delete this task?</p>
-        <div className="deleteTaskButton">
+      <div className={styles.deleteContainer}>
+        <p className={styles.deletePrompt}>
+          Do you really want to delete this task?
+        </p>
+        <div className={styles.buttonsContainer}>
           <button
             onClick={onClickDeleteTaskButton}
-            className="yesDeleteTaskButton"
+            className={`${styles.buttonContainer} ${styles.deleteButton}`}
           >
-            <span>Yes</span>
+            <span className={styles.title}>Yes</span>
           </button>
-          <button onClick={onClickCancle} className="noDeleteTaskButton">
-            <span>No</span>
+          <button
+            onClick={onClickCancle}
+            className={`${styles.buttonContainer} ${styles.cancleButton}`}
+          >
+            <span className={styles.title}>No</span>
           </button>
         </div>
       </div>
@@ -50,4 +56,4 @@ function DeleteTask(props) {
   );
 }
 
-export default DeleteTask;
+export default DeleteTaskForm;

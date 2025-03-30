@@ -42,8 +42,6 @@ function UpdateTaskForm(props) {
   };
 
   const today = new Date();
-  today.setDate(today.getDate());
-  const todayString = today.toISOString().slice(0, 10);
 
   const onSubmitUpdateTaskInfo = (event) => {
     event.preventDefault();
