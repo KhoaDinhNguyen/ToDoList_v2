@@ -1,0 +1,198 @@
+.rootContainer {
+  height: auto;
+}
+
+.rootContainer {
+  margin-left: 10px;
+}
+
+@media screen and (max-width : 499px) {
+  .rootContainer {
+      margin-left: 5px;
+  }
+}
+
+.inputContainer label, .inputContainer span{
+  font-weight: 500;
+  font-size: 14px;
+}
+
+
+.inputContainer input {
+  font-size: 14px;
+  background-color: #ededed;
+  border: 2px #ededed solid;
+  width: 120px;
+  outline: 0;
+}
+
+.inputContainer input:focus {
+  background-color: white;
+  border: 2px solid orange;
+}
+
+@media screen and (max-width : 499px) {
+  .inputContainer input {
+      font-size: 12px;
+      width: 100px;
+  }
+}
+
+.notice {
+  margin-top: 5px;
+  font-weight: 300;
+  font-size: 10px;
+}
+
+@media screen and (max-width : 499px) {
+  .notice {
+      font-size: 10px;
+      margin-top: 0;
+  }
+}
+
+
+.buttonsContainer {
+  margin-top: 10px;
+  margin-left: 10px;
+  display: flex;
+  height: 40px;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.buttonsContainer input {
+  margin-right: 20px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.buttonsContainer input {
+  display: none;
+}
+
+.buttonLabel {
+  padding: 7px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  border: 2px solid black;
+}
+
+.buttonLabel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  border-radius: 10px;
+  transition-duration: 0.75s;
+}
+
+.buttonLabel span {
+  color: white;
+  position: relative;
+  z-index: 3;
+}
+
+.cancelButton label:hover {
+  background-color: #000;
+  border: 2px solid #000;
+}
+
+.cancelButton label:hover::before {
+  width: 100%;
+  background-color: white;
+}
+
+.cancelButton label:hover span {
+  color: black;
+}
+
+.cancelButton label:active {
+  background-color: #000;
+  border: 2px solid #000;
+}
+
+.cancelButton label:active::before {
+  width: 100%;
+  background-color: white;
+}
+
+.cancelButton label:active span {
+  color: black;
+}
+
+.submitButton label:hover {
+  background-color: #008FFF;
+  border: 2px solid #008FFF;
+}
+
+.submitButton label:hover::before {
+  width: 100%;
+  background-color: white;
+}
+
+.submitButton label:hover span {
+  color: #008FFF;
+}
+
+.submitButton label:active {
+  background-color: #008FFF;
+  border: 2px solid #008FFF;
+}
+
+.submitButton label:active::before {
+  width: 100%;
+  background-color: white;
+}
+
+.submitButton label:active span {
+  color: #008FFF;
+}
+
+.cancelButton {
+  margin-left: 20px;
+}
+
+@media screen and (max-width : 499px) {
+  .buttonLabel {
+      padding: 5px;
+  }
+  
+  .rootContainer * {
+      font-size: 12px;
+  }
+
+  .buttonsContainer {
+      margin-top: 0;
+  }
+
+  .buttonsContainer input {
+      margin-right: 10px;
+      padding: 6px;
+      font-size: 14px;
+      width: 70px;
+  }
+  
+}
+
+.editTaskButton input:nth-child(1):hover {
+  background-color: #FBD288;
+  color: black;
+}
+
+.editTaskButton input:nth-child(2):hover {
+  background-color: white;
+  color: black;
+}

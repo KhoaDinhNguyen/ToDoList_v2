@@ -12,7 +12,7 @@ import {
 
 import UpdateProject from "./UpdateProject";
 import DeleteProject from "./DeleteProject";
-import CreateTaskForm from "../TaskComponents/CreateTaskForm";
+import CreateTaskForm from "../TaskComponents/CreateTaskForm/CreateTaskForm";
 import TaskDisplay from "../TaskComponents/TaskDisplay";
 
 import { projectsSlice, tasksSlice } from "../../redux/databaseSlice";

@@ -4,7 +4,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 import { fetchSignUp } from "../../API/pageAPI";
 import signUpLogo from "../../asset/img/signupPage.png";
-import TextInput from "../../components/utils/TextInput";
+import InputText from "../../components/utils/InputText/InputText";
 import PasswordInput from "../../components/utils/PasswordInput";
 
 import "../../styles/pages/SignUp.css";
@@ -100,7 +100,7 @@ function SignUpMain() {
         </p>
       </div>
       <form onSubmit={onSubmitSignIn} id="signUpForm">
-        <TextInput
+        <InputText
           id="accountNameSignUp"
           value={accountName}
           onChangeText={onChangeAccountName}
@@ -108,7 +108,7 @@ function SignUpMain() {
           placeholder="Username"
           style={styles.signUpInput}
         />
-        <TextInput
+        <InputText
           id="profileNameSignUp"
           value={profileName}
           onChangeText={onChangeProfileName}

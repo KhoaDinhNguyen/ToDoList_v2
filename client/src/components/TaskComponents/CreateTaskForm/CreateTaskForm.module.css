@@ -1,0 +1,179 @@
+.rootContainer {
+  background-color: #FFF;
+  padding-top: 5px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  margin-top: 5px;
+}
+
+@media screen and (max-width : 499px) {
+  .rootContainer {
+      width: 100%;
+  }
+}
+
+.promptText {
+  width: 100%;
+  cursor: pointer;
+  margin-top: -10px;
+  position: relative;
+}
+
+
+.promptText::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  z-index: 2;
+  transition-duration: 0.2s;
+}
+
+.promptText:hover::before, .promptText:active::before {
+  width: 100%;
+  background-image: linear-gradient(to left, #ff5895, #ff529e, #ff4da8, #ff48b3, #ff45be, #f944c8, #f145d2, #e847dc, #d64ce6, #c152ef, #a857f8, #8b5dff);
+}
+
+.promptText p{
+  border: 0;
+  color: #000;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 10px;
+  position: relative;
+  z-index: 3;
+}
+
+.promptText:hover p, .promptText:active p{
+  color: #fff;
+  font-weight: 700;
+}
+
+@media screen and (max-width : 499px) {
+  .promptText p{
+      font-size: 14px;
+      margin-left: 5px;
+  }
+}
+
+.formContainer fieldset {
+  border: 0;
+  background-color: #fff;
+  padding-bottom: 20px;
+}
+
+.formContainer legend {
+  margin-left: 20px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.inputContainer {
+  font-size: 16px;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+@media screen and (max-width : 499px) {
+  .inputContainer {
+      font-size: 12px;
+      margin-left: 5px;
+  }
+}
+
+.inputContainer label, .inputContainer span {
+  font-weight: 500;
+}
+
+.inputContainer input {
+  background-color: #e8e7e7;
+  border: 2px #e8e7e7 solid;
+  font-size: 16px;
+  outline: 0;
+  border-radius: 5px;
+}
+
+.inputContainer input:focus {
+  background-color: #fff;
+  border: 2px orange solid;
+}
+
+
+@media screen and (max-width : 499px) {
+  .inputContainer input {
+      background-color: #e8e7e7;
+      border: 1px #e8e7e7 solid;
+      font-size: 12px;
+  }    
+}
+
+.buttonsContainer {
+  margin-left: 10px;
+  margin-top: 10px;
+  display: flex;
+}
+
+.buttonsContainer input {
+  display: none;
+}
+
+.buttonLabel {
+  font-size: 14px;
+  margin-top: 10px;
+  background-color: black;
+  font-weight: bold;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 0;
+  position: relative;
+}
+
+.buttonLabel span {
+  position: relative;
+  z-index: 3;
+} 
+
+@media screen and (max-width : 499px) {
+  .buttonLabel {
+      font-size: 12px;
+      margin-top: 5px;
+  }
+}
+
+.buttonLabel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  transition-duration: 0.5s;
+  border-radius: 5px;
+}
+
+.cancelButtonContainer label:hover::before {
+  width: 100%;
+  background-color: white;
+} 
+
+.cancelButtonContainer label:hover span {
+  color: black;
+} 
+
+.sumbitContainer {
+  margin-right: 20px;
+}
+
+.sumbitContainer label:hover::before {
+  width: 100%;
+  background-color: #118B50;
+  color: white;
+} 
+
+.sumbitContainer label:hover span {
+  color: white;
+} 

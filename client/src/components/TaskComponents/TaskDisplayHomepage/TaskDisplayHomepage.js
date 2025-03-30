@@ -1,8 +1,8 @@
 import DeleteTask from "../DeleteTask";
-import UpdateTask from "../UpdateTask";
 import ImportantStar from "../../utils/ImportantStar/ImportantStar";
 import FulfilledBox from "../../utils/FulfilledBox/FulfilledBox";
 import InfoText from "../../utils/InfoText/InfoText";
+import UpdateTaskForm from "../UpdateTaskForm/UpdataTaskForm";
 
 import { convertFromBooleanToDisplay } from "../../../pages/user/User";
 
@@ -155,7 +155,7 @@ function TaskInfoHomepage(props) {
           </div>
         )}
       </div>
-      <UpdateTask
+      <UpdateTaskForm
         task={task}
         display={convertFromBooleanToDisplay(editDisplay)}
         setEditDisplay={setEditDisplay}

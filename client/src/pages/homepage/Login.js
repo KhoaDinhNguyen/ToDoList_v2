@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { useDispatch } from "react-redux";
 
-import TextInput from "../../components/utils/TextInput";
+import InputText from "../../components/utils/InputText/InputText";
 import PasswordInput from "../../components/utils/PasswordInput";
 
 import { profileNameSlice } from "../../redux/databaseSlice";
@@ -98,7 +98,7 @@ function LoginMain() {
           <p>Please enter your details to sign in</p>
         </div>
         <form onSubmit={onSubmitLogin} id="loginForm">
-          <TextInput
+          <InputText
             id="accountNameSignIn"
             required={true}
             value={accountName}

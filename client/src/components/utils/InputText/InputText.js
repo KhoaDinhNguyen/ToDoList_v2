@@ -1,11 +1,10 @@
-function TextInput({
+function InputText({
   id,
   required,
   valueText,
   onChangeText,
   autoComplete,
   placeholder,
-  containLabel,
   labelText,
   minLength,
   maxLength,
@@ -17,7 +16,9 @@ function TextInput({
 
   return (
     <div className={style}>
-      {containLabel && <label htmlFor={id}>{labelText}</label>}
+      {labelText !== null && labelText !== "" && (
+        <label htmlFor={id}>{labelText}: </label>
+      )}
       <input
         type="text"
         name={id}
@@ -34,4 +35,4 @@ function TextInput({
   );
 }
 
-export default TextInput;
+export default InputText;
