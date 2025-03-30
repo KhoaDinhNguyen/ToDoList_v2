@@ -15,7 +15,7 @@
   flex-flow: row wrap;
 }
 
-.taskNameContainer h4 {
+.taskNameContainer p {
   font-weight: 300;
 }
 .statusContainer {
@@ -29,4 +29,16 @@
   border-radius: 50%;
   color: black;
   font-weight: 700;
+}
+
+.pending {
+  background-color: #f98053;;
+}
+
+.failing {
+  background-color: red;
+}
+
+.fulfilled {
+  background-color: #7cc73e;
 }

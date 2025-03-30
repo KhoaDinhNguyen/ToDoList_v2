@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Helmet } from "react-helmet";
 
-import Calendar from "../../components/TaskComponents/Calendar";
+import Calendar from "../../components/CalendarComponents/Calendar";
 import { tasksSlice } from "../../redux/databaseSlice";
 
 function UserCalendar() {

@@ -1,0 +1,124 @@
+.rootContainer {
+  background-color: #fff;
+  grid-column: 2 / 3;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 499px) {
+  .rootContainer {
+      height: 450px;
+  }
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 499px) {
+  .headerContainer {
+      margin-bottom: 0px;
+  }
+}
+
+.buttonsContainer {
+  display: flex;
+  align-items: center;
+}
+
+.buttonContainer {
+  cursor: pointer;
+  text-align: center;
+}
+
+.calendarMonth {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+@media screen and (max-width : 499px) {
+  .calendarMonth{
+      font-size: 15px;
+  }
+}
+
+.mainContainer {
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 10px;
+  table-layout: fixed;
+  border-spacing: 20px;
+}
+
+@media screen and (max-width : 499px) {
+  .mainContainer {
+      width: 300px;
+  }
+}
+
+.date {
+  margin: 0;
+  text-overflow: ellipsis;
+  padding: 10px;
+  overflow: auto;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  font-weight: 500;
+  font-size: 20px;
+  color: #000;
+  text-align: center;
+}
+
+.dateExist {
+  cursor: pointer;
+
+}
+.dateExist:hover {
+  border-color: #000;
+}
+
+.taskExist {
+  background-color: #c8b6ff;
+}
+
+.weekDays {
+  text-align: center;
+}
+
+.weekDays td{
+  font-weight: 500;
+  font-size: 18px;
+  color: black;
+}
+
+@media screen and (max-width : 499px) {
+  .weekDays td{
+      font-size: 14px;
+  }
+}
+
+.calendarTask {
+  margin-left: 10px;
+}
+
+@media screen and (max-width : 499px) {
+  .calendarTask {
+      font-size: 12px;
+  }
+}
+
+.today {
+  color: var(--commomRedColor);
+  font-weight: 900;
+}
+
+@media screen and (max-width : 499px) {
+  .date {
+      font-size: 12px;
+  }
+}

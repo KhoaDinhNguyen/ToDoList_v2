@@ -17,11 +17,11 @@ function TaskDisplayCalendar({
           currentImportant={currentImportant}
           onClickImportant={onClickImportant}
         />
-        <h4>{taskName}</h4>
-        <h4>-- Project name: {projectName}</h4>
+        <p>{taskName}</p>
+        <p>-- Project name: {projectName}</p>
       </div>
       <div className={styles.statusContainer}>
-        <div className={`${currentStatus} ${styles.statusBlock}`}>
+        <div className={`${styles[currentStatus]} ${styles.statusBlock}`}>
           <p>{currentStatus.substr(0, 1).toUpperCase()}</p>
         </div>
       </div>

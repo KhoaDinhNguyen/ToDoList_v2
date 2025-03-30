@@ -1,7 +1,7 @@
 import TaskDisplay from "../../TaskComponents/TaskDisplay";
 import { sortTask } from "../../../utils/sortTask";
 
-import styles from "./UpcommingTask.module.css";
+import styles from "./UpcommingTasks.module.css";
 
 function UpcomingTask(props) {
   const { upcommingTask } = props;

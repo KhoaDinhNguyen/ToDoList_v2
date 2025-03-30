@@ -1,6 +1,6 @@
 import TaskDisplay from "../../TaskComponents/TaskDisplay";
 
-import styles from "./TodayTask.module.css";
+import styles from "./TodayTasks.module.css";
 
 function TodayTask(props) {
   const { todayTask } = props;

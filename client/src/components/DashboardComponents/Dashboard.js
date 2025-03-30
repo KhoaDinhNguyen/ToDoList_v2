@@ -1,5 +1,5 @@
-import TodayTask from "./TodayTask/TodayTask";
-import UpcomingTask from "./UpcommingTask/UpcommingTask";
+import TodayTask from "./TodayTasks/TodayTasks";
+import UpcomingTask from "./UpcommingTasks/UpcommingTasks";
 import Statistic from "./Statistic/Statistic";
 import DashboardChart from "./Chart/DashboardChart";
 import { convertDateToISOString } from "../../pages/user/User";
