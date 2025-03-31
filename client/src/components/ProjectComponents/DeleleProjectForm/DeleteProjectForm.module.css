@@ -1,4 +1,4 @@
-.detetePrompt .deletePromptBody{
+.rootContainer{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -6,29 +6,29 @@
 }
 
 @media screen and (max-width : 499px) {
-    .detetePrompt .deletePromptBody{
+    .rootContainer{
         height: 150px;
     }
 }
 
-.deletePromptMain {
+.promptContainer {
     text-align: center;
     font-weight: 500;
+    margin: 10px;
 }
 
-.deletePromptMain p:nth-child(2) {
+.notice {
     font-style: italic;
     font-weight: 300;
 }
 
 @media screen and (max-width : 499px) {
-    .deletePromptMain p {
+    .promptContainer p {
         font-size: 12px;
     }
 }
 
-
-.deletePromptButton {
+.buttonsContainer {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -36,11 +36,11 @@
     justify-content: space-evenly;
 }
 
-.deletePromptButton button{
+.buttonContainer {
     width: max-content;
     padding: 10px;
     border-radius: 10px;
-    border: 0;
+    border: transparent;
     background-color: black;
     color: white;
     font-weight: bold;
@@ -51,7 +51,7 @@
 }
 
 @media screen and (max-width : 499px) {
-    .deletePromptButton button{
+    .buttonContainer{
         display: block;
         width: max-content;
         padding: 10px;
@@ -60,7 +60,7 @@
     }
 }
 
-.deletePromptButton button::before {
+.buttonContainer::before {
     content: "";
     z-index: 1;
     position: absolute;
@@ -72,51 +72,51 @@
     border-radius: 10px;
 }
 
-.deletePromptButton span {
+.buttonContainer span {
     position: relative;
     z-index: 5;
 }
 
-.yesDeleteProject:hover::before {
+.submitButton:hover::before {
     width: 100%;
     height: 100%;
     z-index: 1;
     background-color: #f44336;
 }
 
-.yesDeleteProject:hover span {
+.submitButton:hover span {
     color: #fff;
 }
 
-.yesDeleteProject:active::before {
+.submitButton:active::before {
     width: 100%;
     height: 100%;
     z-index: 1;
     background-color: #f44336;
 }
 
-.yesDeleteProject:active span {
+.submitButton:active span {
     color: #fff;
 }
 
-.noDeleteProject:hover::before {
+.cancelButton:hover::before {
     width: 100%;
     height: 100%;
     z-index: 1;
     background-color: #fff;
 }
 
-.noDeleteProject:hover span {
+.cancelButton:hover span {
     color: #000;
 }
 
-.noDeleteProject:active::before {
+.cancelButton:active::before {
     width: 100%;
     height: 100%;
     z-index: 1;
     background-color: #fff;
 }
 
-.noDeleteProject:active span {
+.cancelButton:active span {
     color: #000;
 }

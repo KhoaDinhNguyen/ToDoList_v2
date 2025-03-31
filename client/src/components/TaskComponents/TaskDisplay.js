@@ -143,7 +143,6 @@ function TaskDisplay(props) {
       currentImportant={currentImportant}
       currentStatus={currentStatus}
       finish={taskTimeDeadline < todayString}
-      taskDetailDisplay={taskDetailDisplay}
       deleteDisplay={deleteDisplay}
       editDisplay={editDisplay}
       taskDescriptionDisplay={taskDescriptionDisplay}

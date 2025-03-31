@@ -10,11 +10,11 @@ import {
   Tooltip,
 } from "chart.js";
 
-import DeleteProject from "./DeleteProject";
+//import DeleteProject from "./DeleteProject";
 import CreateTaskForm from "../TaskComponents/CreateTaskForm/CreateTaskForm";
 import TaskDisplay from "../TaskComponents/TaskDisplay";
 import UpdateProjectForm from "./UpdateProjectForm/UpdateProjectForm";
-
+import DeleteProjectForm from "./DeleleProjectForm/DeleteProjectForm";
 import { projectsSlice, tasksSlice } from "../../redux/databaseSlice";
 import {
   searchSlice,
@@ -250,11 +250,12 @@ function Project(props) {
               project={project}
               setProjectExpansionDisplay={setProjectExpansionDisplay}
             />
-            <DeleteProject
+            <DeleteProjectForm
               accountName={accountName}
               projectName={projectName}
               deleteDisplay={convertFromBooleanToDisplay(deleteDisplay)}
               setDeleteDisplay={setDeleteDisplay}
+              setProjectExpansionDisplay={setProjectExpansionDisplay}
             />
           </div>
         </div>

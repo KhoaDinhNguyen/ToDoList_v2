@@ -23,7 +23,6 @@ function TaskDisplayHomepage(props) {
     currentImportant,
     currentStatus,
     finish,
-    taskDetailDisplay,
     deleteDisplay,
     editDisplay,
     taskDescriptionDisplay,
@@ -84,7 +83,6 @@ function TaskDisplayHomepage(props) {
       <TaskInfoHomepage
         task={task}
         finish={finish}
-        taskDetailDisplay={taskDetailDisplay}
         deleteDisplay={deleteDisplay}
         setDeleteDisplay={setDeleteDisplay}
         editDisplay={editDisplay}
@@ -101,7 +99,6 @@ function TaskInfoHomepage(props) {
   const {
     task,
     finish,
-    taskDetailDisplay,
     deleteDisplay,
     setDeleteDisplay,
     editDisplay,
