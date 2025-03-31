@@ -1,9 +1,9 @@
 import { Helmet } from "react-helmet";
 
-import ProjectList from "../../components/project/Project.js";
-import CreateProjectButton from "../../components/project/CreateProjectButton.js";
+import ProjectList from "../../components/ProjectComponents/Project.js";
+import CreateProjectForm from "../../components/ProjectComponents/CreateProjectForm/CreateProjectForm.js";
+import CreateProjectButton from "../../components/ProjectComponents/CreateProjectButton/CreateProjectButton.js";
 import SearchForm from "../../components/utils/SearchForm.js";
-import CreateProjectForm from "../../components/project/CreateProjectForm.js";
 import FilterButton from "../../components/utils/FilterButton.js";
 import FilterAndSortForm from "../../components/utils/FilterAndSort.js";
 

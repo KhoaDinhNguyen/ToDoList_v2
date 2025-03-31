@@ -83,14 +83,14 @@ function UpdateTaskForm(props) {
           labelText="Task name"
           valueText={newTaskName}
           onChangeText={onChangeTaskName}
-          style={styles.inputContainer}
+          containerStyle={styles.inputContainer}
         />
         <InputText
           id={`${taskName}_${projectName}_editTaskDescription`}
           labelText="Task description"
           valueText={newTaskDescription}
           onChangeText={onChangeTaskDescription}
-          style={styles.inputContainer}
+          containerStyle={styles.inputContainer}
         />
         <div className={styles.inputContainer}>
           <p>
@@ -122,7 +122,7 @@ function UpdateTaskForm(props) {
             onClickHandler={onSubmitUpdateTaskInfo}
             labelText="Apply"
             labelStyle={styles.buttonLabel}
-            style={styles.submitButton}
+            containerStyle={styles.submitButton}
           />
           <InputButton
             type={"button"}
@@ -130,7 +130,7 @@ function UpdateTaskForm(props) {
             onClickHandler={onClickCancle}
             labelText="Cancle"
             labelStyle={styles.buttonLabel}
-            style={styles.cancelButton}
+            containerStyle={styles.cancelButton}
           />
         </div>
       </form>

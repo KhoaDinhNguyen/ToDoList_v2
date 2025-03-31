@@ -90,7 +90,7 @@ function CreateTaskForm(props) {
         <fieldset>
           <legend>Create task form</legend>
           <InputText
-            style={styles.inputContainer}
+            containerStyle={styles.inputContainer}
             id={`${projectName}_taskName`}
             required={true}
             onChangeText={onChangeTaskName}
@@ -99,7 +99,7 @@ function CreateTaskForm(props) {
             labelText="Task name"
           />
           <InputText
-            style={styles.inputContainer}
+            containerStyle={styles.inputContainer}
             id={`${projectName}_taskDescription`}
             required={true}
             onChangeText={onChangeTaskDescription}
@@ -123,7 +123,7 @@ function CreateTaskForm(props) {
           </div>
           <div className={styles.buttonsContainer}>
             <InputButton
-              style={styles.sumbitContainer}
+              containerStyle={styles.sumbitContainer}
               type={"submit"}
               id={`${projectName}_${taskName}_submitButton`}
               onClickHandler={onClickToggleCreateTaskButton}
@@ -131,7 +131,7 @@ function CreateTaskForm(props) {
               labelStyle={styles.buttonLabel}
             />
             <InputButton
-              style={styles.cancelButtonContainer}
+              containerStyle={styles.cancelButtonContainer}
               type={"button"}
               id={`${projectName}_${taskName}_cancelButton`}
               onClickHandler={onClickToggleCreateTaskButton}

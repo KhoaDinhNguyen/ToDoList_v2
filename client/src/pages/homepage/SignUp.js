@@ -106,7 +106,7 @@ function SignUpMain() {
           onChangeText={onChangeAccountName}
           required={true}
           placeholder="Username"
-          style={styles.signUpInput}
+          containerStyle={styles.signUpInput}
         />
         <InputText
           id="profileNameSignUp"
@@ -114,7 +114,7 @@ function SignUpMain() {
           onChangeText={onChangeProfileName}
           required={true}
           placeholder="Profile name"
-          style={styles.signUpInput}
+          containerStyle={styles.signUpInput}
         />
         <PasswordInput
           id="profileNameSignUp"

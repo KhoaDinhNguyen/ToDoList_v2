@@ -5,7 +5,7 @@
     margin-top: 20px;
 }
 
-@media screen and (max-width: 499px) {
+@media screen and (max-width: 700px) {
     .rootContainer {
         display: flex;
         flex-direction: column-reverse;

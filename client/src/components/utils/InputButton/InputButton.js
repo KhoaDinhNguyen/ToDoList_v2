@@ -3,12 +3,13 @@ function InputButton({
   valueText,
   onClickHandler,
   labelText,
-  style,
+  containerStyle,
   type,
   labelStyle,
+  inputStyle,
 }) {
   return (
-    <div className={style}>
+    <div className={containerStyle}>
       {labelText !== null && labelText !== "" && (
         <label htmlFor={id} className={labelStyle}>
           <span>{labelText}</span>
@@ -20,6 +21,7 @@ function InputButton({
         id={id}
         value={valueText}
         onClick={onClickHandler}
+        className={inputStyle}
       />
     </div>
   );

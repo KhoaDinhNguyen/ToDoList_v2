@@ -14,6 +14,7 @@ import UpdateProject from "./UpdateProject";
 import DeleteProject from "./DeleteProject";
 import CreateTaskForm from "../TaskComponents/CreateTaskForm/CreateTaskForm";
 import TaskDisplay from "../TaskComponents/TaskDisplay";
+import UpdateProjectForm from "./UpdateProjectForm/UpdateProjectForm";
 
 import { projectsSlice, tasksSlice } from "../../redux/databaseSlice";
 import {
@@ -244,7 +245,7 @@ function Project(props) {
               project={project}
               projectDescriptionDisplay={projectDescriptionDisplay}
             />
-            <UpdateProject
+            <UpdateProjectForm
               editDisplay={convertFromBooleanToDisplay(editDisplay)}
               setEditDisplay={setEditDisplay}
               project={project}

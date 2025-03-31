@@ -8,16 +8,19 @@ function InputText({
   labelText,
   minLength,
   maxLength,
-  style,
+  containerStyle,
+  labelStyle,
+  inputStyle,
 }) {
   const autoCompleteModifiers = autoComplete == null ? "off" : autoComplete;
   const placeHolderModifiers = placeholder == null ? "" : placeholder;
   const requiredModifers = required == null ? false : required;
-
   return (
-    <div className={style}>
+    <div className={containerStyle}>
       {labelText !== null && labelText !== "" && (
-        <label htmlFor={id}>{labelText}: </label>
+        <label htmlFor={id} className={labelStyle}>
+          {labelText}:{" "}
+        </label>
       )}
       <input
         type="text"
@@ -30,6 +33,7 @@ function InputText({
         placeholder={placeHolderModifiers}
         minLength={minLength}
         maxLength={maxLength}
+        className={inputStyle}
       />
     </div>
   );

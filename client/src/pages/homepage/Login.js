@@ -104,7 +104,7 @@ function LoginMain() {
             value={accountName}
             onChangeText={onChangeAccountName}
             placeholder="Username"
-            style={styles.loginInput}
+            containerStyle={styles.loginInput}
           />
           <PasswordInput
             id="passwordSignIn"
