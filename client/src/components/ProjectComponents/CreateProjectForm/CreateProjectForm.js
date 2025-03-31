@@ -7,7 +7,6 @@ import {
   convertDateToISOString,
   convertFromBooleanToDisplay,
 } from "../../../pages/user/User.js";
-import { profileNameSlice } from "../../../redux/databaseSlice.js";
 import { createProjectFormSlice } from "../../../redux/utilsSlice.js";
 import InputText from "../../utils/InputText/InputText.js";
 import InputButton from "../../utils/InputButton/InputButton.js";
@@ -36,8 +35,6 @@ function CreateProjectForm() {
   const onClickCloseForm = () => {
     dispatch(createProjectFormSlice.actions.setState(false));
   };
-
-  const profileName = useSelector((state) => state[profileNameSlice.name]);
 
   const accountName = localStorage.getItem("accountName");
   const today = new Date();

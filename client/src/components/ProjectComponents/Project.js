@@ -10,7 +10,6 @@ import {
   Tooltip,
 } from "chart.js";
 
-import UpdateProject from "./UpdateProject";
 import DeleteProject from "./DeleteProject";
 import CreateTaskForm from "../TaskComponents/CreateTaskForm/CreateTaskForm";
 import TaskDisplay from "../TaskComponents/TaskDisplay";
@@ -249,6 +248,7 @@ function Project(props) {
               editDisplay={convertFromBooleanToDisplay(editDisplay)}
               setEditDisplay={setEditDisplay}
               project={project}
+              setProjectExpansionDisplay={setProjectExpansionDisplay}
             />
             <DeleteProject
               accountName={accountName}

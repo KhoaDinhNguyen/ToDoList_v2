@@ -1,0 +1,135 @@
+.inputContainer {
+  margin-left: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.input {
+  font-size: 14px;
+  background-color: white;
+  border-radius: 5px;
+  width: 125px;
+  outline: none;
+  border: 2px solid grey;
+  padding: 5px;
+}
+
+.input:focus {
+  background-color: white;
+  border: 2px solid orange;
+}
+
+@media screen and (max-width : 499px) {
+  .input {
+      width: 100px;
+      margin-bottom: 0;
+      overflow: auto;
+  }
+}
+
+.inputLabel, .input, .inputContainer p{
+  font-size: 14px;
+}
+
+.inputContainer span, .inputLabel {
+  font-weight: 500;
+
+}
+.message {
+  font-size: 13px;
+  color: black;
+  font-weight: 300;
+}
+
+@media screen and (max-width : 499px) {
+  .message {
+      font-size: 10px;
+  }
+}
+
+.buttonsContainer {
+  margin: 20px 0px 0px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.buttonInput {
+  display: none;
+}
+
+.buttonLabel {
+  background-color: #000;
+  border: 2px solid black;
+  padding: 7px;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.buttonLabel span {
+  position: relative;
+  z-index: 3;
+}
+
+.buttonLabel::before {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  transition-duration: 500ms;
+  border-radius: 10px;
+}
+
+.buttonLabel:hover::before {
+  width: 100%;
+  background-color: white;
+  height: 100%;
+}
+
+.buttonLabel:active::before {
+  width: 100%;
+  background-color: white;
+  height: 100%;
+}
+
+.cancelButton label:hover span {
+  color: black;
+}
+
+.cancelButton label:active span {
+  color: black;
+}
+
+.submitButton label:hover {
+  background-color: #008FFF;
+  border: 2px solid #008FFF;
+}
+
+.submitButton {
+  margin-right: 20px;
+}
+
+.submitButton label:hover span {
+  color: #008FFF;
+}
+
+.submitButton label:active span {
+  color: #008FFF;
+}
+
+@media screen and (max-width : 499px) {
+  .buttonsContainer {
+      margin-top: 0px;
+  }
+
+  .buttonLabe {
+      padding: 5px;
+      font-size: 12px;
+  }
+}
