@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 
-import ProjectList from "../../components/ProjectComponents/Project.js";
+import ArrayProjects from "../../components/ProjectComponents/ArrayProjects.js";
 import CreateProjectForm from "../../components/ProjectComponents/CreateProjectForm/CreateProjectForm.js";
 import CreateProjectButton from "../../components/ProjectComponents/CreateProjectButton/CreateProjectButton.js";
 import SearchForm from "../../components/utils/SearchForm.js";
@@ -31,7 +31,7 @@ function UserHomepage(props) {
         </div>
         <div id="userHomepageBody">
           <div id="userHomepageMain">
-            <ProjectList />
+            <ArrayProjects />
           </div>
         </div>
       </div>

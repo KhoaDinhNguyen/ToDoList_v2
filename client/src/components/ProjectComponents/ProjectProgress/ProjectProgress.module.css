@@ -1,0 +1,12 @@
+.rootContainer {
+  width: 45px;
+  position: relative;
+  bottom: 5px;
+  grid-column: 1 / 2;
+}
+
+@media screen and (max-width: 499px) {
+  .rootContainer {
+      width: 35px;
+  }
+}

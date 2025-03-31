@@ -1,0 +1,20 @@
+.rootContainer {
+  list-style: none;
+  min-width: 800px;
+  border-left: 5px solid #5A4FCF;
+  margin-bottom: 20px;
+  height: max-content;
+  background-color: #FFF;
+}
+
+@media screen and (max-width: 499px) {
+  .rootContainer {
+      min-width: 300px;
+  }
+}
+
+@media screen and (min-width: 499px) and (max-width : 850px) {
+  .rootContainer {
+      min-width: 500px;
+  }
+}

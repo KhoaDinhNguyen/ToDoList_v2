@@ -1,7 +1,7 @@
 .rootContainer {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  width: 300px;
+  grid-template-columns: 200px 1fr;
+  width: max-content;
 }
 
 .title {

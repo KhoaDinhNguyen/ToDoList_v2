@@ -1,0 +1,78 @@
+
+.rootContainer {
+  display: grid; 
+  transition: 0.5s grid-template-rows ease;
+}
+
+.allTasksHidden {
+  grid-template-rows: 0fr;
+}
+
+.allTasksVisible {
+  grid-template-rows: 1fr;
+}
+
+.rootContainer > div {
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-top: 2px solid black;
+}
+
+@media screen and (max-width : 499px) {
+  .header {
+      padding: 5px 0;
+  }
+}
+
+.title {
+  margin-left: 20px;
+  font-weight: 500;
+}
+
+.header img{
+  margin-right: 20px;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+}
+
+.numTaskContainer{
+  margin-right: 10px;
+  background-color: #89CFF0;
+  padding: 5px;
+  border-radius: 50%;
+  min-width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.numText {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.arrayVisible {
+  transition-duration: 500ms;
+}
+
+.arrayHidden {
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: 0;
+  transition-duration: 500ms;
+}

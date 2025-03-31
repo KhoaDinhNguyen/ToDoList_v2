@@ -1,0 +1,37 @@
+.rootContainer {
+  transition-duration: 0.75s;
+  transition-property: height;
+  border-top: 0;
+  height: 0px;
+}
+
+.projectDescription p {
+  font-size: 16px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+
+@media screen and (max-width : 499px) {
+  .projectDescription p {
+      font-size: 14px;
+  }
+}
+
+.rootHidden {
+  height: 0px;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.rootVisible {
+  border: 2px dashed gray;
+  opacity: 1;
+  height: 175px;
+  visibility: visible;
+}
+
+@media screen and (max-width : 499px) {
+  .rootVisible {
+      height: 150px;
+  }
+}
