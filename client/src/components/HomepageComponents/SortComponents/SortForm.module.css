@@ -1,0 +1,31 @@
+@media screen and (max-width : 499px) {
+    .title {
+        font-size: 16px;
+    }  
+}
+
+.clearButton {
+    color: white;
+    background-color: #8D0B41;
+    box-shadow: 0px 5px #8D0B41;
+    border: 0;
+    padding: 5px;
+    margin: 10px 0;
+    font-weight: bold;
+    border-radius: 5px;
+    transition-duration: 0.2s;
+    border: 0;
+    cursor: pointer;
+    display: block;
+}
+
+@media screen and (max-width : 499px) {
+    .clearButton {
+        font-size: 10px;
+    }
+}
+
+.clearButton:hover, .clearButton:active {
+    transform: translate(0, 5px);
+    box-shadow: 0px 0px #8D0B41;
+}

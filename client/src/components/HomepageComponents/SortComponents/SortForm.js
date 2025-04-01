@@ -5,9 +5,13 @@ import {
   sortTaskNameSlice,
   sortTimeCreatedSlice,
   sortTimeDeadlineSlice,
-} from "../../redux/utilsSlice";
+} from "../../../redux/utilsSlice";
 
-import "../../styles/components/SortForm.css";
+import SortTaskName from "./SortTaskName/SortTaskName";
+import SortTaskTimeCreated from "./SortTaskTimeCreated/SortTaskTimeCreated";
+import SortTaskTimeDeadline from "./SortTaskTimeDeadline/SortTaskTimeDeadline";
+
+import styles from "./SortForm.module.css";
 
 function SortForm() {
   const [timeCreatedASC, setTimeCreatedASC] = useState(false);
@@ -108,88 +112,29 @@ function SortForm() {
     setTimeDeadlineDESC(false);
   };
   return (
-    <div id="sortForm">
-      <h3>Sort</h3>
-      <div id="sortFilter">
-        <div id="sortTaskName">
-          <h4>Task name</h4>
-          <div>
-            <div className="statusBox">
-              <input
-                type="checkbox"
-                name="sortTaskNameASC"
-                id="sortTaskNameASC"
-                checked={taskNameASC}
-                onChange={onChangeTaskNameASC}
-              />
-              <label htmlFor="sortTaskNameASC">ASC</label>
-            </div>
-            <div className="statusBox">
-              <input
-                type="checkbox"
-                name="sortTaskNameDESC"
-                id="sortTaskNameDESC"
-                checked={taskNameDESC}
-                onChange={onChangeTaskNameDESC}
-              />
-              <label htmlFor="sortTaskNameDESC">DESC</label>
-            </div>
-          </div>
-        </div>
-        <div id="sortTimeCreated">
-          <h4>Time created</h4>
-          <div>
-            <div className="statusBox">
-              <input
-                type="checkbox"
-                name="sortTimeCreatedASC"
-                id="sortTimeCreatedASC"
-                checked={timeCreatedASC}
-                onChange={onChangeTimeCreatedASC}
-              />
-              <label htmlFor="sortTimeCreatedASC">ASC</label>
-            </div>
-            <div className="statusBox">
-              <input
-                type="checkbox"
-                name="sortImeCreatedDESC"
-                id="sortImeCreatedDESC"
-                checked={timeCreatedDESC}
-                onChange={onChangeTimeCreatedDESC}
-              />
-              <label htmlFor="sortImeCreatedDESC">DESC</label>
-            </div>
-          </div>
-        </div>
-        <div id="sortTimeDeadline">
-          <h4>Time deadline </h4>
-          <div>
-            <div className="statusBox">
-              <input
-                type="checkbox"
-                name="sortTimeDeadlineASC"
-                id="sortTimeDeadlineASC"
-                checked={timeDeadlineASC}
-                onChange={onChangeTimeDeadlineASC}
-              />
-              <label htmlFor="sortTimeDeadlineASC">ASC</label>
-            </div>
-            <div className="statusBox">
-              <input
-                type="checkbox"
-                name="sortTimeDeadlineDESC"
-                id="sortTimeDeadlineDESC"
-                checked={timeDeadlineDESC}
-                onChange={onChangeTimeDeadlineDESC}
-              />
-              <label htmlFor="sortTimeDeadlineDESC">DESC</label>
-            </div>
-          </div>
-        </div>
-        <button id="clearSort" onClick={onClickResetSort}>
-          Clear sort
-        </button>
-      </div>
+    <div>
+      <h3 className={styles.title}>Sort</h3>
+      <SortTaskName
+        taskNameASC={taskNameASC}
+        taskNameDESC={taskNameDESC}
+        onChangeTaskNameASC={onChangeTaskNameASC}
+        onChangeTaskNameDESC={onChangeTaskNameDESC}
+      />
+      <SortTaskTimeCreated
+        timeCreatedASC={timeCreatedASC}
+        timeCreatedDESC={timeCreatedDESC}
+        onChangeTimeCreatedASC={onChangeTimeCreatedASC}
+        onChangeTimeCreatedDESC={onChangeTimeCreatedDESC}
+      />
+      <SortTaskTimeDeadline
+        timeDeadlineASC={timeDeadlineASC}
+        timeDeadlineDESC={timeDeadlineDESC}
+        onChangeTimeDeadlineASC={onChangeTimeDeadlineASC}
+        onChangeTimeDeadlineDESC={onChangeTimeDeadlineDESC}
+      />
+      <button className={styles.clearButton} onClick={onClickResetSort}>
+        Clear sort
+      </button>
     </div>
   );
 }

@@ -1,0 +1,56 @@
+.rootContainer {
+  display: flex;
+  flex-direction: column;
+}   
+
+.checkBoxesContainer {
+  display: flex;
+}   
+
+.checkBoxContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+@media screen and (min-width : 850px) {
+  .rootContainer {
+      flex-direction: column;
+  }
+}
+
+@media screen and (max-width : 499px) {
+  .title{
+      font-size: 12px;
+  }
+}
+
+.checkBoxLabel {
+  font-size: 14px;
+}
+
+@media screen and (max-width : 499px) {
+  .checkBoxLabel{
+      font-size: 12px;
+  }
+}
+
+.checkBoxInput {
+  height: 18px;
+  width: 18px;
+  margin-right: 2px;
+  box-sizing: border-box;
+  margin-left: 10px;
+}
+
+
+@media screen and (max-width : 499px) {
+  .checkBoxInput{   
+      height: 15px;
+      width: 15px;
+  }
+}
+
+.checkBoxInput {
+  accent-color: rgba(244, 91, 105);
+}
