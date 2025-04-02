@@ -19,7 +19,7 @@ function InputText({
     <div className={containerStyle}>
       {labelText !== null && labelText !== "" && (
         <label htmlFor={id} className={labelStyle}>
-          {labelText}:{" "}
+          {labelText}
         </label>
       )}
       <input
