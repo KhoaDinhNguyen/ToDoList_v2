@@ -1,8 +1,11 @@
 import { useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 
-import { FilterDateForm } from "./FilterDateForm";
-import { FilterStatusForm } from "./FilterStatusForm";
+import { FilterStatusForm } from "./FilterStatus/FilterStatusForm";
+import FilterDate from "./FliterDate/FilterDate";
+import FilterStar from "./FilterStar/FilterStar";
+
+import filterButton from "../../../asset/img/filterButton.png";
 
 import {
   filterStatusSlice,
@@ -11,9 +14,10 @@ import {
   filterTimeCreatedToSlice,
   filterTimeDeadlineFromSlice,
   filterTimeDeadlineToSlice,
-} from "../../redux/utilsSlice";
+  filterAndSortFormSlice,
+} from "../../../redux/utilsSlice";
 
-import "../../styles/components/FilterForm.css";
+//import "../../styles/components/FilterForm.css";
 
 function FilterForm() {
   const dispatch = useDispatch();
@@ -47,26 +51,24 @@ function FilterForm() {
     setImporantFilter(!importantFilter);
   };
 
+  const onClickFilter = () => {
+    dispatch(filterAndSortFormSlice.actions.toggle());
+  };
+
   return (
     <div id="filterForm">
       <h3>Filter</h3>
       <h4>Star</h4>
-      <div id="starFilter">
-        <input
-          type="checkbox"
-          id="star"
-          name="star"
-          checked={importantFilter}
-          onChange={onChangeStar}
-        />
-        <label htmlFor="star">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path>
-          </svg>
-        </label>
-      </div>
+      <FilterStar
+        id={"star"}
+        onChangeImportantFilter={onChangeStar}
+        importantFilter={importantFilter}
+      />
       <FilterStatusForm setStatusFilter={setStatusFilter} />
-      <FilterDateForm setDateFilter={setDateFilter} />
+      <FilterDate setDateFilter={setDateFilter} />
+      <button id="filterButton" onClick={onClickFilter}>
+        <img src={filterButton} alt="Filter" title="Filter" />
+      </button>
     </div>
   );
 }

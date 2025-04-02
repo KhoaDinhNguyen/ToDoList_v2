@@ -1,7 +1,7 @@
 import { useParams, useNavigate, NavLink, Outlet } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
-
+import { Cookies } from "react-cookie";
 import { Footer } from "../homepage/Homepage.js";
 import { fetchUserDatabase } from "../../API/userAPI.js";
 
@@ -45,17 +45,48 @@ function User() {
   const [navigationBarDisplay, setNavigationBarDisplay] = useState(true);
 
   const accountName = params.username;
-  const accountNameAuthen = localStorage.getItem("accountName");
+  //const accountNameAuthen = localStorage.getItem("accountName");
 
   const onClickNavigationBarDisplay = () => {
     setNavigationBarDisplay(!navigationBarDisplay);
   };
 
   useEffect(() => {
-    if (accountName !== accountNameAuthen) {
-      alert("BAD");
-      localStorage.setItem("accountName", "");
-      dispatch(profileNameSlice.actions.assignName(""));
+    const cookies = new Cookies();
+    // if (accountName !== accountNameAuthen) {
+    //   alert("BAD");
+    //   document.cookie = "";
+    //   //localStorage.setItem("accountName", "");
+    //   dispatch(profileNameSlice.actions.assignName(""));
+    //   navigate("/homepage/login");
+    // }
+    // console.log(document.cookie);
+    // if (document.cookie === "") {
+    //   alert("PLEASE SIGN IN");
+    //   navigate("/homepage/login");
+    // }
+
+    // const cookieArray = document.cookie
+    //   .split(";")
+    //   .map((cookie) => cookie.split("="));
+
+    // console.log(cookieArray);
+    // let jwt = "";
+    // console.log(cookieArray);
+
+    // for (let i = 0; i < cookieArray.length; ++i) {
+    //   if (cookieArray[i][0] === "jwt") {
+    //     jwt = cookieArray[i][1];
+    //   }
+    // }
+
+    // console.log(jwt);
+    // if (jwt === "") {
+    //   alert("BAD CREDENTIA");
+    //   navigate("/homepage/login");
+    // }
+    if (!cookies.get("jwt") || cookies.get("jwt") === "") {
+      alert("BAD CREDENTIA");
       navigate("/homepage/login");
     }
 
@@ -66,9 +97,12 @@ function User() {
         dispatch(profileNameSlice.actions.assignName(response[0].profileName));
       })
       .catch((err) => {
+        alert("BAD CREDENTIAL");
+        cookies.remove("jwt");
+        navigate("/homepage/login");
         console.log(err);
       });
-  }, [dispatch, navigate, accountName, accountNameAuthen]);
+  }, [dispatch, navigate, accountName]);
 
   const linkIsActive = ({ isActive }) => {
     return isActive ? "match" : "noMatch";

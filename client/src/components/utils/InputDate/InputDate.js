@@ -4,16 +4,20 @@ function InputDate({
   valueText,
   onChangeText,
   labelText,
-  style,
+  containerStyle,
   min,
   max,
+  labelStyle,
+  inputStyle,
 }) {
   const requiredModifers = required == null ? false : required;
 
   return (
-    <div className={style}>
+    <div className={containerStyle}>
       {labelText !== null && labelText !== "" && (
-        <label htmlFor={id}>{labelText}: </label>
+        <label htmlFor={id} className={labelStyle}>
+          {labelText}:{" "}
+        </label>
       )}
       <input
         type="date"
@@ -24,6 +28,7 @@ function InputDate({
         onChange={onChangeText}
         min={min}
         max={max}
+        className={inputStyle}
       />
     </div>
   );

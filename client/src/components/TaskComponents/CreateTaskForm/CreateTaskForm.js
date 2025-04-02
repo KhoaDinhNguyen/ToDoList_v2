@@ -108,7 +108,7 @@ function CreateTaskForm(props) {
             labelText="Task description"
           />
           <InputDate
-            style={styles.inputContainer}
+            containerStyle={styles.inputContainer}
             id={`${projectName}_taskTimeDeadline`}
             required={true}
             onChangeText={onChangeTaskDeadline}

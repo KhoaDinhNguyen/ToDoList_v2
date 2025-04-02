@@ -75,60 +75,28 @@
     margin-top: 5px;
 }
 
-/* ================================== DATE FILTER ================================== */
-@media screen and (max-width : 499px) {
-    .dateFilter label{
-        margin-left: 0;
-    }
-}
-
-#clearDate {
-    display: block;
-    color: white;
-    background-color: #023e8a;
-    box-shadow: 0px 5px #023e8a;
-    border: 0;
-    padding: 5px;
-    margin-top: 10px;
-    font-weight: bold;
-    border-radius: 5px;
-    transition-duration: 0.2s;
+#filterButton {
+    border: 1px solid #000;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
     cursor: pointer;
+    margin-right: 10px;
 }
 
 @media screen and (max-width : 499px) {
-    #clearDate {
-        font-size: 10px;
+    #filterButton {
+        width: 35px;
+        height: 35px;
+        justify-self: center;
     }
 }
 
-
-#clearDate:hover, #clearDate:active {
-    transform: translate(0, 5px);
-    box-shadow: 0px 0px #023e8a;
-}
-
-#starFilter {
-    z-index: -1;
-}
-#starFilter input[type="checkbox"]{
-    visibility: hidden;
-    width: 0;
-    height: 0;
-}
-
-#starFilter label svg {
-    width: 20px;
-    height: 20px;
-    fill: none;
-    stroke: #000;
-    stroke-width: 1px;
-    cursor: pointer;
-    position: relative;
-    top: 2px;
-    fill: #fff;
-}
-
-#starFilter input[type=checkbox]:checked + label svg {
-    fill: yellow;
+#filterButton img {
+    width: 25px;
+    height: 25px;
 }

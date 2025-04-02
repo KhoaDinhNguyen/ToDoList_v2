@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-import FilterForm from "./FilterForm";
+import FilterForm from "../HomepageComponents/FilterComponents/FilterForm";
 import SortForm from "../HomepageComponents/SortComponents/SortForm";
 
 import { filterAndSortFormSlice } from "../../redux/utilsSlice";

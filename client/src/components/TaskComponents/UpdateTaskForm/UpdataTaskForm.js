@@ -104,7 +104,7 @@ function UpdateTaskForm(props) {
           valueText={taskTimeDeadline}
           labelText="Task deadline"
           min={convertDateToISOString(today)}
-          style={styles.inputContainer}
+          containerStyle={styles.inputContainer}
         />
         <div className={styles.inputContainer}>
           <p>

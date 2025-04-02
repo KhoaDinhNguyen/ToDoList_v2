@@ -2,6 +2,7 @@ import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { useDispatch } from "react-redux";
+import { useCookies } from "react-cookie";
 
 import InputText from "../../components/utils/InputText/InputText";
 import PasswordInput from "../../components/utils/PasswordInput";
@@ -54,6 +55,7 @@ function LoginMain() {
   const [accountName, setAccountName] = useState("");
   const [password, setPassword] = useState("");
   const [displayMessage, setDisplayMessage] = useState("hidden");
+  const [cookie, setCookie] = useCookies(["jwt"]);
 
   const onChangeAccountName = (event) => {
     setAccountName(event.target.value);
@@ -69,7 +71,10 @@ function LoginMain() {
       .then((response) => {
         setLoading(false);
         if (!response.error) {
-          localStorage.setItem("accountName", response.name);
+          //document.cookie = response.token;
+          //console.log(document.cookie);
+          setCookie("jwt", response.token);
+          //localStorage.setItem("accountName", response.name);
           dispatch(profileNameSlice.actions.assignName(response.full_name));
           setAccountName("");
           setPassword("");
@@ -77,7 +82,6 @@ function LoginMain() {
         } else {
           setMessage(response.message);
           setDisplayMessage("visible");
-
           setTimeout(() => {
             setMessage("");
             setDisplayMessage("hidden");

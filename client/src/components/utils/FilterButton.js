@@ -2,7 +2,6 @@ import { useDispatch } from "react-redux";
 import { filterAndSortFormSlice } from "../../redux/utilsSlice";
 
 import filterButton from "../../asset/img/filterButton.png";
-import "../../styles/components/FilterButton.css";
 
 function FilterButton() {
   const dispatch = useDispatch();

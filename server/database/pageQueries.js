@@ -1,6 +1,12 @@
+const jwt = require("jsonwebtoken");
 const pool = require("./database");
-
 const bcrypt = require("bcrypt");
+
+const signToken = (id) => {
+  return jwt.sign({ id: id }, process.env.JWT_SECRET, {
+    expiresIn: process.env.JWT_EXPIRED_TIME,
+  });
+};
 
 const getAccountName = (req, res, next) => {
   const { accountName } = req.body;
@@ -48,9 +54,25 @@ const validateAccountName = async (req, res, next) => {
       pool.query(
         `SELECT * FROM users WHERE name = '${accountName}'`,
         (_, result) => {
-          res
-            .status(200)
-            .json({ ...result.rows[0], message: "Found", error: false });
+          const cookieOptions = {
+            expires: new Date(
+              Date.now() + process.env.JWT_COOKIE_EXPIRED_TIME * 1
+            ),
+            httpOnly: true,
+          };
+
+          if (process.env.NODE_ENV === "production")
+            cookieOptions.secure = true;
+
+          console.log(cookieOptions);
+          const token = signToken(accountName);
+          res.cookie("jwt", token, cookieOptions);
+          res.status(200).json({
+            ...result.rows[0],
+            message: "Found",
+            error: false,
+            token: token,
+          });
         }
       );
     } else {

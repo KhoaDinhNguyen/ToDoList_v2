@@ -1,16 +1,22 @@
 import { createSearchParams } from "react-router-dom";
+import { Cookies } from "react-cookie";
 
 const fetchUserDatabase = async (accountName) => {
   const environment = process.env.NODE_ENV;
+  const cookies = new Cookies();
+
   const getUserDatabaseAPI =
     process.env[
       `REACT_APP_GET_USER_DATABASE_API_URL_${environment.toUpperCase()}`
     ];
   const getUserEndpoint = `${getUserDatabaseAPI}/${accountName}`;
 
+  const myHeaders = new Headers();
+  myHeaders.append("Authorization", "Bearer " + cookies.get("jwt"));
   try {
     const jsonResponse = await fetch(getUserEndpoint, {
       method: "GET",
+      headers: myHeaders,
     });
 
     const response = await jsonResponse.json();

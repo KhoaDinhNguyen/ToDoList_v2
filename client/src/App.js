@@ -6,6 +6,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+import { CookiesProvider } from "react-cookie";
+
 import Root from "./Root";
 
 import Login from "./pages/homepage/Login";
@@ -45,6 +47,11 @@ const router = createHashRouter(
 );
 
 function App() {
+  return (
+    <CookiesProvider defaultSetOptions={{ path: "/" }}>
+      <RouterProvider router={router} />
+    </CookiesProvider>
+  );
   return <RouterProvider router={router} />;
 }
 
