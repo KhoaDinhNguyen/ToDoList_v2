@@ -1,10 +1,33 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { Cookies } from "react-cookie";
+import { fetchVerifyToken } from "../../API/pageAPI";
+import { useEffect } from "react";
 
 import logoPage from "../../asset/img/logoPage.png";
 import "../../styles/pages/Homepage.css";
 
 function HomePage() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const cookies = new Cookies();
+    const jwt = cookies.get("jwt");
+
+    if (jwt === undefined || jwt === "") {
+      navigate("/homepage/login");
+    } else {
+      fetchVerifyToken()
+        .then((response) => {
+          navigate(`/user/${response.id}`);
+        })
+        .catch((err) => {
+          console.log(err);
+          navigate("/homepage/login");
+        });
+    }
+  }, [navigate]);
+
   return (
     <div id="homepage">
       <Header />

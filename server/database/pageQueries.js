@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const pool = require("./database");
 const bcrypt = require("bcrypt");
+const util = require("util");
 
 const signToken = (id) => {
   return jwt.sign({ id: id }, process.env.JWT_SECRET, {
@@ -54,19 +55,19 @@ const validateAccountName = async (req, res, next) => {
       pool.query(
         `SELECT * FROM users WHERE name = '${accountName}'`,
         (_, result) => {
-          const cookieOptions = {
-            expires: new Date(
-              Date.now() + process.env.JWT_COOKIE_EXPIRED_TIME * 1
-            ),
-            httpOnly: true,
-          };
+          // const cookieOptions = {
+          //   expires: new Date(
+          //     Date.now() + process.env.JWT_COOKIE_EXPIRED_TIME * 1
+          //   ),
+          //   httpOnly: true,
+          // };
 
-          if (process.env.NODE_ENV === "production")
-            cookieOptions.secure = true;
+          // if (process.env.NODE_ENV === "production")
+          //   cookieOptions.secure = true;
 
-          console.log(cookieOptions);
+          // console.log(cookieOptions);
           const token = signToken(accountName);
-          res.cookie("jwt", token, cookieOptions);
+          //res.cookie("jwt", token, cookieOptions);
           res.status(200).json({
             ...result.rows[0],
             message: "Found",
@@ -109,9 +110,43 @@ const createAccount = async (req, res, next) => {
   }
 };
 
+const verifyToken = async (req, res, next) => {
+  console.log(req.headers.authorization);
+
+  // getToken
+  if (
+    !(
+      req.headers.authorization &&
+      req.headers.authorization.startsWith("Bearer")
+    )
+  ) {
+    return res.status(401).json({ message: "You are not log in" });
+  }
+
+  const token = req.headers.authorization.split(" ")[1];
+  // verify token
+  console.log(token);
+  try {
+    console.log(process.env.JWT_SECRET);
+    const decoded = await util.promisify(jwt.verify)(
+      token,
+      process.env.JWT_SECRET
+    );
+    // check if user still exists (by database)
+    console.log(decoded.id);
+
+    return res
+      .status(200)
+      .json({ id: decoded.id, message: "Token verification success" });
+  } catch (err) {
+    return res.status(401).json({ message: "Token error" });
+  }
+};
+
 module.exports = {
   getAccountName,
   validateAccountName,
   createAccount,
   findAccountNameExist,
+  verifyToken,
 };

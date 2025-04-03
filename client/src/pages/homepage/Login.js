@@ -73,7 +73,9 @@ function LoginMain() {
         if (!response.error) {
           //document.cookie = response.token;
           //console.log(document.cookie);
-          setCookie("jwt", response.token);
+          setCookie("jwt", response.token, {
+            expires: Date.now() + process.env.JWT_COOKIE_EXPIRED_TIME * 1,
+          });
           //localStorage.setItem("accountName", response.name);
           dispatch(profileNameSlice.actions.assignName(response.full_name));
           setAccountName("");

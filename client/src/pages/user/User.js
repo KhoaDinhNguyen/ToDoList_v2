@@ -86,8 +86,10 @@ function User() {
     //   navigate("/homepage/login");
     // }
     if (!cookies.get("jwt") || cookies.get("jwt") === "") {
-      alert("BAD CREDENTIA");
-      navigate("/homepage/login");
+      alert("BAD CREDENTIAL. Please Log In");
+      cookies.remove("jwt");
+      navigate("/homepage");
+      return <></>;
     }
 
     fetchUserDatabase(accountName)
@@ -95,11 +97,12 @@ function User() {
         dispatch(tasksSlice.actions.initialize(response));
         dispatch(projectsSlice.actions.initialize(response));
         dispatch(profileNameSlice.actions.assignName(response[0].profileName));
+        navigate("homepage");
       })
       .catch((err) => {
-        alert("BAD CREDENTIAL");
+        alert("BAD CREDENTIAL. Please Log In Your Account");
         cookies.remove("jwt");
-        navigate("/homepage/login");
+        navigate("/homepage");
         console.log(err);
       });
   }, [dispatch, navigate, accountName]);
