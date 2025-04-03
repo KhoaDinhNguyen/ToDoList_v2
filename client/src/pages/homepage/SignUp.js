@@ -117,7 +117,7 @@ function SignUpMain() {
           containerStyle={styles.signUpInput}
         />
         <PasswordInput
-          id="profileNameSignUp"
+          id="passwordSignUp"
           value={password}
           onChangePassword={onChangePassword}
           placeholder="Password name"
