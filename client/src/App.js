@@ -11,7 +11,7 @@ import { CookiesProvider } from "react-cookie";
 import Root from "./Root";
 
 import Login from "./pages/homepage/Login";
-import SignUp from "./pages/homepage/SignUp";
+import SignUp from "./pages/homepage/SignUp/SignUp";
 import PageNotFound from "./pages/homepage/PageNotFound";
 import ForgetPassword from "./pages/homepage/ForgetPassword";
 import UserCalendar from "./pages/user/UserCalendar";

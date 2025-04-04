@@ -1,0 +1,27 @@
+.contentContainer {
+  background-color: white;
+  padding: 100px 150px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  z-index: 999;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.hiddenModal {
+  position: relative;
+  top: -50%;
+}
+
+.visibleModal {
+  top: 50%;
+  transition-duration: 0.5s;
+}

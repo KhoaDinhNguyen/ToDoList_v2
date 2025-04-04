@@ -66,25 +66,24 @@ function DashboardSVG() {
         strokeLinejoin="round"
       />
       <g id="SVGRepo_iconCarrier">
-        {" "}
         <path
           d="M12 12C12 11.4477 12.4477 11 13 11H19C19.5523 11 20 11.4477 20 12V19C20 19.5523 19.5523 20 19 20H13C12.4477 20 12 19.5523 12 19V12Z"
           stroke="#ffffff"
           strokeWidth="2"
           strokeLinecap="round"
-        />{" "}
+        />
         <path
           d="M4 5C4 4.44772 4.44772 4 5 4H8C8.55228 4 9 4.44772 9 5V19C9 19.5523 8.55228 20 8 20H5C4.44772 20 4 19.5523 4 19V5Z"
           stroke="#ffffff"
           strokeWidth="2"
           strokeLinecap="round"
-        />{" "}
+        />
         <path
           d="M12 5C12 4.44772 12.4477 4 13 4H19C19.5523 4 20 4.44772 20 5V7C20 7.55228 19.5523 8 19 8H13C12.4477 8 12 7.55228 12 7V5Z"
           stroke="#ffffff"
           strokeWidth="2"
           strokeLinecap="round"
-        />{" "}
+        />
       </g>
     </svg>
   );
@@ -106,14 +105,13 @@ function CalendarSVG() {
         strokeLinejoin="round"
       />
       <g id="SVGRepo_iconCarrier">
-        {" "}
         <path
           d="M3 9H21M7 3V5M17 3V5M6 13H8M6 17H8M11 13H13M11 17H13M16 13H18M16 17H18M6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V8.2C21 7.07989 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21Z"
           stroke="#FFFFFF"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-        />{" "}
+        />
       </g>
     </svg>
   );
@@ -137,27 +135,24 @@ function ProfileSVG() {
         strokeLinejoin="round"
       />
       <g id="SVGRepo_iconCarrier">
-        {" "}
         <g id="style=stroke">
-          {" "}
           <g id="profile">
-            {" "}
             <path
               id="vector (Stroke)"
               fillRule="evenodd"
               clipRule="evenodd"
               d="M12 2.75C9.92893 2.75 8.25 4.42893 8.25 6.5C8.25 8.57107 9.92893 10.25 12 10.25C14.0711 10.25 15.75 8.57107 15.75 6.5C15.75 4.42893 14.0711 2.75 12 2.75ZM6.75 6.5C6.75 3.6005 9.1005 1.25 12 1.25C14.8995 1.25 17.25 3.6005 17.25 6.5C17.25 9.3995 14.8995 11.75 12 11.75C9.1005 11.75 6.75 9.3995 6.75 6.5Z"
               fill="#ffffff"
-            />{" "}
+            />
             <path
               id="rec (Stroke)"
               fillRule="evenodd"
               clipRule="evenodd"
               d="M4.25 18.5714C4.25 15.6325 6.63249 13.25 9.57143 13.25H14.4286C17.3675 13.25 19.75 15.6325 19.75 18.5714C19.75 20.8792 17.8792 22.75 15.5714 22.75H8.42857C6.12081 22.75 4.25 20.8792 4.25 18.5714ZM9.57143 14.75C7.46091 14.75 5.75 16.4609 5.75 18.5714C5.75 20.0508 6.94924 21.25 8.42857 21.25H15.5714C17.0508 21.25 18.25 20.0508 18.25 18.5714C18.25 16.4609 16.5391 14.75 14.4286 14.75H9.57143Z"
               fill="#ffffff"
-            />{" "}
-          </g>{" "}
-        </g>{" "}
+            />
+          </g>
+        </g>
       </g>
     </svg>
   );
@@ -189,13 +184,12 @@ function Calendar2SVG() {
         strokeLinejoin="round"
       />
       <g id="SVGRepo_iconCarrier">
-        {" "}
         <path
           d="M3 9H21M7 3V5M17 3V5M6 12H8M11 12H13M16 12H18M6 15H8M11 15H13M16 15H18M6 18H8M11 18H13M16 18H18M6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V8.2C21 7.07989 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21Z"
           stroke="#000000"
           strokeWidth="0.744"
           strokeLinecap="round"
-        />{" "}
+        />
       </g>
     </svg>
   );
@@ -255,6 +249,99 @@ function RightArrow() {
     </svg>
   );
 }
+
+function ErrorSVG() {
+  return (
+    <svg
+      width="100px"
+      height="100px"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      stroke="#ffffff"
+    >
+      <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+      <g
+        id="SVGRepo_tracerCarrier"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke="#CCCCCC"
+        stroke-width="0.096"
+      />
+
+      <g id="SVGRepo_iconCarrier">
+        <g id="style=stroke">
+          <g id="close-circle">
+            <path
+              id="vector (Stroke)"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M12 2.75C6.89137 2.75 2.75 6.89137 2.75 12C2.75 17.1086 6.89137 21.25 12 21.25C17.1086 21.25 21.25 17.1086 21.25 12C21.25 6.89137 17.1086 2.75 12 2.75ZM1.25 12C1.25 6.06294 6.06294 1.25 12 1.25C17.9371 1.25 22.75 6.06294 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12Z"
+              fill="#D75A4A"
+            />
+            <path
+              id="vector (Stroke)_2"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M8.46967 8.46967C8.76257 8.17678 9.23744 8.17678 9.53033 8.46967L15.5303 14.4697C15.8232 14.7626 15.8232 15.2374 15.5303 15.5303C15.2374 15.8232 14.7625 15.8232 14.4696 15.5303L8.46967 9.53033C8.17678 9.23743 8.17678 8.76256 8.46967 8.46967Z"
+              fill="#D75A4A"
+            />
+            <path
+              id="vector (Stroke)_3"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M15.5303 8.46967C15.8232 8.76257 15.8232 9.23744 15.5303 9.53033L9.53033 15.5303C9.23743 15.8232 8.76256 15.8232 8.46967 15.5303C8.17678 15.2374 8.17678 14.7625 8.46967 14.4696L14.4697 8.46967C14.7626 8.17678 15.2374 8.17678 15.5303 8.46967Z"
+              fill="#D75A4A"
+            />
+          </g>
+        </g>
+      </g>
+    </svg>
+  );
+}
+
+function SuccesSVG() {
+  return (
+    <svg
+      width="100px"
+      height="100px"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      stroke="#ffffff"
+    >
+      <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+      <g
+        id="SVGRepo_tracerCarrier"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+
+      <g id="SVGRepo_iconCarrier">
+        <g id="style=stroke">
+          <g id="check-circle">
+            <path
+              id="vector (Stroke)"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M12 2.75C6.89137 2.75 2.75 6.89137 2.75 12C2.75 17.1086 6.89137 21.25 12 21.25C17.1086 21.25 21.25 17.1086 21.25 12C21.25 6.89137 17.1086 2.75 12 2.75ZM1.25 12C1.25 6.06294 6.06294 1.25 12 1.25C17.9371 1.25 22.75 6.06294 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12Z"
+              fill="#007200"
+            />
+            <path
+              id="vector (Stroke)_2"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M16.5303 8.96967C16.8232 9.26256 16.8232 9.73744 16.5303 10.0303L11.9041 14.6566C11.2207 15.34 10.1126 15.34 9.42923 14.6566L7.46967 12.697C7.17678 12.4041 7.17678 11.9292 7.46967 11.6363C7.76256 11.3434 8.23744 11.3434 8.53033 11.6363L10.4899 13.5959C10.5875 13.6935 10.7458 13.6935 10.8434 13.5959L15.4697 8.96967C15.7626 8.67678 16.2374 8.67678 16.5303 8.96967Z"
+              fill="#007200"
+            />
+          </g>
+        </g>
+      </g>
+    </svg>
+  );
+}
 export {
   LogOutSVG,
   HomepageSVG,
@@ -264,4 +351,6 @@ export {
   Calendar2SVG,
   LeftArrow,
   RightArrow,
+  ErrorSVG,
+  SuccesSVG,
 };

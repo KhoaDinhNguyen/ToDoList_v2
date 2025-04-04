@@ -111,8 +111,6 @@ const createAccount = async (req, res, next) => {
 };
 
 const verifyToken = async (req, res, next) => {
-  console.log(req.headers.authorization);
-
   // getToken
   if (
     !(
@@ -125,7 +123,6 @@ const verifyToken = async (req, res, next) => {
 
   const token = req.headers.authorization.split(" ")[1];
   // verify token
-  console.log(token);
   try {
     console.log(process.env.JWT_SECRET);
     const decoded = await util.promisify(jwt.verify)(
@@ -133,7 +130,6 @@ const verifyToken = async (req, res, next) => {
       process.env.JWT_SECRET
     );
     // check if user still exists (by database)
-    console.log(decoded.id);
 
     return res
       .status(200)

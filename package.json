@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "cd client && npm run start",
-    "server": "cd server && node app.js",
+    "server": "cd server && nodemon app.js",
     "start": "npm run client && npm run server",
     "install": "cd client && npm install && cd ../server && npm install && cd .."
   },

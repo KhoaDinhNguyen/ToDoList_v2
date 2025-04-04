@@ -1,0 +1,38 @@
+.contentContainer {
+  background-color: white;
+  padding: 100px 150px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  z-index: 999;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.buttonsContainer {
+  margin-top: 20px;
+  display: flex;
+}
+
+.buttonContainer {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.buttonContainer:hover {
+  background-color: black;
+  color: white;
+}
