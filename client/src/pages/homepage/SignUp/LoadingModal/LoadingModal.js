@@ -1,4 +1,4 @@
-import Modal from "../../../components/utils/Modal/Modal";
+import Modal from "../../../../components/utils/Modal/Modal";
 import FadeLoader from "react-spinners/FadeLoader";
 
 import styles from "./LoadingModal.module.css";

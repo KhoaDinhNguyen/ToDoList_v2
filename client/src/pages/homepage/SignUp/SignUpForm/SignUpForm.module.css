@@ -1,0 +1,152 @@
+.rootContainer {
+  background-color: #F8F8F8;;
+  width: 450px;
+  height: 650px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+@media screen and (max-width : 850px) {
+  .rootContainer {
+      width: 300px;
+      height: 475px;
+  }
+}
+
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width : 850px) {
+  .headerContainer {
+      margin-bottom: 30px;
+  }    
+}
+
+.title {
+  width: max-content;
+  margin: 0 auto;
+  font-weight: 500;
+  font-size: 30px;
+}
+
+@media screen and (max-width : 850px) {
+  .title {
+      font-size: 20px;
+  }
+}
+
+.image {
+  width: 48px;
+  height: 48px;
+}
+
+@media screen and (max-width : 850px) {
+  .image {
+      width: 32px;
+      height: 32px;
+  }
+}
+
+.linkContainer {
+  color: #888;
+}
+
+@media screen and (max-width : 850px) {
+  .linkContainer {
+      font-size: 14px;
+  }
+}
+
+.headerContainer a, .headerContainer a:visited {
+  color: rgb(106 101 255);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+@media screen and (max-width : 850px) {
+  .headerContainer a, .headerContainer a:visited {
+      font-size: 14px;
+  }
+}
+
+
+.headerContainer a:hover {
+  color: #000;
+}
+
+.signUpInput {
+  width: 360px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width : 850px) {
+  .signUpInput {
+      width: 275px;
+      margin-bottom: 20px;
+  }
+}
+
+.signUpInput input {
+  font-size: 16px;
+  background: #F8F8F8;;
+  padding: 12px;
+  width: 360px;
+  border: 2px solid #cccccc;
+  border-radius: 5px;
+  outline: 0;
+}
+
+@media screen and (max-width : 850px) {
+  .signUpInput input {
+      font-size: 14px;
+      padding: 12px;
+      width: 275px;
+  }
+}
+
+.signUpInput input:focus {
+  border: 2px solid orange;
+}
+
+.submitInput {
+  display: none;
+}
+
+.submitLabel {
+  display: block;
+  background-color: rgb(106 101 255);
+  width: max-content;
+  padding: 10px 50px;
+  margin: 0 auto;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid rgb(106 101 255);
+  border-radius: 5px;
+  margin-top: 50px;
+  cursor: pointer;
+  box-shadow: 5px 5px #A294F9;
+  transition-duration: 0.5s;
+}
+
+@media screen and (max-width : 850px) {
+  .submitLabel {
+      padding: 10px 30px;
+      font-size: 14px;
+      margin-top: 30px;
+  }
+}
+
+.submitLabel:hover, .submitLabel:active {
+  transform: translate(5px, 5px);
+  box-shadow: -5px -5px white;
+}
+

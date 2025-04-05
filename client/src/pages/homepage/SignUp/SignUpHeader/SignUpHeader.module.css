@@ -1,0 +1,27 @@
+.title {
+  font-size: 35px;
+  color: rgb(14 0 74);
+  text-align: center;
+  margin: 0 auto;
+}
+
+@media screen and (max-width : 850px) {
+  .title {
+      font-size: 25px;
+  }
+}
+
+.text {
+  font-size: 18px;
+  color: rgb(69 56 120);
+  text-align: center;
+  width: 600px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width : 850px) {
+  .text {
+      font-size: 14px;
+      width: 300px;
+  }
+}

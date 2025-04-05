@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
-import Modal from "../../../components/utils/Modal/Modal";
-import { ErrorSVG, SuccesSVG } from "../../../components/utils/SVG";
+import Modal from "../../../../components/utils/Modal/Modal";
+import { ErrorSVG, SuccesSVG } from "../../../../components/utils/SVG";
 
 import styles from "./ResultModal.module.css";
 
