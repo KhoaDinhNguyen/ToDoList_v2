@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Cookies } from "react-cookie";
+import { cookies } from "../../App";
 
 import { LogOutSVG } from "./SVG";
 import "../../styles/components/LogOut.css";
@@ -8,9 +8,8 @@ function LogOut(props) {
   const navigate = useNavigate();
 
   const onClickLogOut = () => {
-    const cookie = new Cookies();
     //localStorage.clear();
-    cookie.remove("jwt");
+    cookies.remove("jwt");
     navigate("/homepage/login");
   };
 

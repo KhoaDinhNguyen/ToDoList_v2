@@ -1,9 +1,9 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { Cookies } from "react-cookie";
 import { fetchVerifyToken } from "../../API/pageAPI";
 import { useEffect } from "react";
 
+import { cookies } from "../../App";
 import logoPage from "../../asset/img/logoPage.png";
 import "../../styles/pages/Homepage.css";
 
@@ -11,7 +11,6 @@ function HomePage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const cookies = new Cookies();
     const jwt = cookies.get("jwt");
 
     if (jwt === undefined || jwt === "") {

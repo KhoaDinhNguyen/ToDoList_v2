@@ -2,8 +2,10 @@ const jwt = require("jsonwebtoken");
 const util = require("util");
 
 const isAuth = async (req, res, next) => {
+  console.log("WTF");
   const { user } = req.params;
   // getToken
+  console.log("Auth");
   console.log(req.headers.authorization);
   if (
     !(
@@ -11,6 +13,7 @@ const isAuth = async (req, res, next) => {
       req.headers.authorization.startsWith("Bearer")
     )
   ) {
+    console.log("ERROR");
     return res.status(401).json({ error: true, message: "You are not log in" });
   }
 
@@ -26,12 +29,14 @@ const isAuth = async (req, res, next) => {
     console.log(decoded.id);
     console.log(user);
     if (decoded.id !== user) {
+      console.log("ERROR");
       return res
         .status(401)
         .json({ error: true, message: "Please sign in with your account!!!" });
     }
     next();
   } catch (err) {
+    console.log("ERROR");
     return res.status(401).json({ error: true, message: "Token error" });
   }
 };

@@ -1,13 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { Cookies } from "react-cookie";
+import { cookies } from "./App";
 import { fetchVerifyToken } from "./API/pageAPI";
 
 function Root() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const cookies = new Cookies();
     const jwt = cookies.get("jwt");
 
     if (jwt === undefined || jwt === "") {

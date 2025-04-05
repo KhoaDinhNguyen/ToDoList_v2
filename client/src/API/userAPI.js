@@ -1,28 +1,32 @@
 import { createSearchParams } from "react-router-dom";
-import { Cookies } from "react-cookie";
+import { cookies } from "../App";
 
 const fetchUserDatabase = async (accountName) => {
   const environment = process.env.NODE_ENV;
-  const cookies = new Cookies();
 
   const getUserDatabaseAPI =
     process.env[
       `REACT_APP_GET_USER_DATABASE_API_URL_${environment.toUpperCase()}`
     ];
   const getUserEndpoint = `${getUserDatabaseAPI}/${accountName}`;
-
+  console.log(getUserEndpoint);
+  console.log("Bearer " + cookies.get("jwt"));
   const myHeaders = new Headers();
   myHeaders.append("Authorization", "Bearer " + cookies.get("jwt"));
+  myHeaders.append("Content-type", "application/json");
+  //console.log(myHeaders);
   try {
+    console.log("LET's GO");
     const jsonResponse = await fetch(getUserEndpoint, {
       method: "GET",
       headers: myHeaders,
     });
-
     const response = await jsonResponse.json();
+    console.log(response);
     return response;
   } catch (err) {
-    throw new Error(err.message);
+    console.log(err);
+    throw new Error();
   }
 };
 

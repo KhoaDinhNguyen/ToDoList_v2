@@ -1,4 +1,4 @@
-import { Cookies } from "react-cookie";
+import { cookies } from "../App";
 
 async function fetchSignIn(accountName, password) {
   const environment = process.env.NODE_ENV;
@@ -85,7 +85,6 @@ const fetchVerifyToken = async () => {
   const environment = process.env.NODE_ENV;
   const verifyTokenAPI =
     process.env[`REACT_APP_VERIFY_TOKEN_API_URL_${environment.toUpperCase()}`];
-  const cookies = new Cookies();
   const verifyTokenEndpoint = `${verifyTokenAPI}`;
   const body = JSON.stringify({});
 

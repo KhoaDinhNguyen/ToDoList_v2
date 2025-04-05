@@ -65,12 +65,6 @@ function SuccessModal({ onClickStayOnThePage, onClickGoToLogin }) {
         <button onClick={onClickGoToLogin} className={styles.buttonContainer}>
           Go to login
         </button>
-        <button
-          onClick={onClickStayOnThePage}
-          className={styles.buttonContainer}
-        >
-          Stay on page
-        </button>
       </div>
     </>
   );

@@ -6,11 +6,10 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import { CookiesProvider } from "react-cookie";
-
+import { CookiesProvider, Cookies } from "react-cookie";
 import Root from "./Root";
 
-import Login from "./pages/homepage/Login";
+import Login from "./pages/homepage/Login/Login";
 import SignUp from "./pages/homepage/SignUp/SignUp";
 import PageNotFound from "./pages/homepage/PageNotFound";
 import ForgetPassword from "./pages/homepage/ForgetPassword";
@@ -22,6 +21,8 @@ import User from "./pages/user/User";
 import UserHomepage from "./pages/user/UserHomepage";
 import UserDashboard from "./pages/user/UserDashboard";
 import UserProfile from "./pages/user/UserProfile";
+
+export const cookies = new Cookies();
 
 const router = createHashRouter(
   createRoutesFromElements(

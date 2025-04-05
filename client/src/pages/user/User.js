@@ -1,10 +1,10 @@
 import { useParams, useNavigate, NavLink, Outlet } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
-import { Cookies } from "react-cookie";
 import { Footer } from "../homepage/Homepage.js";
 import { fetchUserDatabase } from "../../API/userAPI.js";
 
+import { cookies } from "../../App.js";
 import {
   profileNameSlice,
   projectsSlice,
@@ -52,48 +52,16 @@ function User() {
   };
 
   useEffect(() => {
-    const cookies = new Cookies();
-    // if (accountName !== accountNameAuthen) {
-    //   alert("BAD");
-    //   document.cookie = "";
-    //   //localStorage.setItem("accountName", "");
-    //   dispatch(profileNameSlice.actions.assignName(""));
-    //   navigate("/homepage/login");
-    // }
-    // console.log(document.cookie);
-    // if (document.cookie === "") {
-    //   alert("PLEASE SIGN IN");
-    //   navigate("/homepage/login");
-    // }
-
-    // const cookieArray = document.cookie
-    //   .split(";")
-    //   .map((cookie) => cookie.split("="));
-
-    // console.log(cookieArray);
-    // let jwt = "";
-    // console.log(cookieArray);
-
-    // for (let i = 0; i < cookieArray.length; ++i) {
-    //   if (cookieArray[i][0] === "jwt") {
-    //     jwt = cookieArray[i][1];
-    //   }
-    // }
-
-    // console.log(jwt);
-    // if (jwt === "") {
-    //   alert("BAD CREDENTIA");
-    //   navigate("/homepage/login");
-    // }
+    console.log(cookies.get("jwt"));
     if (!cookies.get("jwt") || cookies.get("jwt") === "") {
       alert("BAD CREDENTIAL. Please Log In");
       cookies.remove("jwt");
       navigate("/homepage");
-      return <></>;
     }
-
+    //alert(cookies.get("jwt"));
     fetchUserDatabase(accountName)
       .then((response) => {
+        console.log(typeof response);
         dispatch(tasksSlice.actions.initialize(response));
         dispatch(projectsSlice.actions.initialize(response));
         dispatch(profileNameSlice.actions.assignName(response[0].profileName));

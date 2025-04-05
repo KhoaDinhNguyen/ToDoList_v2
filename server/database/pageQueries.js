@@ -68,6 +68,7 @@ const validateAccountName = async (req, res, next) => {
           // console.log(cookieOptions);
           const token = signToken(accountName);
           //res.cookie("jwt", token, cookieOptions);
+          console.log(token);
           res.status(200).json({
             ...result.rows[0],
             message: "Found",

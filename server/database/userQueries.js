@@ -2,6 +2,7 @@ const pool = require("./database");
 
 const getUserDatabase = (req, res, next) => {
   const accountName = req.params.user;
+  console.log(accountName);
   pool.query(
     `SELECT * FROM get_user_database('${accountName}');`,
     (err, result) => {
@@ -55,7 +56,9 @@ const getUserDatabase = (req, res, next) => {
         }
       }
 
-      res.status(200).json(database);
+      console.log("Success");
+      console.log(database.length);
+      return res.status(200).json(database);
     }
   );
 };
