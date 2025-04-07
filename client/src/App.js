@@ -21,7 +21,7 @@ import User from "./pages/user/User";
 import UserHomepage from "./pages/user/UserHomepage/UserHomepage";
 import UserDashboard from "./pages/user/UserDashboard/UserDashboard";
 import UserCalendar from "./pages/user/UserCalendar/UserCalendar";
-import UserProfile from "./pages/user/UserProfile";
+import UserProfile from "./pages/user/UserProfile/UserProfile";
 
 export const cookies = new Cookies();
 
