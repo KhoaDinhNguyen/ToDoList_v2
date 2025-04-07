@@ -21,7 +21,7 @@ import {
   ProfileSVG,
 } from "../../components/utils/SVG.js";
 import "../../styles/pages/User.css";
-
+import LoadingDatabaseModal from "../../components/HomepageComponents/LoadingDatabaseModal/LoadingDatabaseModal.js";
 export const convertFromBooleanToDisplay = (display) => {
   return display ? "block" : "none";
 };
@@ -43,7 +43,8 @@ function User() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [navigationBarDisplay, setNavigationBarDisplay] = useState(true);
-
+  const [loadingDatabase, setLoadingDatabase] = useState(false);
+  const [message, setMessage] = useState("");
   const accountName = params.username;
   //const accountNameAuthen = localStorage.getItem("accountName");
 
@@ -52,6 +53,7 @@ function User() {
   };
 
   useEffect(() => {
+    setLoadingDatabase(true);
     if (!cookies.get("jwt") || cookies.get("jwt") === "") {
       alert("BAD CREDENTIAL. Please Log In");
       cookies.remove("jwt");
@@ -64,15 +66,19 @@ function User() {
           dispatch(
             profileNameSlice.actions.assignName(response[0].profileName)
           );
+          setLoadingDatabase(false);
           navigate("homepage");
         })
         .catch((err) => {
           console.log(err.message);
           if (err.message === "Network failed") {
             navigate("homepage");
-            console.log(
+            setMessage(
               "Network failed, loading database is failed. Try reload the page again"
             );
+            setTimeout(() => {
+              setMessage("");
+            }, 3000);
           } else {
             alert("BAD CREDENTIAL. Please Log In Your Account");
             cookies.remove("jwt");
@@ -87,36 +93,39 @@ function User() {
   };
 
   return (
-    <div id="user">
-      <Header
-        navigationBarDisplay={navigationBarDisplay}
-        onClickNavigationBarDisplay={onClickNavigationBarDisplay}
-      />
-      <div id="userPage">
-        <div
-          id="userNavigationBar"
-          className={
-            navigationBarDisplay
-              ? "navigationBarDisplay"
-              : "nonNavigationBarDisplay"
-          }
-        >
-          <div id="userNavigationBarBody">
-            <div id="userNavigationBarHeader">
-              <div id="companyName">
-                <img src={logoPage} alt="logoPage" />
+    <>
+      <div id="user">
+        <Header
+          navigationBarDisplay={navigationBarDisplay}
+          onClickNavigationBarDisplay={onClickNavigationBarDisplay}
+        />
+        <div id="userPage">
+          <div
+            id="userNavigationBar"
+            className={
+              navigationBarDisplay
+                ? "navigationBarDisplay"
+                : "nonNavigationBarDisplay"
+            }
+          >
+            <div id="userNavigationBarBody">
+              <div id="userNavigationBarHeader">
+                <div id="companyName">
+                  <img src={logoPage} alt="logoPage" />
+                </div>
               </div>
+              <PageNavigation linkIsActive={linkIsActive} />
+              <LogOut />
             </div>
-            <PageNavigation linkIsActive={linkIsActive} />
-            <LogOut />
           </div>
+          <div id="userContent">
+            <Outlet />
+          </div>
+          <Footer />
         </div>
-        <div id="userContent">
-          <Outlet />
-        </div>
-        <Footer />
       </div>
-    </div>
+      <LoadingDatabaseModal visible={loadingDatabase === true} />
+    </>
   );
 }
 

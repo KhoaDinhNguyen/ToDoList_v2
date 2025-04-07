@@ -9,8 +9,8 @@ const fetchUserDatabase = async (accountName, limitTime) => {
       `REACT_APP_GET_USER_DATABASE_API_URL_${environment.toUpperCase()}`
     ];
   const getUserEndpoint = `${getUserDatabaseAPI}/${accountName}`;
-  console.log(getUserEndpoint);
-  console.log("Bearer " + cookies.get("jwt"));
+  // console.log(getUserEndpoint);
+  // console.log("Bearer " + cookies.get("jwt"));
   const myHeaders = new Headers();
   myHeaders.append("Authorization", "Bearer " + cookies.get("jwt"));
   myHeaders.append("Content-type", "application/json");

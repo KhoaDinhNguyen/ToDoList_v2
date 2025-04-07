@@ -37,36 +37,35 @@ function LoginForm() {
     event.preventDefault();
     setLoading(true);
     setMessage("");
-    setTimeout(() => {
-      fetchSignIn(accountName, password)
-        .then((response) => {
-          setLoading(false);
-          if (!response.error) {
-            cookies.set("jwt", response.token, {
-              expires: Date.now() + process.env.JWT_COOKIE_EXPIRED_TIME * 1,
-            });
 
-            dispatch(profileNameSlice.actions.assignName(response.full_name));
-            setAccountName("");
-            setPassword("");
-            setMessage("Success");
-            //navigate(`/user/${response.name}/homepage`);
-            setTimeout(() => {
-              navigate(`/user/${response.name}/homepage`);
-            }, 1000);
-          } else {
-            setMessage(response.message);
-            setDisplayMessage("visible");
-            setTimeout(() => {
-              setMessage("");
-              setDisplayMessage("hidden");
-            }, 5000);
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }, 5000);
+    fetchSignIn(accountName, password)
+      .then((response) => {
+        setLoading(false);
+        if (!response.error) {
+          cookies.set("jwt", response.token, {
+            expires: Date.now() + process.env.JWT_COOKIE_EXPIRED_TIME * 1,
+          });
+
+          dispatch(profileNameSlice.actions.assignName(response.full_name));
+          setAccountName("");
+          setPassword("");
+          setMessage("Success");
+          //navigate(`/user/${response.name}/homepage`);
+          setTimeout(() => {
+            navigate(`/user/${response.name}`);
+          }, 1000);
+        } else {
+          setMessage(response.message);
+          setDisplayMessage("visible");
+          setTimeout(() => {
+            setMessage("");
+            setDisplayMessage("hidden");
+          }, 5000);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (

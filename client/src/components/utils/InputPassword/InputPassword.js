@@ -31,6 +31,7 @@ function InputPassword({
         minLength={minLength}
         maxLength={maxLength}
         className={inputStyle}
+        autoComplete="off"
       />
     </div>
   );
