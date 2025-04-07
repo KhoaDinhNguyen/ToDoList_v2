@@ -30,7 +30,7 @@ const fetchUserDatabase = async (accountName, limitTime) => {
   //   });
 
   try {
-    console.log("LET's GO");
+    //console.log("LET's GO");
     const jsonResponse = await fetch(getUserEndpoint, {
       method: "GET",
       headers: myHeaders,

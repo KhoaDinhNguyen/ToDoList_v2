@@ -5,7 +5,7 @@ import Modal from "../../utils/Modal/Modal";
 import styles from "./LoadingDatabaseModal.module.css";
 
 function LoadingDatabaseModal({ visible }) {
-  console.log("CAll this modal");
+  //console.log("CAll this modal");
   return (
     <Modal visible={visible} overrideStyle={styles.rootContainer}>
       <div
