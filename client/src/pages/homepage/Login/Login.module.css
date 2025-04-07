@@ -1,0 +1,14 @@
+.rootContainer {
+  background: linear-gradient(-90deg, #a1c4fda4 0%, #c2e9fb9d 100%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 100px 0;
+}
+
+@media screen and (max-width: 499px) {
+  .rootContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0;
+  }
+}

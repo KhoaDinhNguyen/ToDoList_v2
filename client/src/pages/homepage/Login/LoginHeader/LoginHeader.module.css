@@ -12,32 +12,32 @@
 }
 
 @media screen and (max-width : 499px) {
-  #loginIntroContext {
+  .textContainer {
       display: flex;
       flex-direction: column;
       align-items: center;
   }
 }
 
-#loginIntro h2 {
+.title {
   font-size: 35px;
   width: 300px;
   color: rgb(14 0 74);
 }
 
 @media screen and (max-width : 499px) {
-  #loginIntro h2 {
+  .title {
       text-align: center;
   }
 }
 
 @media screen and (max-width : 850px) {
-  #loginIntro h2 {
+  .title {
       font-size: 25px;
   }
 }
 
-#loginIntro p {
+.text {
   font-size: 18px;
   width: 250px; 
   margin-top: 20px;
@@ -45,13 +45,13 @@
 }
 
 @media screen and (max-width : 850px) {
-  #loginIntro p {
+  .text {
       font-size: 14px;
   } 
 }
 
 @media screen and (max-width : 499px) {
-  #loginIntro img {
+  .image {
       width: 128px;
       height: 128px;
   }

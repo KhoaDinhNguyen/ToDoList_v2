@@ -1,0 +1,226 @@
+.rootContainer {
+  grid-column: 2 / 3;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  align-items: center;
+}
+
+.formContainer {
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 600px;
+  width: 450px;
+  align-items: center;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 850px) {
+  .formContainer {
+    height: 425px;
+    width: 300px;
+  }
+}
+
+.formHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 850px) {
+  .formHeader {
+    margin-bottom: 30px;
+  }
+}
+
+.image {
+  width: 32px;
+  height: 32px;
+}
+
+.title {
+  margin: 0 auto;
+  font-weight: 500;
+  font-size: 30px;
+}
+
+@media screen and (max-width: 850px) {
+  .title {
+    font-size: 20px;
+  }
+}
+
+.text {
+  color: #888;
+}
+
+@media screen and (max-width: 850px) {
+  .text {
+    font-size: 14px;
+  }
+}
+
+.loginInputContainer {
+  margin: 0 auto;
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 850px) {
+  .loginInputContainer {
+    width: 275px;
+  }
+}
+
+.loginInput {
+  font-size: 16px;
+  background: #f8f8f8;
+  width: 360px;
+  padding: 12px;
+  margin: 8px 0;
+  border: 0;
+  border-bottom: 3px solid #efefef;
+}
+
+@media screen and (max-width: 850px) {
+  .loginInput {
+    font-size: 14px;
+    padding: 10px;
+    width: 275px;
+  }
+}
+
+.loginInput:focus {
+  outline: 0;
+  border-bottom: 3px solid black;
+}
+
+.submitInput {
+  display: none;
+}
+
+.submitLabel {
+  display: block;
+  background-color: rgb(106 101 255);
+  border: 0;
+  width: max-content;
+  padding: 10px 50px;
+  margin: 0 auto;
+  border-radius: 5px;
+  margin-top: 30px;
+  cursor: pointer;
+  position: relative;
+}
+
+@media screen and (max-width: 850px) {
+  .submitLabel {
+    padding: 10px 30px;
+  }
+}
+
+.submitLabel span {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+@media screen and (max-width: 850px) {
+  .submitLabel span {
+    font-size: 14px;
+  }
+}
+
+.submitLabel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  background-color: black;
+  transition-duration: 0.5s;
+  border-radius: 5px 0 0 5px;
+}
+
+.submitLabel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  background-color: black;
+  transition-duration: 0.5s;
+  border-radius: 0 5px 5px 0;
+}
+
+.submitLabel:hover::after,
+.submitLabel:hover::before {
+  width: 60%;
+}
+
+.submitLabel:hover span {
+  color: white;
+}
+
+.forgetPasswordContainer {
+  text-align: right;
+  width: 360px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 850px) {
+  .forgetPasswordContainer {
+    width: 275px;
+  }
+}
+
+.forgetPasswordContainer a,
+.forgetPasswordContainer a:visited {
+  color: rgb(106 101 255);
+  font-size: 16px;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 850px) {
+  .forgetPasswordContainer a {
+    font-size: 14px;
+  }
+}
+
+.footerContainer {
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 850px) {
+  .footerContainer {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+}
+
+.footerContainer a,
+.footerContainer a:visited {
+  color: rgb(106 101 255);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 850px) {
+  .footerContainer a {
+    font-size: 14px;
+  }
+}
+
+.footerContainer a:hover {
+  color: black;
+}

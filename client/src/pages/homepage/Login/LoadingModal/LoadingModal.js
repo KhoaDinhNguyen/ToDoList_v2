@@ -1,4 +1,4 @@
-import Modal from "../../../components/utils/Modal/Modal";
+import Modal from "../../../../components/utils/Modal/Modal";
 import ClipLoader from "react-spinners/ClipLoader";
 
 import styles from "./LoadingModal.module.css";

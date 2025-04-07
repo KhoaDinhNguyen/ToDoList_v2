@@ -1,5 +1,5 @@
-import Modal from "../../../components/utils/Modal/Modal";
-import { Success2SVG } from "../../../components/utils/SVG";
+import Modal from "../../../../components/utils/Modal/Modal";
+import { Success2SVG } from "../../../../components/utils/SVG";
 import styles from "./SuccessModal.module.css";
 
 function SuccessModal({ visible }) {

@@ -1,5 +1,5 @@
-import Modal from "../../../components/utils/Modal/Modal";
-import { Error2SVG } from "../../../components/utils/SVG";
+import Modal from "../../../../components/utils/Modal/Modal";
+import { Error2SVG } from "../../../../components/utils/SVG";
 
 import styles from "./FailModal.module.css";
 
