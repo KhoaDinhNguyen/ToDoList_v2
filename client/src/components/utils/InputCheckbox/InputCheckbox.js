@@ -9,6 +9,7 @@ function InputCheckBox({
   checked,
 }) {
   const requiredModifers = required == null ? false : required;
+
   return (
     <div className={containerStyle}>
       {labelText !== null && labelText !== "" && (
