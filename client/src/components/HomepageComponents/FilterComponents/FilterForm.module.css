@@ -1,0 +1,9 @@
+.rootContainer {
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 499px) {
+  .title {
+    font-size: 16px;
+  }
+}

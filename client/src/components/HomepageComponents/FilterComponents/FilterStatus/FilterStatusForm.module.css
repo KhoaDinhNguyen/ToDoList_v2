@@ -1,0 +1,45 @@
+.rootContainer {
+  margin-top: 5px;
+}
+
+.title {
+  margin-bottom: -5px;
+}
+
+.statusContainers {
+  display: flex;
+  margin: 5px 0;
+  max-width: 250px;
+  flex-flow: row wrap;
+  align-content: center;
+}
+
+.statusContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.statusInput {
+  height: 18px;
+  width: 18px;
+  margin-right: 2px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 499px) {
+  .statusInput {
+    height: 15px;
+    width: 15px;
+  }
+}
+
+.statusInput:checked {
+  accent-color: #0077b6;
+}
+
+.statusLabel {
+  margin-right: 10px;
+  font-size: 14px;
+}

@@ -1,6 +1,10 @@
-@media screen and (max-width : 499px) {
-  .label{
-      margin-left: 0;
+.label {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 499px) {
+  .label {
+    margin-left: 0;
   }
 }
 
@@ -18,14 +22,14 @@
   cursor: pointer;
 }
 
-@media screen and (max-width : 499px) {
+@media screen and (max-width: 499px) {
   .clearButton {
-      font-size: 10px;
+    font-size: 10px;
   }
 }
 
-
-.clearButton:hover, .clearButton:active {
+.clearButton:hover,
+.clearButton:active {
   transform: translate(0, 5px);
   box-shadow: 0px 0px #023e8a;
 }

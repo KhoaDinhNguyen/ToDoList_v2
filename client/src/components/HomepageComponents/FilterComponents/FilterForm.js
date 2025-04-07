@@ -7,6 +7,8 @@ import FilterStar from "./FilterStar/FilterStar";
 
 import filterButton from "../../../asset/img/filterButton.png";
 
+import styles from "./FilterForm.module.css";
+
 import {
   filterStatusSlice,
   filterImportantSlice,
@@ -51,14 +53,9 @@ function FilterForm() {
     setImporantFilter(!importantFilter);
   };
 
-  const onClickFilter = () => {
-    dispatch(filterAndSortFormSlice.actions.toggle());
-  };
-
   return (
-    <div id="filterForm">
-      <h3>Filter</h3>
-      <h4>Star</h4>
+    <div className={styles.rootContainer}>
+      <h3 className={styles.title}>Filter</h3>
       <FilterStar
         id={"star"}
         onChangeImportantFilter={onChangeStar}
@@ -66,9 +63,6 @@ function FilterForm() {
       />
       <FilterStatusForm setStatusFilter={setStatusFilter} />
       <FilterDate setDateFilter={setDateFilter} />
-      <button id="filterButton" onClick={onClickFilter}>
-        <img src={filterButton} alt="Filter" title="Filter" />
-      </button>
     </div>
   );
 }

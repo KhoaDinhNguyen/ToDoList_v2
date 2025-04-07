@@ -1,4 +1,4 @@
-import InputCheckBox from "../../../utils/InputCheckbox/InputCheckbox";
+import InputCheckBox from "../../../utils/InputCheckBox/InputCheckBox";
 
 import styles from "./SortTaskName.module.css";
 

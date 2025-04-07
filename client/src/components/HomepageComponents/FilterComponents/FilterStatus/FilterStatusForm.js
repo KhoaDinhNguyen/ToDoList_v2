@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
+import InputCheckBox from "../../../utils/InputCheckBox/InputCheckBox";
+
 //import "../../styles/components/FilterForm.css";
+import styles from "./FilterStatusForm.module.css";
 
 function FilterStatusForm(props) {
   const dispatch = useDispatch();
@@ -39,54 +42,47 @@ function FilterStatusForm(props) {
   }, [pending, fulfilled, failing, dispatch, setStatusFilter]);
 
   return (
-    <>
-      <div id="statusFilter">
-        <h4>Status</h4>
-        <div id="statusList">
-          <div className="statusBox">
-            <input
-              type="checkbox"
-              id="pendingFitler"
-              name="pendingFitler"
-              checked={pending}
-              onChange={onChangePending}
-            />
-            <label htmlFor="pendingFitler">Pending</label>
-          </div>
-          <div className="statusBox">
-            <input
-              type="checkbox"
-              id="fulfilledFilter"
-              name="fulfilledFilter"
-              checked={fulfilled}
-              onChange={onChangeFulfilled}
-            />
-            <label htmlFor="fulfilledFilter">Fulfilled</label>
-          </div>
-          <div className="statusBox">
-            <input
-              type="checkbox"
-              id="failingFilter"
-              name="failingFilter"
-              checked={failing}
-              onChange={onChangeFailing}
-            />
-            <label htmlFor="failingFilter">Failing</label>
-          </div>
-          <div className="statusBox">
-            <input
-              type="checkbox"
-              id="allStatus"
-              name="allStatus"
-              value="allStatus"
-              checked={allStatus}
-              onChange={onChangeAllStatus}
-            />
-            <label htmlFor="allStatus">All apply</label>
-          </div>
-        </div>
+    <div className={styles.rootContainer}>
+      <h4 className={styles.title}>Status</h4>
+      <div className={styles.statusContainers}>
+        <InputCheckBox
+          id="pendingFilter"
+          labelText="Pending"
+          checked={pending}
+          onChangeHandler={onChangePending}
+          containerStyle={styles.statusContainer}
+          inputStyle={styles.statusInput}
+          labelStyle={styles.statusLabel}
+        />
+        <InputCheckBox
+          id="fulfilledFilter"
+          labelText="Fulfilled"
+          checked={fulfilled}
+          onChangeHandler={onChangeFulfilled}
+          containerStyle={styles.statusContainer}
+          inputStyle={styles.statusInput}
+          labelStyle={styles.statusLabel}
+        />
+        <InputCheckBox
+          id="failingFilter"
+          labelText="Failing"
+          checked={failing}
+          onChangeHandler={onChangeFailing}
+          containerStyle={styles.statusContainer}
+          inputStyle={styles.statusInput}
+          labelStyle={styles.statusLabel}
+        />
+        <InputCheckBox
+          id="allStatus"
+          checked={allStatus}
+          labelText="All apply"
+          onChangeHandler={onChangeAllStatus}
+          containerStyle={styles.statusContainer}
+          inputStyle={styles.statusInput}
+          labelStyle={styles.statusLabel}
+        />
       </div>
-    </>
+    </div>
   );
 }
 
