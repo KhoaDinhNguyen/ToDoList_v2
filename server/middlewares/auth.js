@@ -3,8 +3,8 @@ const util = require("util");
 
 const isAuth = async (req, res, next) => {
   const { user } = req.params;
-  console.log(req.params);
-  console.log(req.headers.authorization);
+  // console.log(req.params);
+  // console.log(req.headers.authorization);
   if (
     !(
       req.headers.authorization &&
@@ -22,8 +22,8 @@ const isAuth = async (req, res, next) => {
       process.env.JWT_SECRET
     );
     // check if user still exists (by database)
-    console.log(decoded.id);
-    console.log(user);
+    // console.log(decoded.id);
+    // console.log(user);
     if (decoded.id !== user) {
       throw new Error("Unauthorizaion");
     }

@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 
 import { fetchUserUpdate } from "../../../API/userAPI";
 import { profileNameSlice } from "../../../redux/databaseSlice";
-//import "../../styles/components/ProfileName.css";
 
 import styles from "./ProfileName.module.css";
 import InputText from "../../utils/InputText/InputText";
@@ -39,27 +38,6 @@ function ProfileName() {
     setFormVisble(false);
   };
   return (
-    // <>
-    //   <form onSubmit={onSubmitChangeProfileForm} id="profileNameForm">
-    //     <fieldset>
-    //       <legend>Profile name</legend>
-    //       <p>Profile name: {profileName}</p>
-    //       <div className="userProfileInput">
-    //         <label htmlFor="newProfileName">New profile name:</label>
-    //         <input
-    //           type="text"
-    //           id="newProfileName"
-    //           name="newProfileName"
-    //           value={newProfileName}
-    //           onChange={onChangeNewProfileName}
-    //         />
-    //       </div>
-    //       <div id="profileNameButton">
-    //         <input type="submit" value="Apply" />
-    //       </div>
-    //     </fieldset>
-    //   </form>
-    // </>
     <div className={styles.rootContanier}>
       <div className={styles.infoContainer}>
         <div>
@@ -82,8 +60,19 @@ function ProfileName() {
         )}
       </div>
       <div className={styles.buttonsContainer}>
-        <button onClick={onClickEditHandler}>Edit</button>
-        <button onClick={onSubmitChangeProfileForm}>Save changes</button>
+        {formVisble && (
+          <button
+            onClick={onSubmitChangeProfileForm}
+            className={styles.submitButton}
+          >
+            <p>Save changes</p>
+          </button>
+        )}
+        {!formVisble && (
+          <button onClick={onClickEditHandler} className={styles.editButton}>
+            <p>Edit</p>
+          </button>
+        )}
       </div>
     </div>
   );

@@ -46,7 +46,6 @@ function User() {
   const [loadingDatabase, setLoadingDatabase] = useState(false);
   const [message, setMessage] = useState("");
   const accountName = params.username;
-  //const accountNameAuthen = localStorage.getItem("accountName");
 
   const onClickNavigationBarDisplay = () => {
     setNavigationBarDisplay(!navigationBarDisplay);

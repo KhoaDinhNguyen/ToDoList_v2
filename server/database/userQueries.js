@@ -1,4 +1,5 @@
 const pool = require("./database");
+const bcrypt = require("bcrypt");
 
 const getUserDatabase = (req, res, next) => {
   const accountName = req.params.user;
@@ -63,23 +64,30 @@ const getUserDatabase = (req, res, next) => {
   );
 };
 
-const updateUser = (req, res, next) => {
+const updateUser = async (req, res, next) => {
   const accountName = req.params.user;
   const type = req.query.type;
   if (type === "password") {
-    const { newPassword } = req.body;
-    pool.query(
-      `CALL change_password('${accountName}', '${newPassword}');`,
-      (err, result) => {
-        if (err) {
-          res.status(404).json({ message: err.message, error: true });
-        } else {
-          res
-            .status(200)
-            .json({ message: "Change password successfully", error: false });
+    try {
+      const { newPassword } = req.body;
+      const salt = await bcrypt.genSalt(10);
+      const hashedPassword = await bcrypt.hash(newPassword, salt);
+
+      pool.query(
+        `CALL change_password('${accountName}', '${hashedPassword}');`,
+        (err, result) => {
+          if (err) {
+            res.status(404).json({ message: err.message, error: true });
+          } else {
+            res
+              .status(200)
+              .json({ message: "Change password successfully", error: false });
+          }
         }
-      }
-    );
+      );
+    } catch (err) {
+      console.log(err);
+    }
   } else if (type === "profileName") {
     const { newProfileName } = req.body;
     pool.query(
