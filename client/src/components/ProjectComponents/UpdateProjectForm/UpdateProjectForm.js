@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { projectsSlice, tasksSlice } from "../../../redux/databaseSlice";
+import { userSlice } from "../../../redux/userSlice";
 import { fetchUpdateProject } from "../../../API/projectAPI";
 import InputText from "../../utils/InputText/InputText";
 import InputButton from "../../utils/InputButton/InputButton";
@@ -18,7 +19,7 @@ function UpdateProjectForm(props) {
 
   const dispatch = useDispatch();
 
-  const accountName = localStorage.getItem("accountName");
+  const accountName = useSelector((state) => state[userSlice]);
 
   const onClickCancel = () => {
     setEditDisplay(false);

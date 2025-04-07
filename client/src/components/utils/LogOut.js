@@ -8,7 +8,6 @@ function LogOut(props) {
   const navigate = useNavigate();
 
   const onClickLogOut = () => {
-    //localStorage.clear();
     cookies.remove("jwt");
     navigate("/homepage/login");
   };

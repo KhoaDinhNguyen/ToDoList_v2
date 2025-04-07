@@ -1,5 +1,5 @@
 import { createSearchParams } from "react-router-dom";
-
+import { cookies } from "../App";
 const fetchDeleteProject = async (accountName, projectName) => {
   const environment = process.env.NODE_ENV;
   const deleteProjectAPI =
@@ -12,12 +12,14 @@ const fetchDeleteProject = async (accountName, projectName) => {
   const searchQueryString = createSearchParams(searchQueryParams);
   const endpoint = `${deleteProjectAPI}/${accountName}?${searchQueryString}`;
 
+  const myHeaders = new Headers();
+  myHeaders.append("Authorization", "Bearer " + cookies.get("jwt"));
+  myHeaders.append("Content-type", "application/json");
+
   try {
     const jsonResponse = await fetch(endpoint, {
       method: "DELETE",
-      headers: {
-        "Content-type": "application/json",
-      },
+      headers: myHeaders,
     });
 
     const response = jsonResponse.json();
@@ -42,13 +44,15 @@ const fetchCreateProject = async (
   const endpoint = `${createProjectAPI}/${accountName}`;
   const body = JSON.stringify({ projectName, projectDescription });
 
+  const myHeaders = new Headers();
+  myHeaders.append("Authorization", "Bearer " + cookies.get("jwt"));
+  myHeaders.append("Content-type", "application/json");
+
   try {
     const jsonResponse = await fetch(endpoint, {
       method: "POST",
       body: body,
-      headers: {
-        "Content-type": "application/json",
-      },
+      headers: myHeaders,
     });
 
     const response = await jsonResponse.json();
@@ -82,13 +86,15 @@ const fetchUpdateProject = async (
   const searchQueryString = createSearchParams(searchQueryParams);
   const endpoint = `${updateProjectAPI}/${accountName}?${searchQueryString}`;
 
+  const myHeaders = new Headers();
+  myHeaders.append("Authorization", "Bearer " + cookies.get("jwt"));
+  myHeaders.append("Content-type", "application/json");
+
   try {
     const jsonResponse = await fetch(endpoint, {
       method: "PUT",
       body: JSON.stringify(bodyInfo),
-      headers: {
-        "Content-type": "application/json",
-      },
+      headers: myHeaders,
     });
 
     const response = await jsonResponse.json();

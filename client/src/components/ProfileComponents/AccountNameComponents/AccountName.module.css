@@ -1,0 +1,15 @@
+.rootContainer {
+  width: 800px;
+  padding: 20px 0px;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  align-items: center;
+}
+
+.title {
+  font-size: 18px;
+}
+
+.info {
+  padding: 10px;
+}

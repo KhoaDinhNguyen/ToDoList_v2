@@ -1,5 +1,5 @@
 import { createSearchParams } from "react-router-dom";
-
+import { cookies } from "../App";
 const fetchTaskCreate = async (
   accountName,
   projectName,
@@ -12,6 +12,10 @@ const fetchTaskCreate = async (
     process.env[`REACT_APP_CREATE_TASK_API_URL_${environment.toUpperCase()}`];
   const createTaskEndpointAPI = `${createTaskAPI}/${accountName}`;
 
+  const myHeaders = new Headers();
+  myHeaders.append("Authorization", "Bearer " + cookies.get("jwt"));
+  myHeaders.append("Content-type", "application/json");
+
   try {
     const jsonResponse = await fetch(createTaskEndpointAPI, {
       method: "POST",
@@ -21,9 +25,7 @@ const fetchTaskCreate = async (
         taskDescription,
         taskTimeDeadline,
       }),
-      headers: {
-        "Content-type": "application/json",
-      },
+      headers: myHeaders,
     });
     const response = await jsonResponse.json();
     return response;
@@ -42,15 +44,17 @@ const fetchTaskDelete = async (accountName, projectName, taskName) => {
     projectName,
   };
 
+  const myHeaders = new Headers();
+  myHeaders.append("Authorization", "Bearer " + cookies.get("jwt"));
+  myHeaders.append("Content-type", "application/json");
+
   const searchQueryString = createSearchParams(searchQueryParams);
   const deleteTaskEndpoint = `${deleteTaskAPI}/${accountName}?${searchQueryString}`;
 
   try {
     const jsonRespnse = await fetch(deleteTaskEndpoint, {
       method: "DELETE",
-      headers: {
-        "Content-type": "application/json",
-      },
+      headers: myHeaders,
     });
     const response = await jsonRespnse.json();
 
@@ -73,12 +77,14 @@ const fetchTaskUpdate = async (taskInfo, type) => {
     newImportantStatus,
   });
 
+  const myHeaders = new Headers();
+  myHeaders.append("Authorization", "Bearer " + cookies.get("jwt"));
+  myHeaders.append("Content-type", "application/json");
+
   try {
     const jsonRespone = await fetch(endpoint, {
       method: "PUT",
-      headers: {
-        "Content-type": "application/json",
-      },
+      headers: myHeaders,
       body: body,
     });
 
@@ -115,12 +121,14 @@ const fetchTaskUpdateAPI = async (bodyObject, type, accountName) => {
 
   const body = JSON.stringify(bodyObject);
 
+  const myHeaders = new Headers();
+  myHeaders.append("Authorization", "Bearer " + cookies.get("jwt"));
+  myHeaders.append("Content-type", "application/json");
+
   try {
     const jsonRespone = await fetch(endpoint, {
       method: "PUT",
-      headers: {
-        "Content-type": "application/json",
-      },
+      headers: myHeaders,
       body: body,
     });
 

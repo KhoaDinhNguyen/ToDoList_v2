@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { useSelector } from "react-redux";
+import { userSlice } from "../../../redux/userSlice";
 import ProjectHeader from "../ProjectHeader/ProjectHeader";
 import ProjectForm from "../ProjectForm/ProjectForm";
 import ArrayTasks from "../ArrayTasks/ArrayTasks";
@@ -22,7 +24,7 @@ function Project(props) {
     useState(false);
   const [taskListDisplay, setTaskListDisplay] = useState(true);
   const { projectName } = project;
-  const accountName = localStorage.getItem("accountName");
+  const accountName = useSelector((state) => state[userSlice.name]);
 
   const onClickTaskListDisplay = () => {
     setTaskListDisplay(!taskListDisplay);

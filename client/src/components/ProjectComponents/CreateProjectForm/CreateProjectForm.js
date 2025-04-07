@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 
 import { projectsSlice } from "../../../redux/databaseSlice.js";
+import { userSlice } from "../../../redux/userSlice.js";
 import { fetchCreateProject } from "../../../API/projectAPI.js";
 import {
   convertDateToISOString,
@@ -36,7 +37,7 @@ function CreateProjectForm() {
     dispatch(createProjectFormSlice.actions.setState(false));
   };
 
-  const accountName = localStorage.getItem("accountName");
+  const accountName = useSelector((state) => state[userSlice.name]);
   const today = new Date();
   const todayString = convertDateToISOString(today);
 

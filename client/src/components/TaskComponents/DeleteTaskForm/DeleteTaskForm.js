@@ -1,15 +1,15 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { fetchTaskDelete } from "../../../API/taskAPI";
 import { tasksSlice } from "../../../redux/databaseSlice";
-
+import { userSlice } from "../../../redux/userSlice";
 import styles from "./DeleteTaskForm.module.css";
 
 function DeleteTaskForm(props) {
   const dispatch = useDispatch();
   const { task, display, setDeleteDisplay, setTaskDetailDisplay } = props;
   const { taskName, projectName } = task;
-  const accountName = localStorage.getItem("accountName");
+  const accountName = useSelector((state) => state[userSlice.name]);
 
   const onClickDeleteTaskButton = () => {
     fetchTaskDelete(accountName, projectName, taskName)

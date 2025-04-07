@@ -9,28 +9,12 @@ const fetchUserDatabase = async (accountName, limitTime) => {
       `REACT_APP_GET_USER_DATABASE_API_URL_${environment.toUpperCase()}`
     ];
   const getUserEndpoint = `${getUserDatabaseAPI}/${accountName}`;
-  // console.log(getUserEndpoint);
-  // console.log("Bearer " + cookies.get("jwt"));
+
   const myHeaders = new Headers();
   myHeaders.append("Authorization", "Bearer " + cookies.get("jwt"));
   myHeaders.append("Content-type", "application/json");
 
-  // fetch(getUserEndpoint, {
-  //   method: "GET",
-  //   headers: myHeaders,
-  // })
-  //   .then(async (jsonResponse) => {
-  //     if (!jsonResponse.ok) {
-  //       throw new Error();
-  //     }
-  //     return jsonResponse.json().then((response) => response);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
-
   try {
-    //console.log("LET's GO");
     const jsonResponse = await fetch(getUserEndpoint, {
       method: "GET",
       headers: myHeaders,
@@ -76,13 +60,15 @@ const fetchUserUpdate = async (
     body.newProfileName = newProfileName;
   }
 
+  const myHeaders = new Headers();
+  myHeaders.append("Authorization", "Bearer " + cookies.get("jwt"));
+  myHeaders.append("Content-type", "application/json");
+
   try {
     const jsonResponse = await fetch(updateUserEndpoint, {
       method: "PUT",
       body: JSON.stringify(body),
-      headers: {
-        "Content-type": "application/json",
-      },
+      headers: myHeaders,
     });
 
     const response = await jsonResponse.json();

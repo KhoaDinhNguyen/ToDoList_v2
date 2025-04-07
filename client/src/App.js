@@ -13,13 +13,14 @@ import Login from "./pages/homepage/Login/Login";
 import SignUp from "./pages/homepage/SignUp/SignUp";
 import PageNotFound from "./pages/homepage/PageNotFound";
 import ForgetPassword from "./pages/homepage/ForgetPassword";
-import UserCalendar from "./pages/user/UserCalendar";
+
 import AboutUs from "./pages/homepage/AboutUs";
 import HomePage from "./pages/homepage/Homepage";
 
 import User from "./pages/user/User";
 import UserHomepage from "./pages/user/UserHomepage/UserHomepage";
-import UserDashboard from "./pages/user/UserDashboard";
+import UserDashboard from "./pages/user/UserDashboard/UserDashboard";
+import UserCalendar from "./pages/user/UserCalendar/UserCalendar";
 import UserProfile from "./pages/user/UserProfile";
 
 export const cookies = new Cookies();

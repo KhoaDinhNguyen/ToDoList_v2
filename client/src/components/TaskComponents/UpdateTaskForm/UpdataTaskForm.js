@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { tasksSlice } from "../../../redux/databaseSlice";
 import { featchTaskUpdateInfo } from "../../../API/taskAPI";
@@ -7,7 +7,7 @@ import InputText from "../../utils/InputText/InputText";
 import InputDate from "../../utils/InputDate/InputDate";
 import InputButton from "../../utils/InputButton/InputButton";
 import { convertDateToISOString } from "../../../pages/user/User";
-
+import { userSlice } from "../../../redux/userSlice";
 import styles from "./UpdateTaskForm.module.css";
 
 function UpdateTaskForm(props) {
@@ -24,9 +24,8 @@ function UpdateTaskForm(props) {
   const [newTaskTimeDeadline, setNewTaskTimeDeadline] =
     useState(taskTimeDeadline);
 
-  const accountName = localStorage.getItem("accountName");
   const dispatch = useDispatch();
-
+  const accountName = useSelector((state) => state[userSlice.name]);
   const onClickCancle = () => {
     setEditDisplay(false);
     setTaskDetailDisplay(false);

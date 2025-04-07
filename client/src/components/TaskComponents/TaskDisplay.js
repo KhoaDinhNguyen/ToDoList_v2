@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { convertDateToISOString } from "../../pages/user/User";
 import { fetchTaskUpdate } from "../../API/taskAPI";
@@ -7,7 +7,7 @@ import { tasksSlice } from "../../redux/databaseSlice";
 import TaskDisplayCalendar from "./TaskDisplayCalendar/TaskDisplayCalendar";
 import TaskDisplayDashboard from "./TaskDisplayDashboard/TaskDisplayDashboard";
 import TaskDisplayHomepage from "./TaskDisplayHomepage/TaskDisplayHomepage";
-
+import { userSlice } from "../../redux/userSlice";
 //import "../../styles/components/taskDisplay.css";
 
 function TaskDisplay(props) {
@@ -17,11 +17,10 @@ function TaskDisplay(props) {
   const [currentStatus, setCurrentStatus] = useState(taskStatus);
   const [taskDetailDisplay, setTaskDetailDisplay] = useState(false);
   const [currentImportant, setCurrentImportant] = useState(taskImportant);
-  const accountName = localStorage.getItem("accountName");
   const [deleteDisplay, setDeleteDisplay] = useState(false);
   const [editDisplay, setEditDisplay] = useState(false);
   const [taskDescriptionDisplay, setTaskDescriptionDisplay] = useState(false);
-
+  const accountName = useSelector((state) => state[userSlice.name]);
   const dispatch = useDispatch();
 
   const today = new Date();

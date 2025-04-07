@@ -1,0 +1,32 @@
+.rootContainer {
+  width: 800px;
+}
+
+.infoContainer {
+  width: 800px;
+  padding: 20px 0px;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  align-items: center;
+}
+
+.title {
+  font-size: 18px;
+}
+
+.info {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.profileInput {
+  padding: 10px;
+  width: 500px;
+  font-size: 16px;
+}
+
+.buttonsContainer {
+  width: 750px;
+  display: flex;
+  justify-content: flex-end;
+}

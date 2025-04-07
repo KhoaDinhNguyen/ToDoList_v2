@@ -1,23 +1,22 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { tasksSlice } from "../../../redux/databaseSlice";
+import { userSlice } from "../../../redux/userSlice";
 import { fetchTaskCreate } from "../../../API/taskAPI";
 import { convertDateToISOString } from "../../../pages/user/User";
 import { convertFromBooleanToDisplay } from "../../../pages/user/User";
 import InputText from "../../utils/InputText/InputText";
 import InputDate from "../../utils/InputDate/InputDate";
 import InputButton from "../../utils/InputButton/InputButton";
-import Modal from "../../utils/Modal/Modal";
 
 import styles from "./CreateTaskForm.module.css";
 
 function CreateTaskForm(props) {
   const dispatch = useDispatch();
   const { projectName } = props;
-  const accountName = localStorage.getItem("accountName");
   const today = new Date();
-
+  const accountName = useSelector((state) => state[userSlice.name]);
   const [createTaskFormDisplay, setCreateTaskFormDisplay] = useState(false);
   const [taskName, setTaskName] = useState("");
   const [taskDescription, setTaskDescription] = useState("");

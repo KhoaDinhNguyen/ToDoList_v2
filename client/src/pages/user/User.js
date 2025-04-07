@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { Footer } from "../homepage/Homepage.js";
 import { fetchUserDatabase } from "../../API/userAPI.js";
-
+import { userSlice } from "../../redux/userSlice.js";
 import { cookies } from "../../App.js";
 import {
   profileNameSlice,
@@ -66,6 +66,7 @@ function User() {
           dispatch(
             profileNameSlice.actions.assignName(response[0].profileName)
           );
+          dispatch(userSlice.actions.apply(accountName));
           setLoadingDatabase(false);
           navigate("homepage");
         })

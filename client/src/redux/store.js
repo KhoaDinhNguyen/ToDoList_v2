@@ -1,5 +1,6 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { projectsSlice, tasksSlice, profileNameSlice } from "./databaseSlice";
+import { userSlice } from "./userSlice";
 import {
   searchSlice,
   createProjectFormSlice,
@@ -16,6 +17,8 @@ import {
 } from "./utilsSlice";
 
 const reducers = {
+  [userSlice.name]: userSlice.reducer,
+
   [projectsSlice.name]: projectsSlice.reducer,
   [tasksSlice.name]: tasksSlice.reducer,
   [profileNameSlice.name]: profileNameSlice.reducer,
