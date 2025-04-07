@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import { filterAndSortFormSlice } from "../../../../redux/utilsSlice";
 
 import filterButton from "../../../../asset/img/filterButton.png";
+import { FilterSVG } from "../../../utils/SVG";
 
 import styles from "./FilterButton.module.css";
 
@@ -14,12 +15,7 @@ function FilterButton() {
 
   return (
     <button className={styles.rootContainer} onClick={onClickFilter}>
-      <img
-        src={filterButton}
-        alt="Filter"
-        title="Filter"
-        className={styles.image}
-      />
+      <FilterSVG />
     </button>
   );
 }

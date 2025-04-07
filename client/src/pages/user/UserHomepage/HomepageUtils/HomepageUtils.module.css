@@ -1,0 +1,13 @@
+.rootContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
+  height: 90px;
+}
+
+@media screen and (max-width: 499px) {
+  .rootContainer {
+    justify-content: center;
+  }
+}

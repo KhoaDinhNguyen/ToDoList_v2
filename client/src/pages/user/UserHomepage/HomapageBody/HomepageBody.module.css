@@ -1,0 +1,5 @@
+.rootContainer {
+  min-width: 275px;
+  display: flex;
+  justify-content: center;
+}

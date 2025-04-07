@@ -1,11 +1,11 @@
 import ArrayProjects from "../../../../components/ProjectComponents/ArrayProjects";
 
+import styles from "./HomepageBody.module.css";
+
 function HomepageBody() {
   return (
-    <div id="userHomepageBody">
-      <div id="userHomepageMain">
-        <ArrayProjects />
-      </div>
+    <div className={styles.rootContainer}>
+      <ArrayProjects />
     </div>
   );
 }

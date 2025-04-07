@@ -9,6 +9,21 @@
   background-color: #fff;
   cursor: pointer;
   margin-right: 10px;
+  position: relative;
+  z-index: 1;
+  transition-duration: 500ms;
+}
+
+.rootContainer:hover {
+  background-color: black;
+}
+
+.rootContainer path {
+  transition-duration: 500ms;
+}
+
+.rootContainer:hover path {
+  fill: white;
 }
 
 @media screen and (max-width: 499px) {
@@ -17,9 +32,4 @@
     height: 35px;
     justify-self: center;
   }
-}
-
-.image {
-  width: 25px;
-  height: 25px;
 }
