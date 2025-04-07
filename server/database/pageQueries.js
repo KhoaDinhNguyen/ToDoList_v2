@@ -68,7 +68,7 @@ const validateAccountName = async (req, res, next) => {
           // console.log(cookieOptions);
           const token = signToken(accountName);
           //res.cookie("jwt", token, cookieOptions);
-          console.log(token);
+          //console.log(token);
           res.status(200).json({
             ...result.rows[0],
             message: "Found",
@@ -125,7 +125,7 @@ const verifyToken = async (req, res, next) => {
   const token = req.headers.authorization.split(" ")[1];
   // verify token
   try {
-    console.log(process.env.JWT_SECRET);
+    //console.log(process.env.JWT_SECRET);
     const decoded = await util.promisify(jwt.verify)(
       token,
       process.env.JWT_SECRET

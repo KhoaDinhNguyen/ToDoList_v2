@@ -56,8 +56,8 @@ const getUserDatabase = (req, res, next) => {
         }
       }
 
-      console.log("Success");
-      console.log(database.length);
+      //console.log("Success");
+      //console.log(database.length);
       return res.status(200).json(database);
     }
   );
