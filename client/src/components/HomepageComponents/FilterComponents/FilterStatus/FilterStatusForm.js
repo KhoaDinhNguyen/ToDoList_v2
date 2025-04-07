@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
 import InputCheckBox from "../../../utils/InputCheckBox/InputCheckBox";
-
 //import "../../styles/components/FilterForm.css";
 import styles from "./FilterStatusForm.module.css";
 
