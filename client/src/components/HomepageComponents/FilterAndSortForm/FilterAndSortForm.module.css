@@ -1,0 +1,18 @@
+.rootContainer {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: max-content;
+  background-color: #fff;
+  padding: 50px;
+  border-radius: 20px;
+  border: 3px solid black;
+}
+
+@media screen and (max-width: 499px) {
+  .rootContainer {
+    width: 90%;
+    flex-flow: column;
+    padding: 10px;
+  }
+}

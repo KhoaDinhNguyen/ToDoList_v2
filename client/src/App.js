@@ -18,7 +18,7 @@ import AboutUs from "./pages/homepage/AboutUs";
 import HomePage from "./pages/homepage/Homepage";
 
 import User from "./pages/user/User";
-import UserHomepage from "./pages/user/UserHomepage";
+import UserHomepage from "./pages/user/UserHomepage/UserHomepage";
 import UserDashboard from "./pages/user/UserDashboard";
 import UserProfile from "./pages/user/UserProfile";
 

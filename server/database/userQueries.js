@@ -2,7 +2,7 @@ const pool = require("./database");
 
 const getUserDatabase = (req, res, next) => {
   const accountName = req.params.user;
-  console.log(accountName);
+  //console.log(accountName);
   pool.query(
     `SELECT * FROM get_user_database('${accountName}');`,
     (err, result) => {

@@ -1,12 +1,12 @@
 import { useSelector } from "react-redux";
 
-import FilterForm from "../HomepageComponents/FilterComponents/FilterForm";
-import SortForm from "../HomepageComponents/SortComponents/SortForm";
+import FilterForm from "../FilterComponents/FilterForm";
+import SortForm from "../SortComponents/SortForm";
 
-import { filterAndSortFormSlice } from "../../redux/utilsSlice";
-import { convertFromBooleanToDisplay } from "../../pages/user/User";
+import { filterAndSortFormSlice } from "../../../redux/utilsSlice";
+import { convertFromBooleanToDisplay } from "../../../pages/user/User";
 
-import "../../styles/components/FilterAndSort.css";
+import styles from "./FilterAndSortForm.module.css";
 
 function FilterAndSortForm() {
   const filterAndSortDisplay = useSelector(
@@ -15,7 +15,7 @@ function FilterAndSortForm() {
 
   return (
     <div style={{ display: convertFromBooleanToDisplay(filterAndSortDisplay) }}>
-      <div id="filterAndSortForm">
+      <div className={styles.rootContainer}>
         <FilterForm />
         <SortForm />
       </div>

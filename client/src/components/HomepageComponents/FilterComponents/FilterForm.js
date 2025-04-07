@@ -5,8 +5,6 @@ import { FilterStatusForm } from "./FilterStatus/FilterStatusForm";
 import FilterDate from "./FliterDate/FilterDate";
 import FilterStar from "./FilterStar/FilterStar";
 
-import filterButton from "../../../asset/img/filterButton.png";
-
 import styles from "./FilterForm.module.css";
 
 import {
@@ -16,10 +14,7 @@ import {
   filterTimeCreatedToSlice,
   filterTimeDeadlineFromSlice,
   filterTimeDeadlineToSlice,
-  filterAndSortFormSlice,
 } from "../../../redux/utilsSlice";
-
-//import "../../styles/components/FilterForm.css";
 
 function FilterForm() {
   const dispatch = useDispatch();
