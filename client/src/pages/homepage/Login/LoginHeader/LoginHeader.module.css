@@ -1,0 +1,58 @@
+.rootContainer {
+  grid-column: 1 / 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width : 499px) {
+  .rootContainer {
+      margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width : 499px) {
+  #loginIntroContext {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+#loginIntro h2 {
+  font-size: 35px;
+  width: 300px;
+  color: rgb(14 0 74);
+}
+
+@media screen and (max-width : 499px) {
+  #loginIntro h2 {
+      text-align: center;
+  }
+}
+
+@media screen and (max-width : 850px) {
+  #loginIntro h2 {
+      font-size: 25px;
+  }
+}
+
+#loginIntro p {
+  font-size: 18px;
+  width: 250px; 
+  margin-top: 20px;
+  color: rgb(69 56 120);
+}
+
+@media screen and (max-width : 850px) {
+  #loginIntro p {
+      font-size: 14px;
+  } 
+}
+
+@media screen and (max-width : 499px) {
+  #loginIntro img {
+      width: 128px;
+      height: 128px;
+  }
+}

@@ -8,6 +8,7 @@ import PasswordInput from "../../../components/utils/PasswordInput";
 
 import LoadingModal from "./LoadingModal";
 import SuccessModal from "./SuccessModal";
+import LoginHeader from "./LoginHeader/LoginHeader";
 import FailModal from "./FailModal";
 import { profileNameSlice } from "../../../redux/databaseSlice";
 import { fetchSignIn } from "../../../API/pageAPI";
@@ -26,27 +27,27 @@ function Login() {
         <title>Login | ToDo List</title>
       </Helmet>
       <div id="loginPage">
-        <LoginIntro />
+        <LoginHeader />
         <LoginMain />
       </div>
     </>
   );
 }
 
-function LoginIntro() {
-  return (
-    <div id="loginIntro">
-      <div id="loginIntroContext">
-        <h2>Elevate Your Task Management Effortlessly</h2>
-        <p>
-          Log in to continue the seamless journey with our intuitive app. Safe,
-          secure, and always at your service.
-        </p>
-        <img src={loginImg} alt="Login logo" />
-      </div>
-    </div>
-  );
-}
+// function LoginIntro() {
+//   return (
+//     <div id="loginIntro">
+//       <div id="loginIntroContext">
+//         <h2>Elevate Your Task Management Effortlessly</h2>
+//         <p>
+//           Log in to continue the seamless journey with our intuitive app. Safe,
+//           secure, and always at your service.
+//         </p>
+//         <img src={loginImg} alt="Login logo" />
+//       </div>
+//     </div>
+//   );
+// }
 
 function LoginMain() {
   const navigate = useNavigate();
@@ -65,7 +66,6 @@ function LoginMain() {
   const onChangePassword = (event) => {
     setPassword(event.target.value);
   };
-
   const onSubmitLogin = async (event) => {
     event.preventDefault();
     setLoading(true);

@@ -52,27 +52,34 @@ function User() {
   };
 
   useEffect(() => {
-    console.log(cookies.get("jwt"));
     if (!cookies.get("jwt") || cookies.get("jwt") === "") {
       alert("BAD CREDENTIAL. Please Log In");
       cookies.remove("jwt");
       navigate("/homepage");
+    } else {
+      fetchUserDatabase(accountName, 5)
+        .then((response) => {
+          dispatch(tasksSlice.actions.initialize(response));
+          dispatch(projectsSlice.actions.initialize(response));
+          dispatch(
+            profileNameSlice.actions.assignName(response[0].profileName)
+          );
+          navigate("homepage");
+        })
+        .catch((err) => {
+          console.log(err.message);
+          if (err.message === "Network failed") {
+            navigate("homepage");
+            console.log(
+              "Network failed, loading database is failed. Try reload the page again"
+            );
+          } else {
+            alert("BAD CREDENTIAL. Please Log In Your Account");
+            cookies.remove("jwt");
+            navigate("/homepage");
+          }
+        });
     }
-    //alert(cookies.get("jwt"));
-    fetchUserDatabase(accountName)
-      .then((response) => {
-        console.log(typeof response);
-        dispatch(tasksSlice.actions.initialize(response));
-        dispatch(projectsSlice.actions.initialize(response));
-        dispatch(profileNameSlice.actions.assignName(response[0].profileName));
-        navigate("homepage");
-      })
-      .catch((err) => {
-        alert("BAD CREDENTIAL. Please Log In Your Account");
-        cookies.remove("jwt");
-        navigate("/homepage");
-        console.log(err);
-      });
   }, [dispatch, navigate, accountName]);
 
   const linkIsActive = ({ isActive }) => {

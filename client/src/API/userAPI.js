@@ -1,7 +1,7 @@
 import { createSearchParams } from "react-router-dom";
 import { cookies } from "../App";
 
-const fetchUserDatabase = async (accountName) => {
+const fetchUserDatabase = async (accountName, limitTime) => {
   const environment = process.env.NODE_ENV;
 
   const getUserDatabaseAPI =
@@ -14,19 +14,45 @@ const fetchUserDatabase = async (accountName) => {
   const myHeaders = new Headers();
   myHeaders.append("Authorization", "Bearer " + cookies.get("jwt"));
   myHeaders.append("Content-type", "application/json");
-  //console.log(myHeaders);
+
+  // fetch(getUserEndpoint, {
+  //   method: "GET",
+  //   headers: myHeaders,
+  // })
+  //   .then(async (jsonResponse) => {
+  //     if (!jsonResponse.ok) {
+  //       throw new Error();
+  //     }
+  //     return jsonResponse.json().then((response) => response);
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   });
+
   try {
     console.log("LET's GO");
     const jsonResponse = await fetch(getUserEndpoint, {
       method: "GET",
       headers: myHeaders,
     });
+
+    if (!jsonResponse.ok) {
+      throw new Error(
+        await jsonResponse.json().then((response) => response.message)
+      );
+    }
     const response = await jsonResponse.json();
-    console.log(response);
+
     return response;
   } catch (err) {
-    console.log(err);
-    throw new Error();
+    console.log(err.message);
+    if (err.message === "Failed to fetch" && limitTime > 0) {
+      console.log("Network failed, restart the database loading");
+      return await fetchUserDatabase(accountName, limitTime - 1);
+    } else if (err.message === "Failed to fetch" && limitTime === 0) {
+      throw new Error("Network failed");
+    }
+    throw new Error(err);
   }
 };
 
