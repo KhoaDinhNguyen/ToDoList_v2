@@ -9,19 +9,19 @@ import {
 import { CookiesProvider, Cookies } from "react-cookie";
 import Root from "./Root";
 
+import HomePage from "./pages/homepage/Homepage";
+import AboutUs from "./pages/homepage/AboutUs/AboutUs";
 import Login from "./pages/homepage/Login/Login";
 import SignUp from "./pages/homepage/SignUp/SignUp";
-import PageNotFound from "./pages/homepage/PageNotFound";
-import ForgetPassword from "./pages/homepage/ForgetPassword";
-
-import AboutUs from "./pages/homepage/AboutUs";
-import HomePage from "./pages/homepage/Homepage";
+import ForgetPassword from "./pages/homepage/ForgetPassword/ForgetPassword";
 
 import User from "./pages/user/User";
 import UserHomepage from "./pages/user/UserHomepage/UserHomepage";
 import UserDashboard from "./pages/user/UserDashboard/UserDashboard";
 import UserCalendar from "./pages/user/UserCalendar/UserCalendar";
 import UserProfile from "./pages/user/UserProfile/UserProfile";
+
+import PageNotFound from "./pages/others/PageNotFound/PageNotFound";
 
 export const cookies = new Cookies();
 

@@ -33,7 +33,7 @@ function TaskDisplayDashboard(props) {
           />
         </div>
         <div
-          className="taskNameAndTaskDeadline"
+          className={styles.taskNameAndTaskDeadline}
           onClick={onChangeTaskDetailDisplay}
         >
           <div className={styles.taskName}>

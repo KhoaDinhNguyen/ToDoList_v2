@@ -112,11 +112,7 @@
 }
 
 .taskInfoContainer {
-  display: grid;
-  flex-direction: column;
-  justify-content: space-between;
   grid-column: 1 / 5;
-  transition: grid-template-rows 1000ms;
 }
 
 .backgroundTaskDelete {

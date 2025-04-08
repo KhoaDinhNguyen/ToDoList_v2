@@ -1,0 +1,40 @@
+.rootContainer {
+  background-color: rgb(7 1 39);
+  padding: 50px;
+}
+
+@media screen and (max-width: 499px) {
+  .rootContainer {
+    padding: 10px;
+  }
+}
+
+.companyName {
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.companyImage {
+  cursor: default;
+}
+
+.infoContainer {
+  color: gray;
+  display: flex;
+  justify-content: space-between;
+}
+
+.message {
+  max-width: 500px;
+}
+
+@media screen and (max-width: 499px) {
+  .message {
+    font-size: 14px;
+  }
+
+  .contact {
+    font-size: 14px;
+  }
+}

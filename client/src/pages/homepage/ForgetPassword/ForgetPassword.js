@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { fetchFindAccount } from "../../API/pageAPI";
-import { fetchUserUpdate } from "../../API/userAPI";
-import styles from "../../styles/pages/ForgetPassword.module.css";
+import { fetchFindAccount } from "../../../API/pageAPI";
+import { fetchUserUpdate } from "../../../API/userAPI";
+
+import styles from "./ForgetPassword.module.css";
 
 function ForgetPassword() {
   const [accountName, setAccountName] = useState("");

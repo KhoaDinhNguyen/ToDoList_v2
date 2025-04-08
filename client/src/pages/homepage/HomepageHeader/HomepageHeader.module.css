@@ -1,0 +1,91 @@
+.rootContainer {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background: linear-gradient(-90deg, #a1c4fda4 0%, #c2e9fb9d 100%);
+}
+
+.companyLogoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.companyImage {
+  height: 48px;
+  width: 48px;
+  cursor: pointer;
+  background-color: black;
+  padding: 10px;
+}
+
+@media screen and (max-width: 499px) {
+  .companyImage {
+    height: 32px;
+    width: 32px;
+  }
+}
+
+.companyName {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 499px) {
+  .companyName {
+    font-size: 14px;
+    margin-left: 5px;
+  }
+}
+
+.navigationBar {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.listOfPages {
+  display: flex;
+  justify-content: space-between;
+}
+
+.linkContainer {
+  list-style-type: none;
+  box-sizing: border-box;
+  margin-right: 30px;
+}
+
+@media screen and (max-width: 499px) {
+  .linkContainer {
+    padding: 3px;
+    margin: 0;
+  }
+}
+
+.linkContainer a {
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+@media screen and ((max-width: 499px) or (max-height: 600px)) {
+  .linkContainer a {
+    font-size: 1rem;
+    padding: 3px;
+  }
+}
+
+.linkContainer a.active {
+  color: rgb(106 101 255);
+}
+
+.linkContainer a.nonActive {
+  color: rgb(89, 82, 119);
+}
+
+.linkContainer a.nonActive:hover {
+  color: black;
+}

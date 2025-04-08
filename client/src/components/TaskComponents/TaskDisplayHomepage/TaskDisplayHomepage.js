@@ -140,9 +140,7 @@ function TaskInfoHomepage(props) {
         </InfoText>
         {finish && (
           <div>
-            <span className="note">
-              &#9432; Cannot edit or delete finised task
-            </span>
+            <span>&#9432; Cannot edit or delete finised task</span>
           </div>
         )}
       </div>

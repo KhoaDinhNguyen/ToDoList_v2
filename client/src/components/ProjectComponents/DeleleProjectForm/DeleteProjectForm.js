@@ -31,28 +31,26 @@ function DeleteProjectForm(props) {
   };
 
   return (
-    <div className="detetePrompt">
-      <div style={{ display: deleteDisplay }} className={styles.rootContainer}>
-        <div className={styles.promptContainer}>
-          <p>Do you really want to delete this project?</p>
-          <p className={styles.notice}>
-            &#9432; All tasks will be removed followedly
-          </p>
-        </div>
-        <div className={styles.buttonsContainer}>
-          <button
-            onClick={onClickDeleteProject}
-            className={`${styles.buttonContainer} ${styles.submitButton}`}
-          >
-            <span>Yes, I want to delete it</span>
-          </button>
-          <button
-            onClick={onClickCancle}
-            className={`${styles.buttonContainer} ${styles.cancelButton}`}
-          >
-            <span>No, I think I will keep it</span>
-          </button>
-        </div>
+    <div style={{ display: deleteDisplay }} className={styles.rootContainer}>
+      <div className={styles.promptContainer}>
+        <p>Do you really want to delete this project?</p>
+        <p className={styles.notice}>
+          &#9432; All tasks will be removed followedly
+        </p>
+      </div>
+      <div className={styles.buttonsContainer}>
+        <button
+          onClick={onClickDeleteProject}
+          className={`${styles.buttonContainer} ${styles.submitButton}`}
+        >
+          <span>Yes, I want to delete it</span>
+        </button>
+        <button
+          onClick={onClickCancle}
+          className={`${styles.buttonContainer} ${styles.cancelButton}`}
+        >
+          <span>No, I think I will keep it</span>
+        </button>
       </div>
     </div>
   );
