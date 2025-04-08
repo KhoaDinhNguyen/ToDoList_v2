@@ -96,7 +96,7 @@ function SignUpForm() {
           />
           <InputPassword
             id="confirmedPasswordSignUp"
-            valuePassword={password}
+            valuePassword={confirmedPassword}
             onChangePassword={onChangeConfirmedPassword}
             placeholder="Confirmed password"
             style={styles.signUpInput}

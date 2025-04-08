@@ -1,6 +1,13 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import InputText from "../../utils/InputText/InputText";
+import InputDate from "../../utils/InputDate/InputDate";
+import InputButton from "../../utils/InputButton/InputButton";
+import LoadingModal from "../LoadingModal/LoadingModal";
+import SuccessModal from "../SuccessModal/SuccessModal";
+import FailModal from "../FailModal/FailModal";
+
 import { tasksSlice } from "../../../redux/databaseSlice";
 import { userSlice } from "../../../redux/userSlice";
 import { fetchTaskCreate } from "../../../API/taskAPI";
@@ -8,9 +15,6 @@ import {
   convertDateToISOString,
   convertFromBooleanToDisplay,
 } from "../../../utils/helperFunctions";
-import InputText from "../../utils/InputText/InputText";
-import InputDate from "../../utils/InputDate/InputDate";
-import InputButton from "../../utils/InputButton/InputButton";
 
 import styles from "./CreateTaskForm.module.css";
 
@@ -23,6 +27,8 @@ function CreateTaskForm(props) {
   const [taskName, setTaskName] = useState("");
   const [taskDescription, setTaskDescription] = useState("");
   const [taskTimeDeadline, setTimeDeadline] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
 
   const onChangeTaskName = (event) => {
     setTaskName(event.target.value);
@@ -39,7 +45,8 @@ function CreateTaskForm(props) {
 
   const onSubmit = (event) => {
     event.preventDefault();
-
+    setLoading(true);
+    setMessage("Create task in process");
     try {
       fetchTaskCreate(
         accountName,
@@ -49,7 +56,7 @@ function CreateTaskForm(props) {
         taskTimeDeadline
       )
         .then((response) => {
-          alert(response.message);
+          //alert(response.message);
           if (!response.error) {
             dispatch(
               tasksSlice.actions.add({
@@ -61,14 +68,29 @@ function CreateTaskForm(props) {
                 projectName,
               })
             );
+            setMessage("Create task successfully");
+            setTimeout(() => {
+              setMessage("");
+            }, 2000);
+            setLoading(false);
             setTaskName("");
             setTaskDescription("");
             setTimeDeadline("");
             setCreateTaskFormDisplay(false);
+          } else {
+            setLoading(false);
+            setMessage(response.message);
+            setTimeout(() => {
+              setMessage("");
+            }, 2000);
           }
         })
         .catch((response) => {
-          console.log(response.message);
+          setLoading(false);
+          setMessage(response.message);
+          setTimeout(() => {
+            setMessage("");
+          }, 2000);
         });
     } catch (err) {
       console.log(err);
@@ -149,6 +171,20 @@ function CreateTaskForm(props) {
           </fieldset>
         </form>
       </div>
+      <LoadingModal visible={loading === true} message={message} />
+      <SuccessModal
+        visible={message === "Create task successfully" && loading === false}
+        message={message}
+      />
+      <FailModal
+        visible={
+          message !== "" &&
+          message !== "Create task successfully" &&
+          loading === false
+        }
+        message={"Cannot create task"}
+        error={message}
+      />
     </>
   );
 }

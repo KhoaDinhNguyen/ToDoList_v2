@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { fetchVerifyToken } from "../../API/pageAPI";
 import { useEffect } from "react";
@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import { cookies } from "../../App";
 import HomepageFooter from "./HomepageFooter/HomepageFooter";
 import HomepageHeader from "./HomepageHeader/HomepageHeader";
-import logoPage from "../../asset/img/logoPage.png";
 
 //import "../../styles/pages/Homepage.css";
 

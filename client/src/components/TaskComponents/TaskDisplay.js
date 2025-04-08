@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { convertDateToISOString } from "../../utils/helperFunctions";
-import { fetchTaskUpdate } from "../../API/taskAPI";
-import { tasksSlice } from "../../redux/databaseSlice";
 import TaskDisplayCalendar from "./TaskDisplayCalendar/TaskDisplayCalendar";
 import TaskDisplayDashboard from "./TaskDisplayDashboard/TaskDisplayDashboard";
 import TaskDisplayHomepage from "./TaskDisplayHomepage/TaskDisplayHomepage";
+
+import { convertDateToISOString } from "../../utils/helperFunctions";
+import { fetchTaskUpdate } from "../../API/taskAPI";
+import { tasksSlice } from "../../redux/databaseSlice";
 import { userSlice } from "../../redux/userSlice";
-//import "../../styles/components/taskDisplay.css";
 
 function TaskDisplay(props) {
   const { type, task } = props;
