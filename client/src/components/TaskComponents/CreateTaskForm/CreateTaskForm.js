@@ -4,8 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { tasksSlice } from "../../../redux/databaseSlice";
 import { userSlice } from "../../../redux/userSlice";
 import { fetchTaskCreate } from "../../../API/taskAPI";
-import { convertDateToISOString } from "../../../pages/user/User";
-import { convertFromBooleanToDisplay } from "../../../pages/user/User";
+import {
+  convertDateToISOString,
+  convertFromBooleanToDisplay,
+} from "../../../utils/helperFunctions";
 import InputText from "../../utils/InputText/InputText";
 import InputDate from "../../utils/InputDate/InputDate";
 import InputButton from "../../utils/InputButton/InputButton";

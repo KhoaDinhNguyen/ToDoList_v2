@@ -80,7 +80,7 @@ function Password() {
         )}
         {!formVisble && (
           <p className={styles.info}>
-            (This is not the password): The password cannot read. Edit only
+            (This is not the password) The password cannot read. Edit only
           </p>
         )}
       </div>

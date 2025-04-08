@@ -1,6 +1,6 @@
 .rootContainer {
   list-style-type: none;
-  background-color: var(--taskColor);
+  background-color: #fff;
   width: 100%;
   margin: 0 auto;
   transition-duration: 0.3s;
@@ -12,9 +12,9 @@
   border-bottom: 1px solid #efefef;
 }
 
-@media screen and (max-width : 499px) {
+@media screen and (max-width: 499px) {
   .rootContainer {
-      grid-template-columns: 30px 1fr 50px 70px;
+    grid-template-columns: 30px 1fr 50px 70px;
   }
 }
 
@@ -26,18 +26,17 @@
   align-items: center;
 }
 
-@media screen and (max-width : 499px) {
+@media screen and (max-width: 499px) {
   .fulfilledContainer {
-      position: relative;
-      margin-left: 10px;
-      top: 1px;
+    position: relative;
+    margin-left: 10px;
+    top: 1px;
   }
 
   .fulfilledContainer label {
-      width: 15px;
-      height: 15px;
+    width: 15px;
+    height: 15px;
   }
-  
 }
 
 .taskNameContainer {
@@ -62,32 +61,31 @@
   font-size: 14px;
 }
 
-
-@media screen and (max-width : 499px) {
+@media screen and (max-width: 499px) {
   .taskStatusContainer p {
-      font-size: 10px;
+    font-size: 10px;
   }
 }
 
 .pending_task {
-  background-color: #FF8C00;
+  background-color: #ff8c00;
 }
 
 .fulfilled_task {
-  background-color: #50C878;
+  background-color: #50c878;
 }
 
 .failing_task {
-  background-color: #FF748B;
+  background-color: #ff748b;
 }
 
 .homepageTaskName h4 {
   font-weight: 400;
 }
 
-@media screen and (max-width : 499px) {
+@media screen and (max-width: 499px) {
   .homepageTaskName h4 {
-      font-size: 12px;
+    font-size: 12px;
   }
 }
 
@@ -105,11 +103,11 @@
   margin-left: 20px;
 }
 
-@media screen and (max-width : 499px) {
+@media screen and (max-width: 499px) {
   .taskFunctionContainer img {
-      height: 15px;
-      width: 15px;
-      margin-left: 5px;
+    height: 15px;
+    width: 15px;
+    margin-left: 5px;
   }
 }
 
@@ -126,18 +124,18 @@
 }
 
 .backgroundTaskNonDelete {
-  background-color: #FFF0E5;
+  background-color: #fff0e5;
   background-color: white;
 }
 
-#userHomepage .taskInfoHidden, #userHomepage .taskInfoHidden * {
+#userHomepage .taskInfoHidden,
+#userHomepage .taskInfoHidden * {
   height: 0px;
   opacity: 0;
   visibility: hidden;
   width: 0px;
   overflow: hidden;
 }
-
 
 .taskInfoVisible {
   border-radius: 10px;
@@ -194,23 +192,23 @@
   box-shadow: 0px 0px white;
 }
 
-.taskInfoButton figure img{
+.taskInfoButton figure img {
   height: 16px;
   width: 16px;
 }
 
-.taskInfoButton figure figcaption{
+.taskInfoButton figure figcaption {
   font-size: 16px;
   font-weight: 500;
   color: white;
 }
 
 .taskInfoEdit {
-  background-color: #008FFF;
+  background-color: #008fff;
 }
 
 .taskInfoDelete {
-  background-color: #F86363;
+  background-color: #f86363;
 }
 
 .taskInfoClose {

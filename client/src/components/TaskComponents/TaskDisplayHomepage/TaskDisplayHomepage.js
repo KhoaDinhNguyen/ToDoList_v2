@@ -4,7 +4,7 @@ import InfoText from "../../utils/InfoText/InfoText";
 import UpdateTaskForm from "../UpdateTaskForm/UpdataTaskForm";
 import DeleteTaskForm from "../DeleteTaskForm/DeleteTaskForm";
 
-import { convertFromBooleanToDisplay } from "../../../pages/user/User";
+import { convertFromBooleanToDisplay } from "../../../utils/helperFunctions";
 
 import informationLogo from "../../../asset/img/informationDisplay.png";
 import editLogo from "../../../asset/img/editDisplay.png";

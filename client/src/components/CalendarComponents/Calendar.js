@@ -17,30 +17,24 @@ function Calendar(props) {
   const [currentView, setCurrentView] = useState("month");
 
   return (
-    <>
-      <div className="pageActive">
-        <p>To-do List Application</p>
-        <h2>Calendar</h2>
-      </div>
-      <div className={styles.rootContainer}>
-        <TaskDisplaysCalendar
-          date={calendarDate}
-          month={calendarMonth}
-          year={calendarYear}
-          tasks={tasks}
-          currentView={currentView}
-        />
-        <CalendarTable
-          tasks={tasks}
-          calendarMonth={calendarMonth}
-          calendarYear={calendarYear}
-          setCalendarDate={setCalendarDate}
-          setCalendarMonth={setCalendarMonth}
-          setCalendarYear={setCalendarYear}
-          setCurrentView={setCurrentView}
-        />
-      </div>
-    </>
+    <div className={styles.rootContainer}>
+      <TaskDisplaysCalendar
+        date={calendarDate}
+        month={calendarMonth}
+        year={calendarYear}
+        tasks={tasks}
+        currentView={currentView}
+      />
+      <CalendarTable
+        tasks={tasks}
+        calendarMonth={calendarMonth}
+        calendarYear={calendarYear}
+        setCalendarDate={setCalendarDate}
+        setCalendarMonth={setCalendarMonth}
+        setCalendarYear={setCalendarYear}
+        setCurrentView={setCurrentView}
+      />
+    </div>
   );
 }
 

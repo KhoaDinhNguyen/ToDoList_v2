@@ -4,7 +4,7 @@ import FilterForm from "../FilterComponents/FilterForm";
 import SortForm from "../SortComponents/SortForm";
 
 import { filterAndSortFormSlice } from "../../../redux/utilsSlice";
-import { convertFromBooleanToDisplay } from "../../../pages/user/User";
+import { convertFromBooleanToDisplay } from "../../../utils/helperFunctions";
 
 import styles from "./FilterAndSortForm.module.css";
 

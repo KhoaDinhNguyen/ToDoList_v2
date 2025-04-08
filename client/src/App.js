@@ -54,7 +54,6 @@ function App() {
       <RouterProvider router={router} />
     </CookiesProvider>
   );
-  return <RouterProvider router={router} />;
 }
 
 export default App;

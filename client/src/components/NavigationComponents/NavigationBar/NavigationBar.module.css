@@ -1,0 +1,136 @@
+.rootContainer {
+  grid-column: 1 / 2;
+  position: absolute;
+  z-index: 997;
+}
+
+@media screen and (max-width: 850px) {
+  .rootContainer {
+    height: 500px;
+  }
+}
+
+.barContainer {
+  background-color: #7b71cc;
+  width: 80px;
+  height: 550px;
+  position: absolute;
+  margin-top: 25px;
+  margin-left: 10px;
+  border-radius: 20px;
+  transition-duration: 0.5s;
+}
+
+@media screen and (max-width: 850px) {
+  .barContainer {
+    width: 60px;
+    height: 450px;
+    margin-left: 10px;
+  }
+}
+
+.visibleBar .barContainer {
+  opacity: 1;
+  visibility: visible;
+  left: 0%;
+}
+
+.hiddenBar .barContainer {
+  opacity: 0;
+  visibility: hidden;
+  left: -10%;
+}
+
+.barHeader {
+  border-bottom: 1px solid #efefef;
+}
+
+.logoContainer {
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 850px) {
+  .logoContainer {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.logoImage {
+  width: 25px;
+  height: 25px;
+}
+
+@media screen and (max-width: 850px) {
+  .logoImage {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.pageNavigation {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-top: 20px;
+  position: relative;
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  list-style-type: none;
+}
+
+.buttonContainer {
+  margin: 10px 0;
+}
+
+@media screen and (max-width: 850px) {
+  .buttonContainer {
+    margin: 5px 0;
+  }
+}
+
+.buttonContainer a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 15px;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 850px) {
+  .buttonContainer {
+    padding: 10px;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .buttonContainer a svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.buttonContainer a:hover {
+  background-color: #000;
+}
+
+.matchPage {
+  background-color: #6247aa;
+  border-right: 0;
+}

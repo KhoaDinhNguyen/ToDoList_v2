@@ -2,7 +2,7 @@
     Helper functions
 */
 // convertDateToISOString(Date) -> "YYYY-MM-DD"
-import { convertDateToISOString } from "../pages/user/User";
+import { convertDateToISOString } from "./helperFunctions";
 /*
     Seperate a list of tasks into two lists of tasks (finished and unfinished)
     @param tasks: list of tasks

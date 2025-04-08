@@ -1,5 +1,5 @@
 import TaskDisplay from "../../TaskComponents/TaskDisplay";
-import { convertDateToISOString } from "../../../pages/user/User";
+import { convertDateToISOString } from "../../../utils/helperFunctions";
 
 import styles from "./TaskDisplaysCalendar.module.css";
 

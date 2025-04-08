@@ -6,7 +6,7 @@ import { featchTaskUpdateInfo } from "../../../API/taskAPI";
 import InputText from "../../utils/InputText/InputText";
 import InputDate from "../../utils/InputDate/InputDate";
 import InputButton from "../../utils/InputButton/InputButton";
-import { convertDateToISOString } from "../../../pages/user/User";
+import { convertDateToISOString } from "../../../utils/helperFunctions";
 import { userSlice } from "../../../redux/userSlice";
 import styles from "./UpdateTaskForm.module.css";
 

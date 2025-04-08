@@ -2,7 +2,7 @@ import UpdateProjectForm from "../UpdateProjectForm/UpdateProjectForm";
 import DeleteProjectForm from "../DeleleProjectForm/DeleteProjectForm";
 import InfoText from "../../utils/InfoText/InfoText";
 
-import { convertFromBooleanToDisplay } from "../../../pages/user/User";
+import { convertFromBooleanToDisplay } from "../../../utils/helperFunctions";
 
 import styles from "./ProjectForm.module.css";
 

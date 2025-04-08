@@ -1,0 +1,39 @@
+.footerContainer {
+  background-color: rgb(7 1 39);
+  padding: 50px;
+  grid-column: 1 / 3;
+}
+
+@media screen and (max-width: 499px) {
+  .footerContainer {
+    padding: 10px;
+  }
+}
+
+.companyLogo {
+  display: flex;
+  align-items: center;
+}
+.companyName {
+  color: white;
+}
+
+.infoContainer {
+  color: gray;
+  display: flex;
+  justify-content: space-between;
+}
+
+.messageContainer {
+  max-width: 500px;
+}
+
+@media screen and (max-width: 499px) {
+  .messageContainer {
+    font-size: 14px;
+  }
+
+  .contactInfo {
+    font-size: 14px;
+  }
+}

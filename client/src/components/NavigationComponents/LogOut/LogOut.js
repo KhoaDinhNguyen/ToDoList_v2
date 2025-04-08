@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import { cookies } from "../../App";
+import { cookies } from "../../../App";
 
-import { LogOutSVG } from "./SVG";
-import "../../styles/components/LogOut.css";
+import { LogOutSVG } from "../../utils/SVG";
+import styles from "./LogOut.module.css";
 
 function LogOut(props) {
   const navigate = useNavigate();
@@ -13,8 +13,8 @@ function LogOut(props) {
   };
 
   return (
-    <div id="userNavigationBarFooter">
-      <button onClick={onClickLogOut} id="logOut">
+    <div className={styles.rootContainer}>
+      <button onClick={onClickLogOut} className={styles.buttonContainer}>
         <LogOutSVG />
       </button>
     </div>

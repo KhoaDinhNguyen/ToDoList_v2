@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { convertDateToISOString } from "../../pages/user/User";
+import { convertDateToISOString } from "../../utils/helperFunctions";
 import { fetchTaskUpdate } from "../../API/taskAPI";
 import { tasksSlice } from "../../redux/databaseSlice";
 import TaskDisplayCalendar from "./TaskDisplayCalendar/TaskDisplayCalendar";

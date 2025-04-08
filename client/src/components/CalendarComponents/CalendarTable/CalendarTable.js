@@ -1,4 +1,4 @@
-import { convertDateToISOString } from "../../../pages/user/User";
+import { convertDateToISOString } from "../../../utils/helperFunctions";
 import { getMonthNameShorthand } from "../../../utils/getMonthName";
 import { Calendar2SVG, LeftArrow, RightArrow } from "../../utils/SVG";
 

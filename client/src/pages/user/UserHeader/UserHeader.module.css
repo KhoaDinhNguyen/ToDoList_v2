@@ -1,0 +1,22 @@
+.rootContainer {
+  background: none;
+  background-color: rgb(7 1 39);
+  padding: 5px 0px;
+}
+
+.navigationButton {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 850px) {
+  .navigationButton {
+    top: 50%;
+    left: 75%;
+  }
+
+  .navigationButton svg {
+    width: 25px;
+    height: 25px;
+  }
+}

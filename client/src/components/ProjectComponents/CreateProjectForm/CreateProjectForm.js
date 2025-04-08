@@ -7,7 +7,7 @@ import { fetchCreateProject } from "../../../API/projectAPI.js";
 import {
   convertDateToISOString,
   convertFromBooleanToDisplay,
-} from "../../../pages/user/User.js";
+} from "../../../utils/helperFunctions.js";
 import { createProjectFormSlice } from "../../../redux/utilsSlice.js";
 import InputText from "../../utils/InputText/InputText.js";
 import InputButton from "../../utils/InputButton/InputButton.js";

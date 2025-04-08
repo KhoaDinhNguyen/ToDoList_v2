@@ -489,6 +489,40 @@ function EyeSlashSVG() {
     </svg>
   );
 }
+
+function NavigationButtonSVG() {
+  return (
+    <svg
+      fill="#000000"
+      width="35px"
+      height="35px"
+      viewBox="-250 -250 1500.00 1500.00"
+      xmlns="http://www.w3.org/2000/svg"
+      stroke="#000000"
+    >
+      <g id="SVGRepo_bgCarrier" strokeWidth="0">
+        <rect
+          x="-250"
+          y="-250"
+          width="1500.00"
+          height="1500.00"
+          rx="0"
+          fill="#ffffff"
+          strokeWidth="0"
+        />
+      </g>
+      <g
+        id="SVGRepo_tracerCarrier"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <g id="SVGRepo_iconCarrier">
+        <path d="M20 818h958V712H20v106zm0-266h958V446H20v106zm0-372v106h958V180H20z" />
+      </g>
+    </svg>
+  );
+}
+
 export {
   LogOutSVG,
   HomepageSVG,
@@ -505,4 +539,5 @@ export {
   FilterSVG,
   EyeSVG,
   EyeSlashSVG,
+  NavigationButtonSVG,
 };
