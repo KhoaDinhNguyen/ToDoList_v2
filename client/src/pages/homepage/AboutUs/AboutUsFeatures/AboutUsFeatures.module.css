@@ -1,0 +1,67 @@
+.rootContainer {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0px;
+}
+
+.title {
+  background: linear-gradient(
+    135deg,
+    rgba(235, 231, 255, 0.3) 0%,
+    rgba(202, 217, 254, 0.3) 18.75%,
+    rgba(218, 208, 255, 0.3) 45.72%,
+    rgba(177, 234, 251, 0.3) 66.99%,
+    rgba(209, 245, 255, 0.3) 100%
+  );
+  color: rgb(106 101 255);
+  font-weight: 500;
+  font-size: 18px;
+  padding: 5px 16px;
+  width: max-content;
+  border-radius: 15px;
+}
+
+.message {
+  font-size: 35px;
+  color: rgb(14 0 74);
+  margin-top: 20px;
+  text-align: center;
+}
+
+@media screen and (max-width: 499px) {
+  .message {
+    font-size: 30px;
+  }
+}
+
+.text {
+  font-size: 18px;
+  color: rgb(69 56 120);
+}
+
+@media screen and (max-width: 499px) {
+  .text {
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+.featuresContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+#homepage {
+  background: linear-gradient(45deg, #e3f0ff 0%, #dcf2fc 100%);
+}
+
+#dashboard {
+  background: linear-gradient(120deg, #a1c4fda4 0%, #c2e9fb9d 100%);
+}
+
+#calendar {
+  background: linear-gradient(195deg, #82b1fca4 0%, #a9dff89d 100%);
+}

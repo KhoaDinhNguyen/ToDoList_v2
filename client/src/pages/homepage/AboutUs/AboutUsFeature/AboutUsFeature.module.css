@@ -1,0 +1,122 @@
+.featureContainer {
+  width: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 20px;
+  padding: 30px;
+  margin-left: 30px;
+  margin-top: 20px;
+  height: 300px;
+  border: transparent 3px solid;
+}
+
+@media screen and (max-width: 499px) {
+  .featureContainer {
+    width: 90%;
+    margin: 0;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+  }
+}
+
+.featureContainer:hover {
+  animation: borderColors 500ms steps(100) forwards;
+}
+
+@keyframes borderColors {
+  0% {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  25% {
+    border-top-color: #000;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  50% {
+    border-top-color: #000;
+    border-right-color: #000;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  75% {
+    border-top-color: #000;
+    border-right-color: #000;
+    border-bottom-color: #000;
+    border-left-color: transparent;
+  }
+  100% {
+    border-top-color: #000;
+    border-right-color: #000;
+    border-bottom-color: #000;
+    border-left-color: #000;
+  }
+}
+
+.featureContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.featureContent h4 {
+  color: rgb(14 0 74);
+  font-size: 35px;
+}
+
+@media screen and (max-width: 499px) {
+  .featureContent h4 {
+    font-size: 25px;
+    text-align: center;
+  }
+}
+
+.featureContent p {
+  width: 200px;
+  font-size: 18px;
+  color: rgb(69 56 120);
+}
+
+@media screen and (max-width: 499px) {
+  .featureContent p {
+    font-size: 14px;
+    text-align: justify;
+  }
+}
+
+.imageContainer {
+  grid-column: 2 / 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  height: 150px;
+  width: 150px;
+  transition-duration: 500ms;
+}
+
+@media screen and (max-width: 499px) {
+  .image {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+.featureContainer:hover .image {
+  height: 200px;
+  width: 200px;
+}
+
+@media screen and (max-width: 499px) {
+  .featureContainer:hover .image {
+    height: 150px;
+    width: 150px;
+  }
+}

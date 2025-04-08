@@ -1,0 +1,143 @@
+.rootContainer {
+  background: linear-gradient(-90deg, #a1c4fda4 0%, #c2e9fb9d 100%);
+  color: black;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 100px 0px;
+}
+
+@media screen and (max-width: 499px) {
+  .rootContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0px;
+  }
+}
+
+.contentContainer {
+  display: flex;
+  grid-column: 1 / 2;
+  text-align: left;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 499px) {
+  .contentContainer div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.title {
+  background: linear-gradient(
+    135deg,
+    rgba(235, 231, 255, 0.3) 0%,
+    rgba(202, 217, 254, 0.3) 18.75%,
+    rgba(218, 208, 255, 0.3) 45.72%,
+    rgba(177, 234, 251, 0.3) 66.99%,
+    rgba(209, 245, 255, 0.3) 100%
+  );
+  color: rgb(106 101 255);
+  font-weight: 500;
+  font-size: 18px;
+  padding: 5px 16px;
+  width: max-content;
+  border-radius: 15px;
+}
+
+.message {
+  font-size: 50px;
+  width: 300px;
+  color: rgb(14 0 74);
+}
+
+@media screen and (max-width: 499px) {
+  .message {
+    font-size: 30px;
+    text-align: center;
+  }
+}
+
+.text {
+  font-size: 18px;
+  width: 250px;
+  margin-top: 20px;
+  color: rgb(69 56 120);
+}
+
+@media screen and (max-width: 499px) {
+  .text {
+    font-size: 14px;
+    text-align: justify;
+  }
+}
+
+.button {
+  background-color: rgb(106 101 255);
+  color: white;
+  padding: 10px 15px;
+  font-size: 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 20px;
+  width: max-content;
+  border: 3px solid rgb(106 101 255);
+  transition-duration: 0.5s;
+}
+
+.button:hover {
+  background-color: white;
+  color: rgb(106 101 255);
+}
+
+.imageContainer {
+  display: flex;
+  grid-column: 2 / 3;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageContainer div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 499px) {
+  .imageContainer {
+    display: block;
+    margin-top: 40px;
+  }
+}
+
+.image {
+  height: 350px;
+  width: 350px;
+  rotate: -15deg;
+  transition-duration: 1s;
+}
+
+@media screen and (max-width: 850px) {
+  .image {
+    height: 256px;
+    width: 256px;
+  }
+}
+
+.image:hover {
+  height: 400px;
+  width: 400px;
+  rotate: 0deg;
+}
+
+@media screen and (max-width: 850px) {
+  .image:hover {
+    height: 256px;
+    width: 256px;
+  }
+}
