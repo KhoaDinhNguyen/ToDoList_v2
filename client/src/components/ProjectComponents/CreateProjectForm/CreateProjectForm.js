@@ -1,6 +1,12 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 
+import LoadingModal from "../LoadingModal/LoadingModal.js";
+import SuccessModal from "../SuccessModal/SuccessModal.js";
+import FailModal from "../FailModal/FailModal.js";
+import InputText from "../../utils/InputText/InputText.js";
+import InputButton from "../../utils/InputButton/InputButton.js";
+
 import { projectsSlice } from "../../../redux/databaseSlice.js";
 import { userSlice } from "../../../redux/userSlice.js";
 import { fetchCreateProject } from "../../../API/projectAPI.js";
@@ -9,9 +15,6 @@ import {
   convertFromBooleanToDisplay,
 } from "../../../utils/helperFunctions.js";
 import { createProjectFormSlice } from "../../../redux/utilsSlice.js";
-import InputText from "../../utils/InputText/InputText.js";
-import InputButton from "../../utils/InputButton/InputButton.js";
-import CreateProjectModal from "../CreateProjectModal/CreateProjectModal.js";
 
 import styles from "./CreateProjectForm.module.css";
 
@@ -20,6 +23,7 @@ function CreateProjectForm() {
   const [projectName, setProjectName] = useState("");
   const [projectDescription, setProjectDescription] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
   const createProjectFormDisplay = useSelector(
     (state) => state[createProjectFormSlice.name]
   );
@@ -30,37 +34,53 @@ function CreateProjectForm() {
   const onChangeProjectDescription = (event) => {
     setProjectDescription(event.target.value);
   };
-  const onClickCloseDialog = () => {
-    setMessage("");
-  };
+
   const onClickCloseForm = () => {
     dispatch(createProjectFormSlice.actions.setState(false));
   };
 
+  const onChangeMessage = (message) => {
+    setMessage(message);
+    setTimeout(() => {
+      setMessage("");
+    }, 1000);
+  };
   const accountName = useSelector((state) => state[userSlice.name]);
   const today = new Date();
   const todayString = convertDateToISOString(today);
 
   const onSubmitCreateProject = (event) => {
     event.preventDefault();
+    setLoading(true);
 
     fetchCreateProject(accountName, projectName, projectDescription)
       .then((response) => {
+        setLoading(false);
         setMessage(response.message);
         if (!response.error) {
+          onChangeMessage("Create project successfully");
           const newProject = {
             projectName,
             projectTimeCreated: todayString,
             projectDescription,
           };
           dispatch(projectsSlice.actions.add(newProject));
-          setProjectName("");
           setProjectDescription("");
+          setTimeout(() => {
+            setProjectName("");
+          }, 1000);
           dispatch(createProjectFormSlice.actions.setState(false));
+        } else {
+          setMessage(response.message);
+          setTimeout(() => {
+            setProjectName("");
+            setMessage("");
+          }, 1000);
         }
       })
       .catch((err) => {
-        console.log(err);
+        setLoading(false);
+        onChangeMessage(err.message);
       });
   };
 
@@ -130,9 +150,22 @@ function CreateProjectForm() {
           </fieldset>
         </form>
       </div>
-      <CreateProjectModal
-        message={message}
-        onClickCloseDialog={onClickCloseDialog}
+      <LoadingModal
+        visible={loading === true}
+        message={"Create project in process"}
+      />
+      <SuccessModal
+        visible={loading === false && message === "Create project successfully"}
+        message={`Create project ${projectName} successfully`}
+      />
+      <FailModal
+        visible={
+          loading === false &&
+          message !== "" &&
+          message !== "Create project successfully"
+        }
+        message={"Cannot create project"}
+        error={message}
       />
     </>
   );

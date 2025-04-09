@@ -35,13 +35,13 @@ function DeleteTaskForm(props) {
                 projectName,
               })
             );
-          }, 2000);
+          }, 1000);
           setLoading(false);
         } else {
           setMessage(response.message);
           setTimeout(() => {
             setMessage("");
-          }, 2000);
+          }, 1000);
           setLoading(false);
         }
       })
@@ -51,7 +51,7 @@ function DeleteTaskForm(props) {
         setLoading(false);
         setTimeout(() => {
           setMessage("");
-        }, 2000);
+        }, 1000);
       });
   };
   const onClickCancle = () => {
