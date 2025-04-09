@@ -56,7 +56,6 @@ function CreateTaskForm(props) {
         taskTimeDeadline
       )
         .then((response) => {
-          //alert(response.message);
           if (!response.error) {
             dispatch(
               tasksSlice.actions.add({
