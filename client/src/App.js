@@ -22,6 +22,7 @@ import UserCalendar from "./pages/user/UserCalendar/UserCalendar";
 import UserProfile from "./pages/user/UserProfile/UserProfile";
 
 import PageNotFound from "./pages/others/PageNotFound/PageNotFound";
+import CredentialPage from "./pages/others/CredentialPage/CredentialPage";
 
 export const cookies = new Cookies();
 
@@ -34,7 +35,6 @@ const router = createHashRouter(
         <Route path="login" element={<Login />} />
         <Route path="signUp" element={<SignUp />} />
         <Route path="forgetPassword" element={<ForgetPassword />} />
-        <Route path="*" element={<PageNotFound />} />
       </Route>
       <Route path="user/:username" element={<User />}>
         <Route path="homepage" element={<UserHomepage />} />
@@ -43,6 +43,7 @@ const router = createHashRouter(
         <Route path="aboutUs" element={<AboutUs />} />
         <Route path="profile" element={<UserProfile />} />
       </Route>
+      <Route path="credential" element={<CredentialPage />} />
       <Route path="*" element={<PageNotFound />} />
     </>
   )

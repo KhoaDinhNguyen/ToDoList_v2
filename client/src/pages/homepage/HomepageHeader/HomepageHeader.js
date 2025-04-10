@@ -25,17 +25,17 @@ function HomepageHeader() {
       <nav className={styles.navigationBar}>
         <ul className={styles.listOfPages}>
           <li className={styles.linkContainer}>
-            <NavLink to="aboutUs" className={activeLink}>
+            <NavLink to="/homepage/aboutUs" className={activeLink}>
               About us
             </NavLink>
           </li>
           <li className={styles.linkContainer}>
-            <NavLink to="login" className={activeLink}>
+            <NavLink to="/homepage/login" className={activeLink}>
               Log In
             </NavLink>
           </li>
           <li className={styles.linkContainer}>
-            <NavLink to="signUp" className={activeLink}>
+            <NavLink to="/homepage/signUp" className={activeLink}>
               Sign Up
             </NavLink>
           </li>

@@ -3,24 +3,27 @@ import { Helmet } from "react-helmet";
 import HomepageHeader from "../../homepage/HomepageHeader/HomepageHeader";
 import HomepageFooter from "../../homepage/HomepageFooter/HomepageFooter";
 
-import errorImg from "../../../asset/img/errors.png";
+import errorImg from "../../../asset/img/404-error.png";
 
-import styles from "./PageNotFound.module.css";
+import styles from "./CredentialPage.module.css";
 
 function CredentialPage() {
   return (
     <>
       <Helmet>
-        <title>Page not found</title>
+        <title>Bad credentials</title>
       </Helmet>
       <HomepageHeader />
       <main className={styles.rootContainer}>
         <div className={styles.textContainer}>
           <div className={styles.titleContainer}>
-            <img src={errorImg} alt="404" className={styles.image} />
-            <h1 className={styles.title}>404! Page not found.</h1>
+            <img src={errorImg} alt="401" className={styles.image} />
+            <h1 className={styles.title}>401! Bad credentials.</h1>
           </div>
-          <p className={styles.text}>Cannot find the page have same address</p>
+          <p className={styles.text}>
+            Your session might be expired, or you try to access other accounts
+            without log in.
+          </p>
         </div>
       </main>
       <HomepageFooter />

@@ -33,9 +33,8 @@ function User() {
   useEffect(() => {
     setLoadingDatabase(true);
     if (!cookies.get("jwt") || cookies.get("jwt") === "") {
-      alert("BAD CREDENTIAL. Please Log In");
       cookies.remove("jwt");
-      navigate("/homepage");
+      navigate("/credential");
     } else {
       fetchUserDatabase(accountName, 5)
         .then((response) => {
@@ -49,7 +48,6 @@ function User() {
           navigate("homepage");
         })
         .catch((err) => {
-          console.log(err.message);
           if (err.message === "Network failed") {
             navigate("homepage");
             setMessage(
@@ -59,9 +57,8 @@ function User() {
               setMessage("");
             }, 3000);
           } else {
-            alert("BAD CREDENTIAL. Please Log In Your Account");
             cookies.remove("jwt");
-            navigate("/homepage");
+            navigate("/credential");
           }
         });
     }
