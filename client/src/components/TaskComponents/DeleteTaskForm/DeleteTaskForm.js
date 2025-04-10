@@ -25,28 +25,19 @@ function DeleteTaskForm(props) {
 
     fetchTaskDelete(accountName, projectName, taskName)
       .then((response) => {
-        if (!response.error) {
-          setMessage("Delete task successfully");
-          setTimeout(() => {
-            setMessage("");
-            dispatch(
-              tasksSlice.actions.remove({
-                taskName,
-                projectName,
-              })
-            );
-          }, 1000);
-          setLoading(false);
-        } else {
-          setMessage(response.message);
-          setTimeout(() => {
-            setMessage("");
-          }, 1000);
-          setLoading(false);
-        }
+        setMessage("Delete task successfully");
+        setTimeout(() => {
+          setMessage("");
+          dispatch(
+            tasksSlice.actions.remove({
+              taskName,
+              projectName,
+            })
+          );
+        }, 1000);
+        setLoading(false);
       })
       .catch((err) => {
-        console.log(err.message);
         setMessage(err.message);
         setLoading(false);
         setTimeout(() => {

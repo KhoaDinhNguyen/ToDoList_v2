@@ -10,7 +10,7 @@ function InputButton({
 }) {
   return (
     <div className={containerStyle}>
-      {labelText !== null && labelText !== "" && (
+      {labelText !== undefined && labelText !== "" && (
         <label htmlFor={id} className={labelStyle}>
           <span>{labelText}</span>
         </label>

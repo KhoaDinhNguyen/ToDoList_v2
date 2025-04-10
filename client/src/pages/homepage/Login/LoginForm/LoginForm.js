@@ -25,7 +25,6 @@ function LoginForm() {
   const [message, setMessage] = useState("");
   const [accountName, setAccountName] = useState("");
   const [password, setPassword] = useState("");
-  const [, setDisplayMessage] = useState("hidden");
 
   const onChangeAccountName = (event) => {
     setAccountName(event.target.value);
@@ -41,30 +40,24 @@ function LoginForm() {
     fetchSignIn(accountName, password)
       .then((response) => {
         setLoading(false);
-        if (!response.error) {
-          cookies.set("jwt", response.token, {
-            expires: Date.now() + process.env.JWT_COOKIE_EXPIRED_TIME * 1,
-          });
+        cookies.set("jwt", response.token, {
+          expires: Date.now() + process.env.JWT_COOKIE_EXPIRED_TIME * 1,
+        });
 
-          dispatch(profileNameSlice.actions.assignName(response.full_name));
-          setAccountName("");
-          setPassword("");
-          setMessage("Success");
-          //navigate(`/user/${response.name}/homepage`);
-          setTimeout(() => {
-            navigate(`/user/${response.name}`);
-          }, 1000);
-        } else {
-          setMessage(response.message);
-          setDisplayMessage("visible");
-          setTimeout(() => {
-            setMessage("");
-            setDisplayMessage("hidden");
-          }, 5000);
-        }
+        dispatch(profileNameSlice.actions.assignName(response.full_name));
+        setAccountName("");
+        setPassword("");
+        setMessage("Success");
+        setTimeout(() => {
+          navigate(`/user/${response.name}`);
+        }, 1000);
       })
       .catch((err) => {
-        console.log(err);
+        setLoading(false);
+        setMessage(err.message);
+        setTimeout(() => {
+          setMessage("");
+        }, 2000);
       });
   };
 

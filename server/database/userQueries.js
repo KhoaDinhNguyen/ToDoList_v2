@@ -57,8 +57,6 @@ const getUserDatabase = (req, res, next) => {
         }
       }
 
-      //console.log("Success");
-      //console.log(database.length);
       return res.status(200).json(database);
     }
   );
@@ -85,9 +83,7 @@ const updateUser = async (req, res, next) => {
           }
         }
       );
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   } else if (type === "profileName") {
     const { newProfileName } = req.body;
     pool.query(

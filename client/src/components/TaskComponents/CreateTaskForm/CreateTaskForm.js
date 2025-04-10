@@ -47,53 +47,41 @@ function CreateTaskForm(props) {
     event.preventDefault();
     setLoading(true);
     setMessage("Create task in process");
-    try {
-      fetchTaskCreate(
-        accountName,
-        projectName,
-        taskName,
-        taskDescription,
-        taskTimeDeadline
-      )
-        .then((response) => {
-          if (!response.error) {
-            dispatch(
-              tasksSlice.actions.add({
-                taskName,
-                taskStatus: "pending",
-                taskDescription,
-                taskTimeCreated: convertDateToISOString(today),
-                taskTimeDeadline,
-                projectName,
-              })
-            );
-            setMessage("Create task successfully");
-            setTimeout(() => {
-              setMessage("");
-            }, 2000);
-            setLoading(false);
-            setTaskName("");
-            setTaskDescription("");
-            setTimeDeadline("");
-            setCreateTaskFormDisplay(false);
-          } else {
-            setLoading(false);
-            setMessage(response.message);
-            setTimeout(() => {
-              setMessage("");
-            }, 2000);
-          }
-        })
-        .catch((response) => {
-          setLoading(false);
-          setMessage(response.message);
-          setTimeout(() => {
-            setMessage("");
-          }, 2000);
-        });
-    } catch (err) {
-      console.log(err);
-    }
+    fetchTaskCreate(
+      accountName,
+      projectName,
+      taskName,
+      taskDescription,
+      taskTimeDeadline
+    )
+      .then((response) => {
+        dispatch(
+          tasksSlice.actions.add({
+            taskName,
+            taskStatus: "pending",
+            taskDescription,
+            taskTimeCreated: convertDateToISOString(today),
+            taskTimeDeadline,
+            projectName,
+          })
+        );
+        setMessage(response.message);
+        setTimeout(() => {
+          setMessage("");
+          setTaskName("");
+        }, 1000);
+        setLoading(false);
+        setTaskDescription("");
+        setTimeDeadline("");
+        setCreateTaskFormDisplay(false);
+      })
+      .catch((err) => {
+        setLoading(false);
+        setMessage(err.message);
+        setTimeout(() => {
+          setMessage("");
+        }, 1000);
+      });
   };
 
   return (
@@ -112,7 +100,6 @@ function CreateTaskForm(props) {
           style={{
             display: convertFromBooleanToDisplay(createTaskFormDisplay),
           }}
-          onSubmit={onSubmit}
           className={styles.formContainer}
         >
           <fieldset>
@@ -129,7 +116,7 @@ function CreateTaskForm(props) {
             <InputText
               containerStyle={styles.inputContainer}
               id={`${projectName}_taskDescription`}
-              required={true}
+              required={false}
               onChangeText={onChangeTaskDescription}
               valueText={taskDescription}
               autoComplete="off"
@@ -154,7 +141,7 @@ function CreateTaskForm(props) {
                 containerStyle={styles.sumbitContainer}
                 type={"submit"}
                 id={`${projectName}_${taskName}_submitButton`}
-                onClickHandler={onClickToggleCreateTaskButton}
+                onClickHandler={onSubmit}
                 labelText="New task"
                 labelStyle={styles.buttonLabel}
               />
@@ -170,16 +157,14 @@ function CreateTaskForm(props) {
           </fieldset>
         </form>
       </div>
-      <LoadingModal visible={loading === true} message={message} />
+      <LoadingModal visible={loading} message={message} />
       <SuccessModal
-        visible={message === "Create task successfully" && loading === false}
-        message={message}
+        visible={message === "Create task successfully" && !loading}
+        message={`Create task ${taskName} successfully`}
       />
       <FailModal
         visible={
-          message !== "" &&
-          message !== "Create task successfully" &&
-          loading === false
+          message !== "" && message !== "Create task successfully" && !loading
         }
         message={"Cannot create task"}
         error={message}

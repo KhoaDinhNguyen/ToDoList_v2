@@ -61,38 +61,30 @@ function UpdateTaskForm(props) {
       newTaskTimeDeadline
     )
       .then((response) => {
-        if (!response.error) {
-          setLoading(false);
-          setMessage("Update task successfully");
-          setTimeout(() => {
-            setMessage("");
-            dispatch(
-              tasksSlice.actions.updateInfo({
-                taskName,
-                projectName,
-                accountName,
-                newTaskName,
-                newTaskDescription,
-                newTaskTimeDeadline,
-              })
-            );
-          }, 1000);
-          setEditDisplay(false);
-          setTaskDetailDisplay(false);
-        } else {
-          setLoading(false);
-          setMessage(response.message);
-          setTimeout(() => {
-            setMessage("");
-          }, 2000);
-        }
+        setLoading(false);
+        setMessage("Update task successfully");
+        setTimeout(() => {
+          setMessage("");
+          dispatch(
+            tasksSlice.actions.updateInfo({
+              taskName,
+              projectName,
+              accountName,
+              newTaskName,
+              newTaskDescription,
+              newTaskTimeDeadline,
+            })
+          );
+        }, 1000);
+        setEditDisplay(false);
+        setTaskDetailDisplay(false);
       })
       .catch((err) => {
         setLoading(false);
         setMessage(err.message);
         setTimeout(() => {
           setMessage("");
-        }, 2000);
+        }, 1000);
       });
   };
   return (
@@ -156,18 +148,16 @@ function UpdateTaskForm(props) {
           </div>
         </form>
       </div>
-      <LoadingModal visible={loading === true} message={message} />
+      <LoadingModal visible={loading} message={message} />
       <SuccessModal
-        visible={loading === false && message === "Update task successfully"}
+        visible={!loading && message === "Update task successfully"}
         message={
           "Update task successfully. New version will be display in seconds."
         }
       />
       <FailModal
         visible={
-          loading === false &&
-          message !== "Update task successfully" &&
-          message !== ""
+          !loading && message !== "Update task successfully" && message !== ""
         }
         message={"Cannot edit task"}
         error={message}

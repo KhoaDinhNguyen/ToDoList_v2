@@ -1,5 +1,6 @@
 import { createSearchParams } from "react-router-dom";
 import { cookies } from "../App";
+
 const fetchTaskCreate = async (
   accountName,
   projectName,
@@ -27,10 +28,15 @@ const fetchTaskCreate = async (
       }),
       headers: myHeaders,
     });
+
     const response = await jsonResponse.json();
+
+    if (!jsonResponse.ok) {
+      throw new Error(response.message);
+    }
     return response;
   } catch (err) {
-    return err;
+    throw Error(err.message);
   }
 };
 
@@ -52,15 +58,19 @@ const fetchTaskDelete = async (accountName, projectName, taskName) => {
   const deleteTaskEndpoint = `${deleteTaskAPI}/${accountName}?${searchQueryString}`;
 
   try {
-    const jsonRespnse = await fetch(deleteTaskEndpoint, {
+    const jsonResponse = await fetch(deleteTaskEndpoint, {
       method: "DELETE",
       headers: myHeaders,
     });
-    const response = await jsonRespnse.json();
+    const response = await jsonResponse.json();
+
+    if (!jsonResponse.ok) {
+      throw new Error(response.message);
+    }
 
     return response;
   } catch (err) {
-    return err;
+    throw new Error(err.message);
   }
 };
 
@@ -82,13 +92,17 @@ const fetchTaskUpdate = async (taskInfo, type) => {
   myHeaders.append("Content-type", "application/json");
 
   try {
-    const jsonRespone = await fetch(endpoint, {
+    const jsonResponse = await fetch(endpoint, {
       method: "PUT",
       headers: myHeaders,
       body: body,
     });
 
-    const response = await jsonRespone.json();
+    const response = await jsonResponse.json();
+
+    if (!jsonResponse.ok) {
+      throw new Error(response.message);
+    }
     return response;
   } catch (err) {
     throw new Error(err.message);
@@ -133,6 +147,11 @@ const fetchTaskUpdateAPI = async (bodyObject, type, accountName) => {
     });
 
     const response = await jsonRespone.json();
+
+    if (!jsonRespone.ok) {
+      throw new Error(response.message);
+    }
+
     return response;
   } catch (err) {
     throw new Error(err.message);

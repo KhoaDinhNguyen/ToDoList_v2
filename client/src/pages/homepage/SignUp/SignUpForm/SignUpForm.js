@@ -44,16 +44,14 @@ function SignUpForm() {
         .then((response) => {
           setLoading(false);
           setMessage(response.message);
-
-          if (!response.error) {
-            setAccountName("");
-            setProfileName("");
-            setPassword("");
-            setConfirmedPassword("");
-          }
+          setAccountName("");
+          setProfileName("");
+          setPassword("");
+          setConfirmedPassword("");
         })
         .catch((err) => {
-          console.log(err);
+          setLoading(false);
+          setMessage(err.message);
         });
     }
   };

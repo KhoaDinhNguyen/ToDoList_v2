@@ -12,9 +12,12 @@ function InputText({
   labelStyle,
   inputStyle,
 }) {
-  const autoCompleteModifiers = autoComplete == null ? "off" : autoComplete;
-  const placeHolderModifiers = placeholder == null ? "" : placeholder;
-  const requiredModifers = required == null ? false : required;
+  const autoCompleteModifiers =
+    autoComplete == undefined ? "off" : autoComplete;
+  const placeHolderModifiers = placeholder == undefined ? "" : placeholder;
+  const requiredModifers = required == undefined ? false : required;
+
+  console.log(required);
   return (
     <div className={containerStyle}>
       {labelText !== undefined && labelText !== "" && (

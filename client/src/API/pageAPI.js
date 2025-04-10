@@ -10,6 +10,7 @@ async function fetchSignIn(accountName, password) {
     accountName,
     password,
   });
+
   try {
     const jsonResponse = await fetch(signInEndpoint, {
       method: "POST",
@@ -18,11 +19,16 @@ async function fetchSignIn(accountName, password) {
         "Content-type": "application/json",
       },
     });
+
     const response = await jsonResponse.json();
 
+    if (!jsonResponse.ok) {
+      throw new Error(response.message);
+    }
+
     return response;
-  } catch (error) {
-    console.log(error);
+  } catch (err) {
+    throw new Error(err.message);
   }
 }
 
@@ -37,6 +43,7 @@ async function fetchSignUp(accountName, profileName, password) {
     profileName,
     password,
   });
+
   try {
     const jsonResponse = await fetch(signUpEndpoint, {
       method: "POST",
@@ -45,11 +52,16 @@ async function fetchSignUp(accountName, profileName, password) {
         "Content-type": "application/json",
       },
     });
+
     const response = await jsonResponse.json();
+
+    if (!jsonResponse.ok) {
+      throw new Error(response.message);
+    }
 
     return response;
   } catch (err) {
-    throw new Error(err);
+    throw new Error(err.message);
   }
 }
 
