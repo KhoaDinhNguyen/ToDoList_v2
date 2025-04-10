@@ -11,7 +11,7 @@ function AccountName() {
     <div className={styles.rootContainer}>
       <div>
         <h4 className={styles.title}>Account name: </h4>
-        <p>A unique name used for logging</p>
+        <p className={styles.message}>A unique name used for logging</p>
       </div>
       <p className={styles.info}>{username}</p>
     </div>

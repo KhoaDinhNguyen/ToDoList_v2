@@ -18,6 +18,13 @@
 .taskNameContainer p {
   font-weight: 300;
 }
+
+@media screen and (max-width: 499px) {
+  .taskNameContainer p {
+    font-size: 14px;
+  }
+}
+
 .statusContainer {
   display: flex;
   align-items: center;
@@ -31,8 +38,14 @@
   font-weight: 700;
 }
 
+@media screen and (max-width: 499px) {
+  .statusBlock {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
 .pending {
-  background-color: #f98053;;
+  background-color: #f98053;
 }
 
 .failing {

@@ -61,12 +61,11 @@ function ProfileName() {
   };
   return (
     <>
-      {" "}
-      <div className={styles.rootContanier}>
+      <div className={styles.rootContainer}>
         <div className={styles.infoContainer}>
           <div>
             <h4 className={styles.title}>Profile name: </h4>
-            <p>A name displayed on website</p>
+            <p className={styles.message}>A name displayed on website</p>
           </div>
           {formVisble && (
             <InputText

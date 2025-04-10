@@ -5,7 +5,6 @@ import { Success2SVG } from "../../utils/SVG";
 import styles from "./SuccessModal.module.css";
 
 function SuccessModal({ visible, message }) {
-  console.log(message);
   return (
     <Modal visible={visible} overrideStyle={styles.rootContainer}>
       <div

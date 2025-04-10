@@ -1,13 +1,20 @@
 .rootContainer {
-  width: 800px;
+  max-width: 800px;
+  width: 100%;
 }
 
 .infoContainer {
   padding: 20px 0px;
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 50% 1fr;
   align-items: center;
 }
+
+/* @media screen and (max-width: 499px) {
+  .infoContainer {
+    grid-template-columns: 120px 1fr;
+  }
+} */
 
 .title {
   font-size: 18px;
@@ -18,12 +25,34 @@
   padding: 10px;
 }
 
+@media screen and (max-width: 499px) {
+  .message {
+    display: none;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .info {
+    font-size: 14px;
+    padding: 5px;
+  }
+}
+
 .profileInput {
   padding: 10px;
-  width: 500px;
+  width: 100%;
   font-size: 16px;
   outline: transparent;
   border: 1px solid black;
+}
+
+@media screen and (max-width: 499px) {
+  .profileInput {
+    font-size: 14px;
+    padding: 5px;
+  }
 }
 
 .profileInput:focus {
@@ -31,7 +60,8 @@
 }
 
 .buttonsContainer {
-  width: 800px;
+  max-width: 800px;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
 }

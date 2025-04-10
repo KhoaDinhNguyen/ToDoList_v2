@@ -8,7 +8,7 @@
 
 @media screen and (max-width: 499px) {
   .rootContainer {
-    height: 450px;
+    height: 400px;
   }
 }
 
@@ -74,6 +74,14 @@
   text-align: center;
 }
 
+@media screen and (max-width: 499px) {
+  .date {
+    font-size: 12px;
+    padding: 1px;
+    border-radius: 5px;
+  }
+}
+
 .dateExist {
   cursor: pointer;
 }
@@ -114,10 +122,4 @@
 .today {
   color: rgba(244, 91, 105, 1);
   font-weight: 900;
-}
-
-@media screen and (max-width: 499px) {
-  .date {
-    font-size: 12px;
-  }
 }

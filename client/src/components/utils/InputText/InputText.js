@@ -17,7 +17,6 @@ function InputText({
   const placeHolderModifiers = placeholder == undefined ? "" : placeholder;
   const requiredModifers = required == undefined ? false : required;
 
-  console.log(required);
   return (
     <div className={containerStyle}>
       {labelText !== undefined && labelText !== "" && (

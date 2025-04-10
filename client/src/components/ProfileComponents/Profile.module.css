@@ -4,11 +4,18 @@
   align-items: center;
   border: 2px solid black;
   margin-top: 100px;
-  width: max-content;
+  width: 90%;
+  max-width: 800px;
   justify-self: center;
   padding: 50px;
 }
 
+@media screen and (max-width: 499px) {
+  .rootContainer {
+    padding: 5px;
+    align-items: flex-start;
+  }
+}
 .title {
   align-self: flex-start;
   font-size: 24px;

@@ -71,7 +71,7 @@ function Password() {
         <div className={styles.infoContainer}>
           <div>
             <h4 className={styles.title}>Password: </h4>
-            <p>Protect your logging</p>
+            <p className={styles.message}>Protect your logging</p>
           </div>
           {formVisble && (
             <div className={styles.inputsContainer}>
