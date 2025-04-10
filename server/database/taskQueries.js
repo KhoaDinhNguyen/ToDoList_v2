@@ -93,7 +93,7 @@ const deleteTask = (req, res, next) => {
   pool.query(queryString, (err, result) => {
     if (err) {
       const error = new Error(err.message);
-      error.status = 400;
+      error.status = 500;
       next(error);
     } else {
       res.status(200).json({ message: "Delete task successfully" });

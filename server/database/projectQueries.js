@@ -22,9 +22,7 @@ const createProject = (req, res, next) => {
         next(error);
       }
     } else {
-      res
-        .status(200)
-        .json({ message: "Create project successfully", error: false });
+      res.status(200).json({ message: "Create project successfully" });
     }
   });
 };
@@ -66,9 +64,7 @@ const updateProject = (req, res, next) => {
         next(error);
       }
     } else {
-      res
-        .status(200)
-        .json({ message: "Update project sucessfully", error: false });
+      res.status(200).json({ message: "Update project sucessfully" });
     }
   });
 };

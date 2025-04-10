@@ -8,7 +8,9 @@ const getUserDatabase = (req, res, next) => {
     `SELECT * FROM get_user_database('${accountName}');`,
     (err, result) => {
       if (err) {
-        throw err;
+        const error = new Error(err.message);
+        error.status = 500;
+        next(error);
       }
       const database = [];
       //console.log(result.rows);
@@ -71,34 +73,31 @@ const updateUser = async (req, res, next) => {
       const salt = await bcrypt.genSalt(10);
       const hashedPassword = await bcrypt.hash(newPassword, salt);
 
-      pool.query(
-        `CALL change_password('${accountName}', '${hashedPassword}');`,
-        (err, result) => {
-          if (err) {
-            res.status(404).json({ message: err.message, error: true });
-          } else {
-            res
-              .status(200)
-              .json({ message: "Change password successfully", error: false });
-          }
+      const queryString = `CALL change_password('${accountName}', '${hashedPassword}');`;
+      pool.query(queryString, (err, result) => {
+        if (err) {
+          const error = new Error(err.message);
+          error.status = 500;
+          next(error);
+        } else {
+          res.status(200).json({ message: "Change password successfully" });
         }
-      );
+      });
     } catch (err) {}
   } else if (type === "profileName") {
     const { newProfileName } = req.body;
-    pool.query(
-      `CALL change_profile_name('${accountName}', '${newProfileName}');`,
-      (err, reuslt) => {
-        if (err) {
-          res.status(404).json({ message: err.message, error: true });
-        } else {
-          res.status(200).json({
-            message: "Change profile name successfully",
-            error: false,
-          });
-        }
+    const queryString = `CALL change_profile_name('${accountName}', '${newProfileName}');`;
+    pool.query(queryString, (err, reuslt) => {
+      if (err) {
+        const error = new Error(err.message);
+        error.status = 500;
+        next(error);
+      } else {
+        res.status(200).json({
+          message: "Change profile name successfully",
+        });
       }
-    );
+    });
   }
 };
 module.exports = {

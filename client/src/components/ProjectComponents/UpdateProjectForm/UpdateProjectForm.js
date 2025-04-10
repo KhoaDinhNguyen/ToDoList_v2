@@ -55,30 +55,26 @@ function UpdateProjectForm(props) {
     )
       .then((response) => {
         setLoading(false);
-        if (!response.error) {
-          setLoading(false);
-          onChangeMessage("Edit project successfully");
-          setTimeout(() => {
-            dispatch(
-              projectsSlice.actions.updateInfo({
-                projectName,
-                newProjectName,
-                newProjectDescription,
-              })
-            );
-            dispatch(
-              tasksSlice.actions.updateInfoFromProject({
-                projectName,
-                newProjectName,
-              })
-            );
-            setProjectExpansionDisplay(false);
-            setEditDisplay(false);
-          }, 1000);
-        } else {
-          setLoading(false);
-          onChangeMessage(response.message);
-        }
+
+        setLoading(false);
+        onChangeMessage("Edit project successfully");
+        setTimeout(() => {
+          dispatch(
+            projectsSlice.actions.updateInfo({
+              projectName,
+              newProjectName,
+              newProjectDescription,
+            })
+          );
+          dispatch(
+            tasksSlice.actions.updateInfoFromProject({
+              projectName,
+              newProjectName,
+            })
+          );
+          setProjectExpansionDisplay(false);
+          setEditDisplay(false);
+        }, 1000);
       })
       .catch((err) => {
         setLoading(false);
@@ -87,7 +83,6 @@ function UpdateProjectForm(props) {
   };
   return (
     <>
-      {" "}
       <div style={{ display: editDisplay }}>
         <form>
           <InputText

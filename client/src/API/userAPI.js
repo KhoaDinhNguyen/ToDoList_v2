@@ -20,23 +20,19 @@ const fetchUserDatabase = async (accountName, limitTime) => {
       headers: myHeaders,
     });
 
-    if (!jsonResponse.ok) {
-      throw new Error(
-        await jsonResponse.json().then((response) => response.message)
-      );
-    }
     const response = await jsonResponse.json();
-
+    if (!jsonResponse.ok) {
+      throw new Error(response.message);
+    }
     return response;
   } catch (err) {
-    console.log(err.message);
     if (err.message === "Failed to fetch" && limitTime > 0) {
       console.log("Network failed, restart the database loading");
       return await fetchUserDatabase(accountName, limitTime - 1);
     } else if (err.message === "Failed to fetch" && limitTime === 0) {
       throw new Error("Network failed");
     }
-    throw new Error(err);
+    throw new Error(err.message);
   }
 };
 
@@ -73,9 +69,12 @@ const fetchUserUpdate = async (
 
     const response = await jsonResponse.json();
 
+    if (!jsonResponse.ok) {
+      throw new Error(response.message);
+    }
     return response;
   } catch (err) {
-    throw err;
+    throw new Error(err.message);
   }
 };
 
