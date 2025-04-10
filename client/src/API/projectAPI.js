@@ -1,5 +1,6 @@
 import { createSearchParams } from "react-router-dom";
 import { cookies } from "../App";
+
 const fetchDeleteProject = async (accountName, projectName) => {
   const environment = process.env.NODE_ENV;
   const deleteProjectAPI =
@@ -24,9 +25,12 @@ const fetchDeleteProject = async (accountName, projectName) => {
 
     const response = jsonResponse.json();
 
+    if (!jsonResponse.ok) {
+      throw new Error(response.message);
+    }
     return response;
   } catch (err) {
-    throw new Error(err);
+    throw new Error(err.message);
   }
 };
 
@@ -56,9 +60,13 @@ const fetchCreateProject = async (
     });
 
     const response = await jsonResponse.json();
+
+    if (!jsonResponse.ok) {
+      throw new Error(response.message);
+    }
     return response;
   } catch (err) {
-    return err;
+    throw new Error(err.message);
   }
 };
 
@@ -98,9 +106,14 @@ const fetchUpdateProject = async (
     });
 
     const response = await jsonResponse.json();
+
+    if (!jsonResponse.ok) {
+      throw new Error(response.message);
+    }
+
     return response;
   } catch (err) {
-    return err;
+    throw new Error(err.message);
   }
 };
 export { fetchCreateProject, fetchDeleteProject, fetchUpdateProject };

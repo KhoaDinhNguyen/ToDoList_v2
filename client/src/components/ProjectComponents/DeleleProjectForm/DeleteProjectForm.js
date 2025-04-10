@@ -30,7 +30,7 @@ function DeleteProjectForm(props) {
     fetchDeleteProject(accountName, projectName)
       .then((response) => {
         setLoading(false);
-        onChangeMessage("Delete project successfully");
+        onChangeMessage(response.message);
         setTimeout(() => {
           dispatch(tasksSlice.actions.removeFromProject(projectName));
           dispatch(projectsSlice.actions.remove(projectName));

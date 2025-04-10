@@ -56,27 +56,18 @@ function CreateProjectForm() {
     fetchCreateProject(accountName, projectName, projectDescription)
       .then((response) => {
         setLoading(false);
-        setMessage(response.message);
-        if (!response.error) {
-          onChangeMessage("Create project successfully");
-          const newProject = {
-            projectName,
-            projectTimeCreated: todayString,
-            projectDescription,
-          };
-          dispatch(projectsSlice.actions.add(newProject));
-          setProjectDescription("");
-          setTimeout(() => {
-            setProjectName("");
-          }, 1000);
-          dispatch(createProjectFormSlice.actions.setState(false));
-        } else {
-          setMessage(response.message);
-          setTimeout(() => {
-            setProjectName("");
-            setMessage("");
-          }, 1000);
-        }
+        onChangeMessage("Create project successfully");
+        const newProject = {
+          projectName,
+          projectTimeCreated: todayString,
+          projectDescription,
+        };
+        dispatch(projectsSlice.actions.add(newProject));
+        setProjectDescription("");
+        setTimeout(() => {
+          setProjectName("");
+        }, 1000);
+        dispatch(createProjectFormSlice.actions.setState(false));
       })
       .catch((err) => {
         setLoading(false);
