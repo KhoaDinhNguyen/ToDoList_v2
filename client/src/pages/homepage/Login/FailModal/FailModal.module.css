@@ -1,5 +1,5 @@
 .rootContainer {
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
   width: max-content;
   height: max-content;
   top: 20px;
@@ -7,6 +7,11 @@
   transform: translate(-50%, 0%);
 }
 
+@media screen and (max-width: 450px) {
+  .rootContainer {
+    max-width: 300px;
+  }
+}
 .contentContainer {
   background-color: #ff8fa3;
   padding: 10px 30px;
@@ -32,4 +37,3 @@
   top: 5%;
   transition-duration: 0.5s;
 }
-

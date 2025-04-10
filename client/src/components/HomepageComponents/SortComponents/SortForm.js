@@ -112,7 +112,7 @@ function SortForm() {
     setTimeDeadlineDESC(false);
   };
   return (
-    <div>
+    <div className={styles.rootContainer}>
       <h3 className={styles.title}>Sort</h3>
       <SortTaskName
         taskNameASC={taskNameASC}

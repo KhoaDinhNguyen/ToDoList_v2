@@ -61,7 +61,6 @@ function Password() {
         .catch((err) => {
           setLoading(false);
           onChangeMessage(err.message);
-          console.log(err);
         });
     }
   };

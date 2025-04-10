@@ -11,9 +11,9 @@
   margin-left: 10px;
 }
 
-@media screen and (max-width : 499px) {
+@media screen and (max-width: 499px) {
   .projectDescription p {
-      font-size: 14px;
+    font-size: 14px;
   }
 }
 
@@ -28,10 +28,4 @@
   opacity: 1;
   height: 175px;
   visibility: visible;
-}
-
-@media screen and (max-width : 499px) {
-  .rootVisible {
-      height: 150px;
-  }
 }

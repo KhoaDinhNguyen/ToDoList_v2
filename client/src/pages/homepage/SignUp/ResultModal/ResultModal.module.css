@@ -12,14 +12,29 @@
   transform: translate(-50%, -50%);
 }
 
+@media screen and (max-width: 499px) {
+  .contentContainer {
+    padding: 50px 100px;
+    border-radius: 10px;
+  }
+}
+
 .title {
   margin-top: 20px;
   font-size: 24px;
+  text-align: center;
+}
+
+@media screen and (max-width: 499px) {
+  .title {
+    font-size: 20px;
+  }
 }
 
 .buttonsContainer {
   margin-top: 20px;
   display: flex;
+  justify-content: center;
 }
 
 .buttonContainer {
@@ -29,7 +44,13 @@
   background-color: white;
   border: 1px solid black;
   cursor: pointer;
-  margin-left: 20px;
+}
+
+@media screen and (max-width: 499px) {
+  .buttonContainer {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
 }
 
 .buttonContainer:hover {

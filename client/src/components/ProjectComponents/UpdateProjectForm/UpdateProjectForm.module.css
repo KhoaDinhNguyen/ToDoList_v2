@@ -19,21 +19,23 @@
   border: 2px solid orange;
 }
 
-@media screen and (max-width : 499px) {
+@media screen and (max-width: 499px) {
   .input {
-      width: 100px;
-      margin-bottom: 0;
-      overflow: auto;
+    width: 100px;
+    margin-bottom: 0;
+    overflow: auto;
   }
 }
 
-.inputLabel, .input, .inputContainer p{
+.inputLabel,
+.input,
+.inputContainer p {
   font-size: 14px;
 }
 
-.inputContainer span, .inputLabel {
+.inputContainer span,
+.inputLabel {
   font-weight: 500;
-
 }
 .message {
   font-size: 13px;
@@ -41,9 +43,9 @@
   font-weight: 300;
 }
 
-@media screen and (max-width : 499px) {
+@media screen and (max-width: 499px) {
   .message {
-      font-size: 10px;
+    font-size: 10px;
   }
 }
 
@@ -107,8 +109,8 @@
 }
 
 .submitButton label:hover {
-  background-color: #008FFF;
-  border: 2px solid #008FFF;
+  background-color: #008fff;
+  border: 2px solid #008fff;
 }
 
 .submitButton {
@@ -116,20 +118,16 @@
 }
 
 .submitButton label:hover span {
-  color: #008FFF;
+  color: #008fff;
 }
 
 .submitButton label:active span {
-  color: #008FFF;
+  color: #008fff;
 }
 
-@media screen and (max-width : 499px) {
-  .buttonsContainer {
-      margin-top: 0px;
-  }
-
-  .buttonLabe {
-      padding: 5px;
-      font-size: 12px;
+@media screen and (max-width: 499px) {
+  .buttonLabel {
+    padding: 5px;
+    font-size: 12px;
   }
 }

@@ -4,11 +4,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 850px) {
   .rootContainer {
-    margin-top: 20px;
+    margin-top: 0px;
   }
 }
 
@@ -26,8 +27,9 @@
 
 @media screen and (max-width: 850px) {
   .buttonContainer {
-    padding: 10px;
-    margin-top: 0px;
+    margin-top: 20px;
+    padding: 0px;
+    border-radius: 10px;
   }
 }
 

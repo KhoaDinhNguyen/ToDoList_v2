@@ -4,6 +4,12 @@
   width: max-content;
 }
 
+@media screen and (max-width: 450px) {
+  .rootContainer {
+    grid-template-columns: 150px 1fr;
+  }
+}
+
 .title {
   font-weight: 500;
   margin-right: 10px;
@@ -12,4 +18,14 @@
 
 .content {
   grid-column: 2 / 3;
+}
+
+@media screen and (max-width: 450px) {
+  .title {
+    font-size: 12px;
+  }
+
+  .content {
+    font-size: 12px;
+  }
 }

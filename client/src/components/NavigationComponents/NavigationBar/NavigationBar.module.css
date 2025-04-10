@@ -4,16 +4,9 @@
   z-index: 997;
 }
 
-@media screen and (max-width: 850px) {
-  .rootContainer {
-    height: 500px;
-  }
-}
-
 .barContainer {
   background-color: #7b71cc;
   width: 80px;
-  height: 550px;
   position: absolute;
   margin-top: 25px;
   margin-left: 10px;
@@ -24,7 +17,6 @@
 @media screen and (max-width: 850px) {
   .barContainer {
     width: 60px;
-    height: 450px;
     margin-left: 10px;
   }
 }
@@ -101,6 +93,8 @@
 @media screen and (max-width: 850px) {
   .buttonContainer {
     margin: 5px 0;
+    padding: 0px;
+    border-radius: 10px;
   }
 }
 
@@ -113,7 +107,10 @@
 }
 
 @media screen and (max-width: 850px) {
-  .buttonContainer {
+  .buttonContainer a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
     padding: 10px;
     border-radius: 10px;
   }

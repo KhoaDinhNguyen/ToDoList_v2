@@ -47,7 +47,7 @@ function ErrorModal({ onClickStayOnThePage, message }) {
           onClick={onClickStayOnThePage}
           className={styles.buttonContainer}
         >
-          Sign up again
+          <p> Sign up again</p>
         </button>
       </div>
     </>
@@ -63,7 +63,7 @@ function SuccessModal({ onClickStayOnThePage, onClickGoToLogin }) {
       </p>
       <div className={styles.buttonsContainer}>
         <button onClick={onClickGoToLogin} className={styles.buttonContainer}>
-          Go to login
+          <p>Go to login</p>
         </button>
       </div>
     </>

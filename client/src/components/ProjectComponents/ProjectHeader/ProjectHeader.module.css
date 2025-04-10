@@ -1,7 +1,7 @@
 .rootContainer {
   display: grid;
   grid-template-columns: 50px 1fr 150px;
-  background-color: #5A4FCF;
+  background-color: #5a4fcf;
   transition-duration: 0.5s;
   height: 50px;
   align-items: center;
@@ -9,7 +9,7 @@
 
 @media screen and (max-width: 499px) {
   .rootContainer {
-      grid-template-columns: 40px 1fr 115px;
+    grid-template-columns: 40px 1fr 110px;
   }
 }
 
@@ -23,8 +23,8 @@
 }
 
 @media screen and (max-width: 499px) {
-  .title{
-      font-size: 20px;
+  .title {
+    font-size: 20px;
   }
 }
 
@@ -48,11 +48,10 @@
 }
 
 @media screen and (max-width: 499px) {
-  .buttonContainer img {
-      width: 15px;
-      height: 15px;
-      margin-right: 5px;
-      cursor: pointer;
+  .buttonContainer {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    cursor: pointer;
   }
-  
 }

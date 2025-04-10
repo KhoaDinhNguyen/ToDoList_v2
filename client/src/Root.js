@@ -17,7 +17,6 @@ function Root() {
           navigate(`user/${response.id}`);
         })
         .catch((err) => {
-          console.log(err);
           navigate("/homepage/aboutUs");
         });
     }
