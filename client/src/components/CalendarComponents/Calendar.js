@@ -18,22 +18,26 @@ function Calendar(props) {
 
   return (
     <div className={styles.rootContainer}>
-      <TaskDisplaysCalendar
-        date={calendarDate}
-        month={calendarMonth}
-        year={calendarYear}
-        tasks={tasks}
-        currentView={currentView}
-      />
-      <CalendarTable
-        tasks={tasks}
-        calendarMonth={calendarMonth}
-        calendarYear={calendarYear}
-        setCalendarDate={setCalendarDate}
-        setCalendarMonth={setCalendarMonth}
-        setCalendarYear={setCalendarYear}
-        setCurrentView={setCurrentView}
-      />
+      <div>
+        <TaskDisplaysCalendar
+          date={calendarDate}
+          month={calendarMonth}
+          year={calendarYear}
+          tasks={tasks}
+          currentView={currentView}
+        />
+      </div>
+      <div>
+        <CalendarTable
+          tasks={tasks}
+          calendarMonth={calendarMonth}
+          calendarYear={calendarYear}
+          setCalendarDate={setCalendarDate}
+          setCalendarMonth={setCalendarMonth}
+          setCalendarYear={setCalendarYear}
+          setCurrentView={setCurrentView}
+        />
+      </div>
     </div>
   );
 }

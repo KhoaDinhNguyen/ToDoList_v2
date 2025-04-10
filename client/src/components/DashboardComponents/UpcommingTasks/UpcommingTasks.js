@@ -27,7 +27,7 @@ function UpcomingTask(props) {
 
   return (
     <div className={styles.rootContainer}>
-      <h2>Upcomming task</h2>
+      <h2>Upcomming task ({upcommingTaskList.length})</h2>
       {upcommingTask.length === 0 && <p>Nothing need to do</p>}
       {upcommingTask.length !== 0 && <ul>{upcommingTaskList}</ul>}
     </div>

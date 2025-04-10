@@ -21,7 +21,7 @@ function TodayTask(props) {
 
   return (
     <div className={styles.rootContainer}>
-      <h2>Today</h2>
+      <h2>Today ({todayTaskList.length})</h2>
       {todayTask.length === 0 && <p>Nothing need to do</p>}
       {todayTask.length !== 0 && <ul>{todayTaskList}</ul>}
     </div>
